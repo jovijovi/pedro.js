@@ -1,4 +1,7 @@
 // @filename: log.ts
+// Example:
+//   import * as log from "./log";
+//   log.RequestId("reqId1").Trace("This is a trace msg");
 
 import * as log4js from "log4js";
 
