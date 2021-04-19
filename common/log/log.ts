@@ -27,37 +27,37 @@ const logger = log4js.getLogger();
 logger.level = "trace";
 
 export interface ILogger {
-	Trace(msg: string): void;
-	Debug(msg: string): void;
-	Info(msg: string): void;
-	Warn(msg: string): void;
-	Error(msg: string): void;
-	Fatal(msg: string): void;
+	Trace(msg: any, ...args: any[]): void;
+	Debug(msg: any, ...args: any[]): void;
+	Info(msg: any, ...args: any[]): void;
+	Warn(msg: any, ...args: any[]): void;
+	Error(msg: any, ...args: any[]): void;
+	Fatal(msg: any, ...args: any[]): void;
 }
 
 class implLogger implements ILogger {
-	Trace(msg: string) {
-		logger.trace("%s", msg);
+	Trace(msg: any, ...args: any[]) {
+		logger.trace(msg, ...args);
 	}
 
-	Debug(msg: string) {
-		logger.debug("%s", msg);
+	Debug(msg: any, ...args: any[]) {
+		logger.debug(msg, ...args);
 	}
 
-	Info(msg: string) {
-		logger.info("%s", msg)
+	Info(msg?: any, ...args: any[]) {
+		logger.info(msg, ...args);
 	}
 
-	Warn(msg: string) {
-		logger.warn("%s", msg)
+	Warn(msg: any, ...args: any[]) {
+		logger.warn(msg, ...args);
 	}
 
-	Error(msg: string) {
-		logger.error("%s", msg)
+	Error(msg: any, ...args: any[]) {
+		logger.error(msg, ...args);
 	}
 
-	Fatal(msg: string) {
-		logger.fatal("%s", msg)
+	Fatal(msg: any, ...args: any[]) {
+		logger.fatal(msg, ...args);
 	}
 }
 

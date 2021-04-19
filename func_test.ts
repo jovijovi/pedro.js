@@ -31,3 +31,4 @@ function funcB(msg: string) {
 foo("I am in log.ts");
 bar("haha")
 funcB("Hello")
+logger.trace("%s", "123123")
