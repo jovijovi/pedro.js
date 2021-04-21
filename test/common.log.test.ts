@@ -1,4 +1,4 @@
-import * as log from "../common/log";
+import * as log from "@common/log";
 
 test('#Log', () => {
 	log.RequestId("reqId1").Trace("This is a trace msg");
