@@ -1,16 +1,39 @@
 import * as yaml from 'js-yaml';
 import * as fs from 'fs'
-import * as log from "../log";
 
 export namespace config {
 	export class ConfCluster {
-		Name:           string;
-		Id:             string;
-		Description:    string;
+		name:           string;
+		id:             string;
+		description:    string;
+	}
+
+	export class ConfHTTPServer {
+		enable:         boolean;
+		port:           number;
+	}
+
+	export class ConfHTTPSServer {
+		enable:         boolean;
+		port:           number;
+		mutualTLS:      boolean;
+	}
+
+	export class ConfNetwork {
+		ip:             string;
+		httpServer:     ConfHTTPServer;
+		httpsServer:    ConfHTTPSServer;
+	}
+
+	export class ConfLog {
+		mode:           string;
+		level:          string;
 	}
 
 	export class YmlConfig {
-		Cluster:        ConfCluster
+		cluster:        ConfCluster;
+		network:        ConfNetwork;
+		log:            ConfLog;
 	}
 
 	let setting: YmlConfig
