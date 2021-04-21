@@ -3,7 +3,7 @@
 //   import * as log from "./log";
 //   log.RequestId("reqId1").Trace("This is a trace msg");
 
-import * as log4js from "log4js";
+import * as log4js from 'log4js';
 
 log4js.configure({
 	appenders: {
@@ -66,7 +66,10 @@ class implLogger implements ILogger {
 
 const instanceLogger = new implLogger();
 
-export function RequestId(id: string): ILogger {
-	logger.addContext("X-RequestId", id)
-	return instanceLogger
+export function RequestId(id?: string): ILogger {
+	if (id === undefined) {
+		id = '0';
+	}
+	logger.addContext("X-RequestId", id);
+	return instanceLogger;
 }
