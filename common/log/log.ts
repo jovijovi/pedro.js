@@ -29,7 +29,7 @@ const logger = log4js.getLogger();
 // TODO: get log level from config
 logger.level = "trace";
 
-export interface ILogger {
+interface ILogger {
 	Trace(msg: any, ...args: any[]): void;
 	Debug(msg: any, ...args: any[]): void;
 	Info(msg: any, ...args: any[]): void;
@@ -64,7 +64,7 @@ class implLogger implements ILogger {
 	}
 }
 
-const instanceLogger = new implLogger()
+const instanceLogger = new implLogger();
 
 export function RequestId(id: string): ILogger {
 	logger.addContext("X-RequestId", id)
