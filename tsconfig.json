@@ -2,7 +2,12 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2018",
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": "./",
+    "paths": {
+      "@common/*": ["common/*"],
+      "@network/*": ["network/*"]
+    }
   },
   "exclude": [
     "node_modules"
