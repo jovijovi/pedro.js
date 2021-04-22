@@ -1,6 +1,6 @@
 import * as log from "../../common/log";
 
-export function Ping (req, res) {
-	res.send('pong');
+export function Ping(req, rsp) {
+	rsp.send('pong');
 	log.RequestId().Info("pong")
 }
