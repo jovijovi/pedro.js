@@ -1,6 +1,6 @@
 import * as log from "../../common/log";
 
-export function Metrics(req, rsp) {
-	rsp.send('Metrics');
+export function Metrics(req, res) {
+	res.send('Metrics');
 	log.RequestId().Info("Metrics")
 }

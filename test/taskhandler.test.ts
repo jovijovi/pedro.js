@@ -4,14 +4,14 @@ import * as core from "express-serve-static-core";
 import * as log from "../common/log";
 import {ITaskHandler} from "../taskhandler";
 
-function biz1(req, rsp) {
+function biz1(req, res) {
 	log.RequestId().Info("Req=", req)
-	rsp.send('biz1')
+	res.send('biz1')
 }
 
-async function biz2(req, rsp) {
+async function biz2(req, res) {
 	log.RequestId().Info("Req=", req)
-	rsp.send('biz2')
+	res.send('biz2')
 }
 
 function registerBizAPI(router: core.Express) {

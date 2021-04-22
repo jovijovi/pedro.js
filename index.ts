@@ -4,13 +4,13 @@ import * as core from "express-serve-static-core";
 import * as log from "./common/log";
 import { ITaskHandler } from "./taskhandler";
 
-function biz1(req, rsp) {
-	rsp.send('biz1');
+function biz1(req, res) {
+	res.send('biz1');
 	log.RequestId().Info("biz1");
 }
 
-async function biz2(req, rsp) {
-	rsp.send('biz2');
+async function biz2(req, res) {
+	res.send('biz2');
 	log.RequestId().Info("biz2");
 }
 
