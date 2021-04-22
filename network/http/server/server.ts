@@ -15,7 +15,7 @@ export namespace server {
 		log.RequestId().Info('The HTTP(%s) server is running...', s.address());
 	}
 
-	export function Run(handlers: taskhandler.ITaskHandler) {
+	export function Run(handlers?: taskhandler.ITaskHandler) {
 		let conf = config.GetYmlConfig().network.httpServer
 		if (conf.enable) {
 			RunWithoutTLS(conf.port, handlers);

@@ -26,5 +26,7 @@ const baseHandlers = new implTaskHandler();
 
 export function RegisterHandlers(router: core.Express, privateHandlers: ITaskHandler) {
 	baseHandlers.RegisterHandlers(router)
-	privateHandlers.RegisterHandlers(router)
+	if (privateHandlers != undefined) {
+		privateHandlers.RegisterHandlers(router)
+	}
 }
