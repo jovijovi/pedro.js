@@ -28,6 +28,6 @@ class privateImplHandlers implements ITaskHandler {
 const AppHandlers = new privateImplHandlers();
 
 test('HttpServer', () => {
-	config.LoadConfig('./conf/example.yaml');
+	config.LoadConfig('./conf/app.config.yaml');
 	server.Run(AppHandlers);
 })

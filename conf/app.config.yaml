@@ -1,0 +1,64 @@
+cluster:
+  name: cluster-name
+  id: ad8c0255-3b99-43ca-9340-26d9b6108b0f
+  description: 'cluster description'
+
+network:
+  ip: 0.0.0.0
+  httpServer:
+    enable: true
+    port: 55550
+  httpsServer:
+    enable: false
+    port: 55650
+    mutualTLS: false
+
+web:
+  cors:
+    enable: false
+    headers:
+      allowOrigin: '*'
+      allowMethods: 'GET, POST, DELETE, PUT, PATCH, OPTIONS'
+      allowHeaders: 'Content-Type, api_key, Authorization'
+  framework:
+    mode: debug
+    logger: false
+    hostWhitelist:
+      enable: false
+      static: false
+      whitelist:
+        - 127.0.0.1
+
+serviceInfo:
+  version: v1
+  hostName: HostName
+  serviceName: pedro
+  processName: pedro
+  ip: 127.0.0.1
+  port: 55550
+  tags:
+    - microservice
+    - typescript
+    - docker
+  id: 922d184d-4bd2-46fb-b708-54d44543c1a2
+
+# Service user (Optional)
+serviceUser:
+  user: '#pedro-01'
+  secret: ''
+log:
+  mode: Stdout
+  level: TRACE
+
+# Security (Optional)
+security:
+  readSecretFromEnv: false
+
+# Runtime env (Optional)
+env:
+  isCN: true
+
+# Custom config (Optional)
+custom:
+  cu: abc
+  co: ddd
