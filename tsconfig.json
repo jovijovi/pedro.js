@@ -3,6 +3,8 @@
     "module": "commonjs",
     "target": "es2018",
     "sourceMap": true,
+    "removeComments": false,
+    "outDir": "dist",
 //    "baseUrl": "./",
 //    "paths": {
 //      "@common/*": ["common/*"],

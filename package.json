@@ -11,7 +11,10 @@
     "typescript": "^4.2.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc --build && cp -ap conf ./dist",
+    "clean": "tsc --build --clean && rm -rf ./dist/*",
+    "dev-run": "node ./dist/index.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",
