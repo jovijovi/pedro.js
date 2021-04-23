@@ -7,7 +7,7 @@ log4js.configure({
 			type: 'stdout',
 			layout: {
 				type: 'pattern',
-				pattern: '[%d][%h][pid:%z][%f{0}:%l][%p][%X{X-RequestId}][%m]'
+				pattern: '[%d{ISO8601_WITH_TZ_OFFSET}][%h][pid:%z][%f{0}:%l][%p][%X{X-RequestId}][%m]'
 			}
 		}
 	},
