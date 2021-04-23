@@ -26,7 +26,7 @@ const logger = log4js.getLogger();
 logger.level = "trace";
 
 export function SetLogLevel(lv: string) {
-	logger.level = lv
+	logger.level = lv;
 }
 
 export function Close(callback?: (error: Error) => void) {
