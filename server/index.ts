@@ -1,8 +1,9 @@
+import * as core from 'express-serve-static-core';
 import { server } from '../lib/network/http/server'
-import { config } from "../lib/common/config";
-import * as core from "express-serve-static-core";
-import * as log from "../lib/common/log";
-import { ITaskHandler } from "../lib/taskhandler";
+import { config } from '../lib/common/config';
+import * as log from '../lib/common/log';
+import { ITaskHandler } from '../lib/taskhandler';
+import * as sys from '../lib/common/sys'
 
 function biz1(req, res) {
 	res.send('biz1');
@@ -33,6 +34,7 @@ class privateImplHandlers implements ITaskHandler {
 const AppHandlers = new privateImplHandlers();
 
 function main() {
+	sys.HandleSignals();
 	config.LoadConfig('./conf/app.config.yaml');
 	server.Run(AppHandlers);
 }
