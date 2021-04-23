@@ -27,7 +27,7 @@ class privateImplHandlers implements ITaskHandler {
 
 const AppHandlers = new privateImplHandlers();
 
-test('HttpServer', () => {
+test('TaskHandler', () => {
 	config.LoadConfig('./conf/app.config.yaml');
 	server.Run(AppHandlers);
 })
