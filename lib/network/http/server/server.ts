@@ -11,8 +11,9 @@ app.use(bodyParser.json());
 export namespace server {
 	function RunWithoutTLS(port: number, handlers: taskhandler.ITaskHandler) {
 		taskhandler.RegisterHandlers(app, handlers)
-		const s = app.listen(port);
-		log.RequestId().Info('The HTTP(%s) server is running...', s.address());
+		const s = app.listen(port, () => {
+			log.RequestId().Info('The HTTP(%s) server is running...', s.address());
+		});
 	}
 
 	export function Run(handlers?: taskhandler.ITaskHandler) {

@@ -1,8 +1,8 @@
-import { server } from './network/http/server'
-import { config } from "./common/config";
+import { server } from '../lib/network/http/server'
+import { config } from "../lib/common/config";
 import * as core from "express-serve-static-core";
-import * as log from "./common/log";
-import { ITaskHandler } from "./taskhandler";
+import * as log from "../lib/common/log";
+import { ITaskHandler } from "../lib/taskhandler";
 
 function biz1(req, res) {
 	res.send('biz1');
