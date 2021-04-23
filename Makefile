@@ -35,10 +35,13 @@ debug: build-prepare
 
 build: build-prepare
 	@echo "[MAKEFILE] Building binary"
+	yarn install --frozen-lockfile
+	yarn build
 
 docker:
 	@echo "[MAKEFILE] Building docker image..."
-	docker build -t $(BIN_DIR_NAME):$(VER) -f $(DOCKER_FILE) .
+	docker build --force-rm -t $(BIN_DIR_NAME):$(VER) -f $(DOCKER_FILE) .
+	docker images|grep $(BIN_DIR_NAME)
 	@echo "[MAKEFILE] Build docker image done"
 
 help:
