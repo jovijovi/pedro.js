@@ -1,8 +1,4 @@
 // @filename: log.ts
-// Example:
-//   import * as log from "./log";
-//   log.RequestId("reqId1").Trace("This is a trace msg");
-
 import * as log4js from 'log4js';
 
 log4js.configure({
@@ -33,17 +29,10 @@ export function SetLogLevel(lv: string) {
 	logger.level = lv
 }
 
-	Fatal(msg: any, ...args: any[]) {
-		logger.fatal(msg, ...args);
-	}
-}
-
-const instanceLogger = new implLogger();
-
-export function RequestId(id?: string): ILogger {
+export function RequestId(id?: string): log4js.Logger {
 	if (id === undefined) {
 		id = '0';
 	}
 	logger.addContext("X-RequestId", id);
-	return instanceLogger;
+	return logger;
 }

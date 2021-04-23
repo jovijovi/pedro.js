@@ -50,10 +50,10 @@ export namespace config {
 
 		if (filename == undefined) {
 			serviceConfigFilename = defaultConfigFilename
-			log.RequestId().Info("Loading config file:", defaultConfigFilename)
+			log.RequestId().info("Loading config file:", defaultConfigFilename)
 		} else {
 			serviceConfigFilename = filename
-			log.RequestId().Info("Loading config file:", filename)
+			log.RequestId().info("Loading config file:", filename)
 		}
 
 		let contents = fs.readFileSync(serviceConfigFilename, 'utf8');

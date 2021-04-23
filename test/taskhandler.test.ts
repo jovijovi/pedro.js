@@ -5,12 +5,12 @@ import * as log from "../lib/common/log";
 import {ITaskHandler} from "../lib/taskhandler";
 
 function biz1(req, res) {
-	log.RequestId().Info("Req=", req)
+	log.RequestId().info("Req=", req)
 	res.send('biz1')
 }
 
 async function biz2(req, res) {
-	log.RequestId().Info("Req=", req)
+	log.RequestId().info("Req=", req)
 	res.send('biz2')
 }
 

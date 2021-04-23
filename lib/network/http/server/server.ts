@@ -12,7 +12,7 @@ export namespace server {
 	function RunWithoutTLS(port: number, handlers: taskhandler.ITaskHandler) {
 		taskhandler.RegisterHandlers(app, handlers)
 		const s = app.listen(port, () => {
-			log.RequestId().Info('The HTTP(%s) server is running...', s.address());
+			log.RequestId().info('The HTTP(%s) server is running...', s.address());
 		});
 	}
 

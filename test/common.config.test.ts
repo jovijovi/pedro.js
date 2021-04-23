@@ -6,5 +6,5 @@ test('LoadConfig', () => {
 })
 
 test('GetYmlConfig', () => {
-	log.RequestId().Info("YmlConfig=", config.GetYmlConfig());
+	log.RequestId().info("YmlConfig=", config.GetYmlConfig());
 })

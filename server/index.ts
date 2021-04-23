@@ -6,12 +6,12 @@ import { ITaskHandler } from "../lib/taskhandler";
 
 function biz1(req, res) {
 	res.send('biz1');
-	log.RequestId().Info("biz1");
+	log.RequestId().info("biz1");
 }
 
 async function biz2(req, res) {
 	res.send('biz2');
-	log.RequestId().Info("biz2");
+	log.RequestId().info("biz2");
 }
 
 function registerBizAPI(router: core.Express) {
