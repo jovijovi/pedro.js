@@ -10,7 +10,6 @@ COPY yarn.lock /opt/app_src/
 
 WORKDIR /opt/app_src
 RUN yarn install --frozen-lockfile && yarn build
-ADD node_modules /opt/app_src/dist/node_modules
 
 FROM node:14-alpine as runtime
 
@@ -20,6 +19,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 WORKDIR /opt/app
 
 COPY --from=builder /opt/app_src/dist /opt/app
+COPY --from=builder /opt/app_src/node_modules /opt/app/node_modules
 
 ENTRYPOINT [ "node" ]
 CMD ["server/index.js"]
