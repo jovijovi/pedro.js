@@ -59,6 +59,9 @@ export namespace config {
 		let contents = fs.readFileSync(serviceConfigFilename, 'utf8');
 
 		setting = yaml.load(contents);
+
+		// Set log level
+		log.SetLogLevel(setting.log.level)
 	}
 
 	export function GetYmlConfig(): YmlConfig {

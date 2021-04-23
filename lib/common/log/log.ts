@@ -26,38 +26,12 @@ log4js.configure({
 
 const logger = log4js.getLogger();
 
-// TODO: get log level from config
+// Default log level
 logger.level = "trace";
 
-interface ILogger {
-	Trace(msg: any, ...args: any[]): void;
-	Debug(msg: any, ...args: any[]): void;
-	Info(msg: any, ...args: any[]): void;
-	Warn(msg: any, ...args: any[]): void;
-	Error(msg: any, ...args: any[]): void;
-	Fatal(msg: any, ...args: any[]): void;
+export function SetLogLevel(lv: string) {
+	logger.level = lv
 }
-
-class implLogger implements ILogger {
-	Trace(msg: any, ...args: any[]) {
-		logger.trace(msg, ...args);
-	}
-
-	Debug(msg: any, ...args: any[]) {
-		logger.debug(msg, ...args);
-	}
-
-	Info(msg?: any, ...args: any[]) {
-		logger.info(msg, ...args);
-	}
-
-	Warn(msg: any, ...args: any[]) {
-		logger.warn(msg, ...args);
-	}
-
-	Error(msg: any, ...args: any[]) {
-		logger.error(msg, ...args);
-	}
 
 	Fatal(msg: any, ...args: any[]) {
 		logger.fatal(msg, ...args);
