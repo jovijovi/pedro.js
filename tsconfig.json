@@ -10,8 +10,12 @@
 //      "@common/*": ["common/*"],
 //      "@network/*": ["network/*"]
 //    }
+    // Allow to import node module without `import *` when set true
+    // Exp: import express from 'express'
+    "esModuleInterop": false
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
