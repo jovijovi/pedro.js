@@ -1,0 +1,10 @@
+.git
+.cicd
+.vscode
+.idea
+.github
+
+/test
+**/node_modules
+
+Dockerfile
