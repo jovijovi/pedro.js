@@ -1,6 +1,6 @@
 import * as log from "../lib/common/log";
 
-test('#Log', () => {
+test('Log', () => {
 	log.RequestId("reqId1").trace("This is a trace msg");
 	log.RequestId("reqId2").debug("This is a debug msg");
 	log.RequestId("reqId3").info("This is a info msg");
@@ -24,4 +24,7 @@ test('#Log', () => {
 	user.Name = "Tom";
 	user.Age = 1;
 	log.RequestId("reqId8").info("User=", user);
+	log.Close(() => {
+		console.log("logger closed")
+	})
 })
