@@ -29,6 +29,10 @@ export function SetLogLevel(lv: string) {
 	logger.level = lv
 }
 
+export function Close(callback?: (error: Error) => void) {
+	log4js.shutdown(callback);
+}
+
 export function RequestId(id?: string): log4js.Logger {
 	if (id === undefined) {
 		id = '0';
