@@ -40,7 +40,7 @@ build: build-prepare
 
 docker:
 	@echo "[MAKEFILE] Building docker image..."
-	docker build --force-rm -t $(BIN_DIR_NAME):$(VER) -f $(DOCKER_FILE) .
+	docker build --force-rm -f $(DOCKER_FILE) --build-arg NODE_VER=$(NODE_VER) -t $(BIN_DIR_NAME):$(VER) .
 	docker images|grep $(BIN_DIR_NAME)
 	@echo "[MAKEFILE] Build docker image done"
 

@@ -1,4 +1,6 @@
-FROM node:14 as builder
+ARG NODE_VER
+
+FROM node:${NODE_VER} as builder
 MAINTAINER pedro
 
 ADD conf /opt/app_src/conf
@@ -11,15 +13,16 @@ COPY yarn.lock /opt/app_src/
 WORKDIR /opt/app_src
 RUN yarn install --frozen-lockfile && yarn build
 
-FROM node:14-alpine as runtime
+FROM node:${NODE_VER}-alpine as runtime
 
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-    && apk add --no-cache bash
-
-WORKDIR /opt/app
+    && apk add --no-cache bash \
+    && addgroup -S pedro && adduser -S -G pedro pedro
 
 COPY --from=builder /opt/app_src/dist /opt/app
 COPY --from=builder /opt/app_src/node_modules /opt/app/node_modules
 
+USER pedro
+WORKDIR /opt/app
 ENTRYPOINT [ "node" ]
 CMD ["server/index.js"]
