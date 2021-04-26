@@ -1,6 +1,6 @@
-# ts-abc
+# Pedro.js
 
-TypeScript ABC
+Pedro Microservice Kit in TypeScript
 
 ## Makefile
 
