@@ -16,10 +16,16 @@ export namespace server {
 		});
 	}
 
+	// TODO: RunWithTLS
+	function RunWithTLS(port: number, handlers: taskhandler.ITaskHandler) {
+	}
+
 	export function Run(handlers?: taskhandler.ITaskHandler) {
-		let conf = config.GetYmlConfig().network.httpServer
-		if (conf.enable) {
-			RunWithoutTLS(conf.port, handlers);
+		let networkConf = config.GetYmlConfig().network
+		if (networkConf.httpServer.enable) {
+			RunWithoutTLS(networkConf.httpServer.port, handlers);
+		} else if (networkConf.httpsServer.enable) {
+			RunWithTLS(networkConf.httpsServer.port, handlers)
 		}
 	}
 }
