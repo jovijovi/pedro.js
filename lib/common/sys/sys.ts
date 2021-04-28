@@ -13,7 +13,7 @@ const Signals = [
 
 function shutdown() {
 	log.Close(() => {
-			console.log("[%s] ### Logger close done.", time.GetUTCTimeStamp(), time.GetLocalTimeStamp());
+			console.log("[%s] ### Logger close done.", time.GetLocalTimeStamp());
 			process.abort();
 		}
 	);
