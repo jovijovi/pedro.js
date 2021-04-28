@@ -40,3 +40,7 @@ export function RequestId(id?: string): log4js.Logger {
 	logger.addContext("X-RequestId", id);
 	return logger;
 }
+
+export function logo(msg: any, ...args: any[]) {
+	logger.info(msg, ...args)
+}

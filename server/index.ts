@@ -35,7 +35,7 @@ class privateImplHandlers implements ITaskHandler {
 const AppHandlers = new privateImplHandlers();
 
 function main() {
-	log.RequestId().info(logo);
+	log.logo(logo);
 	sys.HandleSignals();
 	config.LoadConfig('./conf/app.config.yaml');
 	server.Run(AppHandlers);
