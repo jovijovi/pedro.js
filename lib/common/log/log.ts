@@ -42,5 +42,5 @@ export function RequestId(id?: string): log4js.Logger {
 }
 
 export function logo(msg: any, ...args: any[]) {
-	logger.info(msg, ...args)
+	logger.info(msg, ...args);
 }
