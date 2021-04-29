@@ -14,7 +14,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc --build && cp -ap conf ./dist",
-    "clean": "tsc --build --clean && rm -rf ./dist/*",
+    "clean": "rm -rf ./dist/*",
     "dev-run": "ts-node ./server/index.ts",
     "dist-run": "node ./dist/server/index.js"
   },
