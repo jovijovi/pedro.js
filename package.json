@@ -8,13 +8,15 @@
     "express": "^4.17.1",
     "log4js": "^6.3.0",
     "js-yaml": "^4.1.0",
-    "dayjs": "^1.10.4"
+    "dayjs": "^1.10.4",
+    "commander": "^7.2.0"
   },
   "scripts": {
     "test": "jest",
     "build": "tsc --build && cp -ap conf ./dist",
     "clean": "tsc --build --clean && rm -rf ./dist/*",
-    "dev-run": "node ./dist/index.js"
+    "dev-run": "ts-node ./server/index.ts",
+    "dist-run": "node ./dist/server/index.js"
   },
   "devDependencies": {
     "@types/jest": "^26.0.22",

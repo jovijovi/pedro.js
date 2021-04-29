@@ -37,7 +37,7 @@ const AppHandlers = new privateImplHandlers();
 function main() {
 	log.logo(logo);
 	sys.HandleSignals();
-	config.LoadConfig('./conf/app.config.yaml');
+	config.LoadConfig();
 	server.Run(AppHandlers);
 }
 

@@ -1,6 +1,7 @@
 import * as yaml from 'js-yaml';
 import * as fs from 'fs'
 import * as log from '../log';
+import {Command} from "commander";
 
 export namespace config {
 	// Prod config filename
@@ -45,11 +46,33 @@ export namespace config {
 
 	let setting: YmlConfig
 
+	const helpText = `
+Example call:
+  $ node ./src/main --help`
+
+	function GetConfigFilenameFromCmd(must = true): string {
+		const program = new Command();
+		program
+			.option('--config <filename>', 'config filename & path')
+			.addHelpText('after', helpText)
+			.parse();
+
+		if (must) {
+			if (!program.opts().config) {
+				console.log(program.helpInformation());
+				process.exit(1);
+			}
+		}
+
+		return program.opts().config
+	}
+
 	export function LoadConfig(filename?: string) {
 		let serviceConfigFilename: string
 
 		if (filename == undefined) {
-			serviceConfigFilename = defaultConfigFilename
+			const confFile = GetConfigFilenameFromCmd();
+			serviceConfigFilename = !confFile ? defaultConfigFilename : confFile;
 			log.RequestId().info("Loading config file:", defaultConfigFilename)
 		} else {
 			serviceConfigFilename = filename
