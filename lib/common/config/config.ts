@@ -1,7 +1,8 @@
 import * as yaml from 'js-yaml';
 import * as fs from 'fs'
+import path from 'path';
 import * as log from '../log';
-import {Command} from "commander";
+import {Command} from 'commander';
 
 export namespace config {
 	// Prod config filename
@@ -64,19 +65,19 @@ Example call:
 			}
 		}
 
-		return program.opts().config
+		return program.opts().config;
 	}
 
 	export function LoadConfig(filename?: string) {
-		let serviceConfigFilename: string
+		let serviceConfigFilename: string;
 
 		if (filename == undefined) {
 			const confFile = GetConfigFilenameFromCmd();
-			serviceConfigFilename = !confFile ? defaultConfigFilename : confFile;
-			log.RequestId().info("Loading config file:", defaultConfigFilename)
+			serviceConfigFilename = path.resolve(!confFile ? defaultConfigFilename : confFile);
+			log.RequestId().info("Loading config file:", serviceConfigFilename);
 		} else {
-			serviceConfigFilename = filename
-			log.RequestId().info("Loading config file:", filename)
+			serviceConfigFilename = path.resolve(filename);
+			log.RequestId().info("Loading config file:", filename);
 		}
 
 		let contents = fs.readFileSync(serviceConfigFilename, 'utf8');
@@ -84,10 +85,10 @@ Example call:
 		setting = yaml.load(contents);
 
 		// Set log level
-		log.SetLogLevel(setting.log.level)
+		log.SetLogLevel(setting.log.level);
 	}
 
 	export function GetYmlConfig(): YmlConfig {
-		return setting
+		return setting;
 	}
 }
