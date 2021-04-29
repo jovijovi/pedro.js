@@ -1,4 +1,4 @@
-import * as yaml from 'js-yaml';
+import yaml from 'yaml';
 import * as fs from 'fs'
 import path from 'path';
 import * as log from '../log';
@@ -82,7 +82,7 @@ Example call:
 
 		let contents = fs.readFileSync(serviceConfigFilename, 'utf8');
 
-		setting = yaml.load(contents);
+		setting = yaml.parse(contents);
 
 		// Set log level
 		log.SetLogLevel(setting.log.level);
