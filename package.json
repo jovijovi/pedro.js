@@ -1,5 +1,5 @@
 {
-  "name": "ts-abc",
+  "name": "pedro.js",
   "version": "1.0.0",
   "dependencies": {
     "@types/body-parser": "^1.19.0",
