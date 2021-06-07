@@ -1,10 +1,10 @@
 import * as core from 'express-serve-static-core';
-import { server } from '../lib/network/http/server'
+import { server } from '../lib/network/http/server';
 import { config } from '../lib/common/config';
 import * as log from '../lib/common/log';
 import { ITaskHandler } from '../lib/taskhandler';
-import * as sys from '../lib/common/sys'
-import { logo } from './logo'
+import * as sys from '../lib/common/sys';
+import { logo } from './logo';
 
 function biz1(req, res) {
 	res.send('biz1');
@@ -37,7 +37,7 @@ const AppHandlers = new privateImplHandlers();
 function main() {
 	log.logo(logo);
 	sys.HandleSignals();
-	config.LoadConfig('./conf/app.config.yaml');
+	config.LoadConfig();
 	server.Run(AppHandlers);
 }
 

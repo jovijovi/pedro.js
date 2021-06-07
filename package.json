@@ -1,5 +1,5 @@
 {
-  "name": "ts-abc",
+  "name": "pedro.js",
   "version": "1.0.0",
   "dependencies": {
     "@types/body-parser": "^1.19.0",
@@ -7,17 +7,20 @@
     "typescript": "^4.2.4",
     "express": "^4.17.1",
     "log4js": "^6.3.0",
-    "js-yaml": "^4.1.0",
-    "dayjs": "^1.10.4"
+    "yaml": "^1.10.2",
+    "dayjs": "^1.10.4",
+    "commander": "^7.2.0"
   },
   "scripts": {
     "test": "jest",
     "build": "tsc --build && cp -ap conf ./dist",
-    "clean": "tsc --build --clean && rm -rf ./dist/*",
-    "dev-run": "node ./dist/index.js"
+    "clean": "rm -rf ./dist/*",
+    "dev-run": "ts-node ./server/index.ts",
+    "dist-run": "node ./dist/server/index.js"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.22",
+    "@tsconfig/node14": "^1.0.0",
+    "@types/jest": "^26.0.23",
     "jest": "^26.6.3",
     "ts-jest": "^26.5.5",
     "ts-node": "9.1.1"

@@ -28,6 +28,7 @@ all: docker
 
 build-prepare:
 	@echo "[MAKEFILE] Prepare for building..."
+	mkdir -p $(app_dir)
 	echo "$(git_br).$(git_id)" > $(app_dir)/git.txt
 
 debug: build-prepare
