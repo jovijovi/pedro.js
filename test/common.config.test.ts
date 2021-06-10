@@ -1,4 +1,4 @@
-import { config } from '../lib/common/config';
+import {config} from '../lib/common/config';
 import * as log from '../lib/common/log';
 
 test('LoadConfig', () => {

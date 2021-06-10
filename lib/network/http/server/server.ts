@@ -1,7 +1,7 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
 import * as log from '../../../common/log';
-import { config } from '../../../common/config';
+import {config} from '../../../common/config';
 import * as taskhandler from '../../../taskhandler';
 
 const app = express();
