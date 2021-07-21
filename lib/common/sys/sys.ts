@@ -11,7 +11,7 @@ const Signals = [
 	SIGHUP,
 ];
 
-function shutdown() {
+export function Shutdown() {
 	log.Close(() => {
 			console.log("[%s] ### Logger close done.", time.GetLocalTimeStamp());
 			process.abort();
@@ -21,7 +21,7 @@ function shutdown() {
 
 function handle(signal) {
 	log.RequestId().info("PID=%d, Signal=%s, system exit.", process.pid, signal);
-	shutdown();
+	Shutdown();
 }
 
 export function HandleSignals() {
