@@ -1,7 +1,7 @@
 import * as assert from 'assert';
-import * as aes from "../lib/common/security/crypto/aes";
+import * as aes from '../lib/common/security/crypto/aes';
 
-test('common.security.crypto.aes', () => {
+test('Encrypt/Decrypt', () => {
 	const mockUserKey = "this is a user key 1234567890";
 	const mockPlainText = "Hello, world! 1234567890 ~!@#$%^&*()_+";
 

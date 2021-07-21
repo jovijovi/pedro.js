@@ -1,4 +1,4 @@
-import * as log from "../lib/common/log";
+import * as log from '../lib/common/log';
 
 test('Log', () => {
 	log.RequestId("reqId1").trace("This is a trace msg");
@@ -16,7 +16,7 @@ test('Log', () => {
 
 	class User {
 		Name: string;
-		Age:  number;
+		Age: number;
 	}
 
 	let user: User;
@@ -25,6 +25,6 @@ test('Log', () => {
 	user.Age = 1;
 	log.RequestId("reqId8").info("User=", user);
 	log.Close(() => {
-		console.log("logger closed")
+		console.log("logger closed");
 	})
 })

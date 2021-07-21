@@ -1,4 +1,4 @@
-import * as log from "../../common/log";
+import * as log from '../../common/log';
 
 export function Health(req, res) {
 	res.send('OK');

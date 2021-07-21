@@ -6,50 +6,58 @@ import {Command} from 'commander';
 
 export namespace config {
 	// Prod config filename
-	const ProdConfigFileName = 'app.config.yaml'
+	const ProdConfigFileName = 'app.config.yaml';
 
 	// Default config filename
-	const defaultConfigFilename = ProdConfigFileName
+	const defaultConfigFilename = ProdConfigFileName;
 
 	export class ConfCluster {
-		name:           string;
-		id:             string;
-		description:    string;
+		name: string;
+		id: string;
+		description: string;
 	}
 
 	export class ConfHTTPServer {
-		enable:         boolean;
-		port:           number;
+		enable: boolean;
+		port: number;
 	}
 
 	export class ConfHTTPSServer {
-		enable:         boolean;
-		port:           number;
-		mutualTLS:      boolean;
+		enable: boolean;
+		port: number;
+		mutualTLS: boolean;
+	}
+
+	export class ConfJsonRpcProxy {
+		enable: boolean;
+		port: number;
+		mutualTLS: boolean;
 	}
 
 	export class ConfNetwork {
-		ip:             string;
-		httpServer:     ConfHTTPServer;
-		httpsServer:    ConfHTTPSServer;
+		ip: string;
+		httpServer: ConfHTTPServer;
+		httpsServer: ConfHTTPSServer;
+		jsonRpcProxy: ConfJsonRpcProxy;
 	}
 
 	export class ConfLog {
-		mode:           string;
-		level:          string;
+		mode: string;
+		level: string;
 	}
 
 	export class YmlConfig {
-		cluster:        ConfCluster;
-		network:        ConfNetwork;
-		log:            ConfLog;
+		cluster: ConfCluster;
+		network: ConfNetwork;
+		log: ConfLog;
+		custom: any;
 	}
 
-	let setting: YmlConfig
+	let setting: YmlConfig;
 
 	const helpText = `
 Example call:
-  $ node ./src/main --help`
+  $ node ./src/main --help`;
 
 	function GetConfigFilenameFromCmd(must = true): string {
 		const program = new Command();

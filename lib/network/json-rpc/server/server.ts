@@ -1,8 +1,8 @@
-import * as log from "../../../common/log";
-import {config} from "../../../common/config";
+import * as log from '../../../common/log';
+import {config} from '../../../common/config';
 import jayson from 'jayson/promise'
 import {URL} from 'url';
-import {IJsonRpcHandler} from "../../../taskhandler/jsonrpc_handler";
+import {IJsonRpcHandler} from '../../../taskhandler/jsonrpc_handler';
 
 export namespace server {
 	function RunProxy(port: number, handler: IJsonRpcHandler, provider: string,
