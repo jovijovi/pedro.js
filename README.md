@@ -1,8 +1,45 @@
 # Pedro.js
 
-Pedro Microservice Kit in TypeScript
+Pedro Microservice Kit in [TypeScript](https://www.typescriptlang.org).
 
-## Makefile
+## Features
+
+## Quick Guide
+
+- Install dependency
+
+  ```shell
+  yarn
+  ```
+
+- Build
+
+  ```shell
+  yarn build
+  ```
+
+- Run
+  ```shell
+  yarn dist-run --config ./conf/app.config.yaml
+  ```
+
+- Clean
+
+  ```shell
+  yarn clean
+  ```
+
+## Development
+
+### Env
+
+***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
+
+- node `v14.17.0`
+- yarn `v1.22.5`
+- ts-node `v10.1.0`
+
+### Makefile
 
 - Make docker images
 
@@ -10,12 +47,12 @@ Pedro Microservice Kit in TypeScript
 make docker
 ```
 
-## UnitTest with `ts-jest`
+### UnitTest with `ts-jest`
 
 - `Official` <https://kulshekhar.github.io/ts-jest>
 - `Github` <https://github.com/kulshekhar/ts-jest>
 
-### Installation
+#### Install `ts-jest`
 
 - Step 1: install packages
 ```bash
@@ -57,3 +94,5 @@ Time:        1.465 s, estimated 2 s
 Ran all test suites.
 Done in 1.93s.
 ```
+
+## Roadmap
