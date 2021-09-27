@@ -35,9 +35,9 @@ Pedro Microservice Kit in [TypeScript](https://www.typescriptlang.org).
 
 ***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
 
-- node `v14.17.0`
-- yarn `v1.22.5`
-- ts-node `v10.1.0`
+- node `v16.10.0`
+- yarn `v1.22.11`
+- ts-node `v10.2.1`
 
 ### Makefile
 
@@ -81,7 +81,7 @@ yarn test
 
 - Step 5: You got this
 ```text
-yarn run v1.22.5
+yarn run v1.22.11
 warning package.json: No license field
 $ jest
  PASS  test/log.test.ts
