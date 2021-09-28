@@ -1,8 +1,68 @@
 # Pedro.js
 
-Pedro Microservice Kit in [TypeScript](https://www.typescriptlang.org).
+Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescriptlang.org).
 
 ## Features
+
+- HTTP/HTTPS 1.1
+
+  - Based on [express](https://github.com/expressjs/express)
+
+  - Task Handler
+
+- JSON-RPC
+
+- Message Queue
+
+  - AWS SQS
+
+- Database Helper
+
+  - MongoDB
+
+    - Based on [Mongoose](https://github.com/Automattic/mongoose)
+
+  - PostgreSQL
+
+- Logger
+
+  - Asynchronous logging
+
+  - Advanced logger
+
+- Certificate
+
+- Configuration
+
+  - Custom config item in a microservice
+
+- Security Suite
+
+  - Crypto
+
+    - Sign/Verify message by ECDSA
+
+    - Encrypt/Decrypt message by AES
+
+    - Get the digest by specified hash function
+
+- System
+
+  - System signals handler
+
+- Utilities
+
+  - Random
+
+  - Time
+
+  - UUID
+
+- Simple Event
+
+  - Sign/Verify signature
+
+- Expend Types
 
 ## Quick Guide
 
@@ -19,6 +79,7 @@ Pedro Microservice Kit in [TypeScript](https://www.typescriptlang.org).
   ```
 
 - Run
+
   ```shell
   yarn dist-run --config ./conf/app.config.yaml
   ```
@@ -56,11 +117,13 @@ make docker
 #### Install `ts-jest`
 
 - Step 1: install packages
+
 ```bash
 yarn add --dev jest typescript ts-jest @types/jest
 ```
 
 - Step 2: Init ts-jest config
+
 ```bash
 yarn ts-jest config:init
 ```
@@ -76,17 +139,21 @@ Add below to package.json
 ```
 
 - Step 4: Run test
+
 ```bash
 yarn test
 ```
 
-- Step 5: You got this
+- Step 5: You will see the information like this
+
 ```text
 yarn run v1.22.11
 warning package.json: No license field
 $ jest
  PASS  test/log.test.ts
   ✓ #Log (1 ms)
+
+......
 
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
@@ -97,3 +164,109 @@ Done in 1.93s.
 ```
 
 ## Roadmap
+
+- Documents
+
+- Task Handler
+
+  - Health check
+
+    Get health and version info
+
+  - Metrics check
+
+    Get simple metrics info
+
+  - Support CORS by config
+
+  - RequestId
+
+  - Real remote IP
+
+- WebSocket
+
+- GRPC
+
+- TLS
+
+  - Mutual TLS
+
+- Message Queue
+
+  - RabbitMQ
+
+  - Disque
+
+  - Aliyun MNS
+
+  - NSQ
+
+- Database Helper
+
+  - MySQL
+
+  - Redis
+
+  - SQLite
+
+  - LevelDB
+
+  - Elasticsearch
+
+- Certificate
+
+- Service Discovery
+
+- Security Suite
+
+  - Crypto
+
+    - Get fingerprint by specified algorithm
+
+    - Encrypt/Verify password by pbkdf2
+
+    - Encrypt/Decrypt message by RSA
+
+    - Encrypt/Decrypt message by SM4
+
+  - Simple dongle
+
+  - Desensitization
+
+    - Desensitize by rules
+
+- Utilities
+
+  - Execute command
+
+  - File
+
+  - Path
+
+  - PStrings
+
+  - Retry
+
+- Job Scheduler
+
+  - Workflow-based job scheduler
+
+  - Storage adapter
+
+- Distributed Lock
+
+  - etcd
+
+- Object Storage
+
+  - OSS Helper
+
+  - S3 Client
+
+  - S3 Helper
+
+- FSM
+
+## Contributors
+
+[`jovijovi`](https://github.com/jovijovi)
