@@ -10,7 +10,7 @@
     "express": "^4.17.1",
     "jayson": "3.6.4",
     "log4js": "^6.3.0",
-    "mongoose": "^6.0.7",
+    "mongoose": "6.0.8",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.6.5",
