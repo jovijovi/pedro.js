@@ -38,6 +38,7 @@ Pedro Microservice Kit in [TypeScript](https://www.typescriptlang.org).
 - node `v16.10.0`
 - yarn `v1.22.11`
 - ts-node `v10.2.1`
+- typescript `4.3.5`
 
 ### Makefile
 
