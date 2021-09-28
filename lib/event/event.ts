@@ -1,6 +1,8 @@
-import {Bytes} from "./types";
-import {NewUUID} from "../common/util/uuid";
-import {GetUTCTimeStamp, RFC3339_LIKE} from "../common/util/time";
+import {Bytes} from '../types';
+import {NewUUID} from '../common/util/uuid';
+import {GetUTCTimeStamp, RFC3339_LIKE} from '../common/util/time';
+import * as elliptic from '../common/security/crypto/elliptic';
+import * as digest from '../common/security/crypto/digest';
 
 export namespace NSEvent {
 	// Default event version
@@ -36,24 +38,24 @@ export namespace NSEvent {
 	export interface IPayload {
 		id: string;         // Payload ID
 		category: string;   // Payload category
-		digest: Bytes[];   // Raw data digest
-		raw: Bytes[];       // Raw data
+		digest: Bytes;      // Raw data digest
+		raw: Bytes;         // Raw data
 	}
 
 	// Payload of Data
 	class Payload implements IPayload {
 		category: string;
 		id: string;
-		digest: Bytes[];
-		raw: Bytes[];
+		digest: Bytes;
+		raw: Bytes;
 	}
 
 	// Data interface
 	export interface IData {
 		header: IHeader;    // Event header
-		flow: string;      // Event flow name
-		name: string;      // Event name
-		src: string;       // Event source state
+		flow: string;       // Event flow name
+		name: string;       // Event name
+		src: string;        // Event source state
 		payload: IPayload;  // Event payload
 	}
 
@@ -73,33 +75,128 @@ export namespace NSEvent {
 
 	// Event interface
 	export interface IEvent {
-		signature: Bytes[]; // Signature(optional)
+		signature: Bytes;   // Signature(optional)
 		data: IData;        // Event data
 
+		// SetSignature set event data signature
+		SetSignature(signature: Bytes);
+
+		// SetEventId set event id
+		SetEventId(id: string);
+
+		// SetEventNamespace set event namespace
+		SetEventNamespace(namespace: string);
+
+		// SetEventVersion set event version
+		SetEventVersion(version: string);
+
+		// SetRequestId set event request
+		SetRequestId(requestId: string);
+
+		// SetSender set event sender
+		SetSender(sender: string);
+
+		// SetFlow set event flow
+		SetFlow(flow: string);
+
+		// SetName set event name
+		SetName(name: string);
+
+		// SetSrc set event original state
+		SetSrc(src: string);
+
+		// SetPayload set event payload
+		SetPayload(payload: Payload);
+
+		// AddPayload add event payload
+		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string);
+
 		// Sign event
-		Sign(privateKey: Buffer, hashAlgo: string): Buffer;
+		Sign(certificate: string, hashAlgo: string): Bytes;
 
 		// Verify event signature
-		Verify(privateKey: Buffer, hashAlgo: string): boolean;
+		Verify(certificate: string, hashAlgo: string): boolean;
 	}
 
 	// Event
 	class Event implements IEvent {
-		signature: Bytes[];
+		signature: Bytes;
 		data: IData;
 
 		constructor() {
 			this.data = new Data();
 		}
 
-		// TODO: Sign event
-		Sign(privateKey: Buffer, hashAlgo: string): Buffer {
-			return
+		SetSignature(signature: Bytes) {
+			this.signature = signature;
+		}
+
+		SetEventId(id: string) {
+			this.data.header.id = id;
+		}
+
+		SetEventNamespace(namespace: string) {
+			this.data.header.namespace = namespace;
+		}
+
+		SetEventVersion(version: string) {
+			this.data.header.version = version;
+		}
+
+		SetRequestId(requestId: string) {
+			this.data.header.requestId = requestId;
+		}
+
+		SetSender(sender: string) {
+			this.data.header.sender = sender;
+		}
+
+		SetFlow(flow: string) {
+			this.data.flow = flow;
+		}
+
+		SetName(name: string) {
+			this.data.name = name;
+		}
+
+		SetSrc(src: string) {
+			this.data.src = src;
+		}
+
+		SetPayload(payload: Payload) {
+			this.data.payload = payload;
+		}
+
+		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string): Error {
+			if (!id) {
+				return new Error('payload id is empty');
+			} else if (!category) {
+				return new Error('category is empty');
+			} else if (!raw) {
+				return new Error('payload raw is null');
+			}
+
+			this.data.payload.id = id;
+			this.data.payload.category = category;
+			this.data.payload.raw = raw;
+
+			if (hashAlgo) {
+				this.data.payload.digest = digest.Get(Buffer.from(raw as Uint8Array), hashAlgo);
+			}
+
+			return null
+		}
+
+		// Sign event
+		Sign(certificate: string, hashAlgo: string): Bytes {
+			const sig = elliptic.ECDSA.Sign(JSON.stringify(this.data), certificate, hashAlgo);
+			this.SetSignature(sig);
+			return sig;
 		};
 
-		// TODO: Verify event signature
-		Verify(privateKey: Buffer, hashAlgo: string): boolean {
-			return false;
+		// Verify event signature
+		Verify(certificate: string, hashAlgo: string): boolean {
+			return elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
 		};
 	}
 
