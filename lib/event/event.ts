@@ -1,52 +1,109 @@
 import {Bytes} from "./types";
-import {GetUTCTimeStamp, RFC3339_LIKE} from '../common/util/time';
-import {v4 as uuidv4} from 'uuid';
+import {NewUUID} from "../common/util/uuid";
+import {GetUTCTimeStamp, RFC3339_LIKE} from "../common/util/time";
 
-export namespace Event {
+export namespace NSEvent {
+	// Default event version
+	const DefaultVersion = '1';
+
+	// Header interface
+	export interface IHeader {
+		id: string;         // Event ID
+		namespace: string;  // Event namespace
+		timestamp: string;  // Event timestamp(RFC3339)
+		version: string;    // Event version
+		requestId: string;  // Request ID
+		sender: string;     // Sender name
+	}
+
 	// Header of Data
-	export interface Header {
-		id: string          // Event ID
-		namespace?: string  // Event namespace
-		timestamp: string   // Event timestamp(RFC3339)
-		version: string     // Event version
-		requestId?: string  // Request ID
-		sender?: string     // Sender name
+	class Header implements IHeader {
+		id: string;
+		namespace: string;
+		requestId: string;
+		sender: string;
+		timestamp: string;
+		version: string;
+
+		constructor() {
+			this.id = NewUUID();
+			this.timestamp = GetUTCTimeStamp(RFC3339_LIKE);
+			this.version = DefaultVersion;
+		}
+	}
+
+	// Payload interface
+	export interface IPayload {
+		id: string;         // Payload ID
+		category: string;   // Payload category
+		digest: Bytes[];   // Raw data digest
+		raw: Bytes[];       // Raw data
 	}
 
 	// Payload of Data
-	export interface Payload {
-		id: string          // Payload ID
-		category: string    // Payload category
-		digest?: Bytes[]    // Raw data digest
-		raw: Bytes[]        // Raw data
+	class Payload implements IPayload {
+		category: string;
+		id: string;
+		digest: Bytes[];
+		raw: Bytes[];
+	}
+
+	// Data interface
+	export interface IData {
+		header: IHeader;    // Event header
+		flow: string;      // Event flow name
+		name: string;      // Event name
+		src: string;       // Event source state
+		payload: IPayload;  // Event payload
 	}
 
 	// Data of event
-	export interface Data {
-		header: Header      // Event header
-		flow?: string       // Event flow name
-		name?: string       // Event name
-		src?: string        // Event source state
-		payload?: Payload   // Event payload
+	class Data implements IData {
+		header: NSEvent.IHeader;
+		flow: string;
+		name: string;
+		src: string;
+		payload: NSEvent.IPayload;
+
+		constructor() {
+			this.header = new Header();
+			this.payload = new Payload();
+		}
+	}
+
+	// Event interface
+	export interface IEvent {
+		signature: Bytes[]; // Signature(optional)
+		data: IData;        // Event data
+
+		// Sign event
+		Sign(privateKey: Buffer, hashAlgo: string): Buffer;
+
+		// Verify event signature
+		Verify(privateKey: Buffer, hashAlgo: string): boolean;
 	}
 
 	// Event
-	export interface Event {
-		signature?: Bytes[] // Signature(optional)
-		data: Data          // Event data
+	class Event implements IEvent {
+		signature: Bytes[];
+		data: IData;
+
+		constructor() {
+			this.data = new Data();
+		}
+
+		// TODO: Sign event
+		Sign(privateKey: Buffer, hashAlgo: string): Buffer {
+			return
+		};
+
+		// TODO: Verify event signature
+		Verify(privateKey: Buffer, hashAlgo: string): boolean {
+			return false;
+		};
 	}
 
-	const DefaultVersion = '1';
-
 	export function New(): Event {
-		return {
-			data: {
-				header: {
-					id: uuidv4(),
-					timestamp: GetUTCTimeStamp(RFC3339_LIKE),
-					version: DefaultVersion,
-				},
-			},
-		}
+		return new Event();
 	}
 }

@@ -1,6 +1,6 @@
-import {Event} from "../lib/event";
+import {NSEvent} from "../lib/event";
 
 test('NewEvent', () => {
-	const event = Event.New();
+	const event = NSEvent.New();
 	console.log("NewEvent=", event);
 })
