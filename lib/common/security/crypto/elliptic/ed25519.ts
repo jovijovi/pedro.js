@@ -19,7 +19,6 @@ export namespace ED25519 {
 			key: certificate,
 		})
 
-		//return crypto.sign(null, Buffer.from(data), privateKey).toString('hex');
 		return crypto.sign(null, Buffer.from(data), privateKey);
 	}
 
@@ -33,7 +32,6 @@ export namespace ED25519 {
 			key: certificate,
 		})
 
-		//return crypto.verify(null, Buffer.from(data), publicKey, Buffer.from(sig));
 		return crypto.verify(null, Buffer.from(data), publicKey, sig);
 	}
 }
