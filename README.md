@@ -10,6 +10,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Task Handler
 
+    - Health check
+
+      Get health and version info
+
 - JSON-RPC
 
 - Message Queue
@@ -168,10 +172,6 @@ Done in 1.93s.
 - Documents
 
 - Task Handler
-
-  - Health check
-
-    Get health and version info
 
   - Metrics check
 
