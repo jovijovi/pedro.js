@@ -9,6 +9,7 @@ ADD server /opt/app_src/server
 COPY package.json /opt/app_src/
 COPY tsconfig.json /opt/app_src/
 COPY yarn.lock /opt/app_src/
+COPY git.json /opt/app_src/
 
 WORKDIR /opt/app_src
 RUN yarn install --frozen-lockfile && yarn build
@@ -21,8 +22,9 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
 
 COPY --from=builder /opt/app_src/dist /opt/app
 COPY --from=builder /opt/app_src/node_modules /opt/app/node_modules
+COPY --from=builder /opt/app_src/git.json /opt/app/
 
 USER pedro
 WORKDIR /opt/app
 ENTRYPOINT [ "node" ]
-CMD ["server/index.js"]
+CMD ["server/index.js", "--config", "./conf/app.config.yaml"]
