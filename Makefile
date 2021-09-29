@@ -43,11 +43,13 @@ build: build-prepare
 	@echo "[MAKEFILE] Building binary"
 	yarn install --frozen-lockfile
 	yarn build
-	echo $(VERSION_INFO) > $(app_dir)/git.json
+	@echo $(VERSION_INFO) > $(app_dir)/git.json
 
 docker:
 	@echo "[MAKEFILE] Building docker image..."
+	@echo $(VERSION_INFO) > $(prj_dir)/git.json
 	docker build --force-rm -f $(DOCKER_FILE) --build-arg NODE_VER=$(NODE_VER) -t $(BIN_DIR_NAME):$(VER) .
+	docker tag $(BIN_DIR_NAME):$(VER) $(BIN_DIR_NAME):latest
 	docker images|grep $(BIN_DIR_NAME)
 	@echo "[MAKEFILE] Build docker image done"
 
