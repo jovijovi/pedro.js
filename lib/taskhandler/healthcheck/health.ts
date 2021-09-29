@@ -5,5 +5,5 @@ import {Version} from '../../common/version';
 export function Health(req, res) {
 	res.send(response.BuildResponse("200", "SuccessfulOperation", Version.GetVersionInfo()));
 
-	log.RequestId().trace("Receive HealthCheck. URL.Path=", req.request.url);
+	log.RequestId().trace("Receive HealthCheck. URL.Path=", req.url);
 }
