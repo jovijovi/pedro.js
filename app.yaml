@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  congress:
+    container_name: devenv_pedro.js
+    image: pedro.js:latest
+    restart: always
+    volumes:
+      - ./conf:/opt/app/conf
+    ports:
+      - "55550:55550"
