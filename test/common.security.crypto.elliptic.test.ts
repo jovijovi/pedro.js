@@ -48,3 +48,29 @@ test('ED25519 Sign/Verify', () => {
 
 	assert.strictEqual(result, true);
 })
+
+test('ECDSA Export encrypt private key', () => {
+	const key = elliptic.ECDSA.NewKeyPair();
+	const plainPriKeyPEM1 = key.privateKey.export({
+		format: elliptic.ECDSA.DefaultEncodeFormat,
+		type: elliptic.ECDSA.DefaultPriKeyEncodeType,
+	}).toString();
+	console.log("## [ECDSA] plainPriKeyPEM=", plainPriKeyPEM1);
+
+	const encryptedPriKeyPEM = key.privateKey.export({
+		format: elliptic.ECDSA.DefaultEncodeFormat,
+		type: elliptic.ECDSA.DefaultPriKeyEncodeType,
+		cipher: 'aes-256-cbc',
+		passphrase: '1234567890',
+	}).toString();
+	console.log("## [ECDSA] encryptedPriKeyPEM=", encryptedPriKeyPEM);
+
+	const privateKey = elliptic.EllipticBase.LoadPrivateKey(encryptedPriKeyPEM, '1234567890')
+
+	const plainPriKeyPEM2 = privateKey.export({
+		format: elliptic.ECDSA.DefaultEncodeFormat,
+		type: elliptic.ECDSA.DefaultPriKeyEncodeType,
+	}).toString();
+
+	assert.strictEqual(plainPriKeyPEM1, plainPriKeyPEM2);
+})

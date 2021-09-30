@@ -1,4 +1,5 @@
-import crypto, {createPrivateKey, createPublicKey, generateKeyPairSync, KeyPairKeyObjectResult} from 'crypto';
+import crypto, {createPublicKey, generateKeyPairSync, KeyPairKeyObjectResult} from 'crypto';
+import {EllipticBase} from './base';
 
 export namespace ED25519 {
 	export const DefaultEncodeFormat = 'pem';
@@ -13,11 +14,9 @@ export namespace ED25519 {
 	// Sign
 	// data: something to sign
 	// certificate: public key content (PEM)
-	// hashAlgo: hash algorithm name (Optional)
-	export function Sign(data: any, certificate: string, hashAlgo?: string): Buffer {
-		const privateKey = createPrivateKey({
-			key: certificate,
-		})
+	// passphrase: if the private key is encrypted, a passphrase must be specified. The length of the passphrase is limited to 1024 bytes
+	export function Sign(data: any, certificate: string, passphrase?: string | Buffer): Buffer {
+		const privateKey = EllipticBase.LoadPrivateKey(certificate, passphrase);
 
 		return crypto.sign(null, Buffer.from(data), privateKey);
 	}
@@ -26,8 +25,7 @@ export namespace ED25519 {
 	// data: something to sign
 	// certificate: public key content (PEM)
 	// sig: signature in HEX string
-	// hashAlgo: hash algorithm name (Optional)
-	export function Verify(data: any, certificate: string, sig: Buffer, hashAlgo?: string): boolean {
+	export function Verify(data: any, certificate: string, sig: Buffer): boolean {
 		const publicKey = createPublicKey({
 			key: certificate,
 		})
