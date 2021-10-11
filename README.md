@@ -60,6 +60,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Utilities
 
+  - File
+
+    - Read dedupe line from file to map
+
   - Random
 
   - Time
@@ -104,8 +108,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 ***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
 
-- node `v16.10.0`
-- yarn `v1.22.11`
+- node `v16.11.0`
+- yarn `v1.22.15`
 - ts-node `v10.2.1`
 - typescript `4.3.5`
 
@@ -236,8 +240,6 @@ Done in 1.93s.
 - Utilities
 
   - Execute command
-
-  - File
 
   - Path
 
