@@ -1,5 +1,5 @@
-import {SQSClient} from "@aws-sdk/client-sqs";
-import {Credentials} from "@aws-sdk/types/src/credentials";
+import {SQSClient} from '@aws-sdk/client-sqs';
+import {Credentials} from '@aws-sdk/types/dist-types/credentials';
 
 export namespace SQS {
 	export interface Config {
