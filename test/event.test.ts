@@ -36,6 +36,8 @@ const mockEventName = 'OpenDoor';
 const mockEventSrc = 'DoorIsClosed';
 const mockEventPayloadHashString = 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646';
 
+let evtAfterSign: NSEvent.Event;
+
 test('NewEvent', () => {
 	const event = NSEvent.New();
 	console.log("NewEvent=", event);
@@ -134,4 +136,31 @@ test('Event Sign/Verify', () => {
 	const result = evt.Verify(ecdsaCert, elliptic.SHA256);
 	console.log("VerifyResult=", result);
 	assert.strictEqual(result, true);
+
+	evtAfterSign = evt;
+})
+
+test('Event Marshal/Unmarshal', () => {
+	let evt1 = evtAfterSign;
+
+	// TEST Marshal/Unmarshal
+	const evtJson = evt1.Marshal();
+	console.log("Event=", evtJson);
+	const evt2 = evt1.Unmarshal(evtJson);
+	console.log("Event1=", evt1);
+
+	console.log("Event2=", evt2);
+	console.log("Event2.Signature=", evt2.signature);
+
+	// Check equal
+	expect(evt1).toEqual(evt2);
+
+	// Check instance
+	console.log("Event2 is instance of Event:", evt2 instanceof NSEvent.Event);
+
+	evt2.SetRequestId('new-req-id-123456');
+	console.log("Event2 updated=", evt2);
+
+	// Check not equal
+	expect(evt1).not.toEqual(evt2);
 })

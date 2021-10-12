@@ -3,6 +3,7 @@ import {NewUUID} from '../common/util/uuid';
 import {GetUTCTimeStamp, RFC3339_LIKE} from '../common/util/time';
 import * as elliptic from '../common/security/crypto/elliptic';
 import * as digest from '../common/security/crypto/digest';
+import {plainToClass} from 'class-transformer';
 
 export namespace NSEvent {
 	// Default event version
@@ -116,10 +117,16 @@ export namespace NSEvent {
 
 		// Verify event signature
 		Verify(certificate: string, hashAlgo: string): boolean;
+
+		// Marshal event
+		Marshal(): string;
+
+		// Unmarshal event
+		Unmarshal(s: string): Event;
 	}
 
 	// Event
-	class Event implements IEvent {
+	export class Event implements IEvent {
 		signature: Bytes;
 		data: IData;
 
@@ -198,6 +205,39 @@ export namespace NSEvent {
 		Verify(certificate: string, hashAlgo: string): boolean {
 			return elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
 		};
+
+		// Marshal event
+		Marshal(): string {
+			return JSON.stringify(this);
+		};
+
+		Unmarshal(s: string): Event {
+			const plainObj = JSON.parse(s, (key, value) => {
+				switch (key) {
+					case 'header':
+						if (value) {
+							return Object.assign(new Header(), value);
+						}
+						break;
+
+					case 'payload':
+						if (value) {
+							return Object.assign(new Payload(), value);
+						}
+						break;
+				}
+
+				if (value && value.type && value.data && value.type == 'Buffer') {
+					return Buffer.from(value.data);
+				}
+
+				return value
+			});
+
+			plainObj.data = Object.assign(new Data(), plainObj.data);
+
+			return plainToClass(Event, plainObj);
+		}
 	}
 
 	export function New(): Event {
