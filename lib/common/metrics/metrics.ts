@@ -4,7 +4,7 @@ export namespace Metrics {
 		cpuUsage: any
 		memoryUsage: any
 		uptime: any
-		tsVersion: string
+		nodejsVersion: string
 
 		toJSON(): string
 	}
@@ -12,21 +12,21 @@ export namespace Metrics {
 	class MetricsInfo implements IMetricsInfo {
 		cpuUsage: any;
 		memoryUsage: any;
-		tsVersion: string;
+		nodejsVersion: string;
 		uptime: any;
 
 		constructor() {
 			this.cpuUsage = process.cpuUsage();
 			this.memoryUsage = process.memoryUsage();
 			this.uptime = process.uptime();
-			this.tsVersion = process.version;
+			this.nodejsVersion = process.version;
 		}
 
 		toJSON(): string {
 			return JSON.stringify({
 				cpuUsage: this.cpuUsage,
 				memoryUsage: this.memoryUsage,
-				tsVersion: this.tsVersion,
+				nodejsVersion: this.nodejsVersion,
 				uptime: this.uptime,
 			});
 		}
