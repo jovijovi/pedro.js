@@ -74,6 +74,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Sign/Verify signature
 
+  - Marshal/Unmarshal
+
 - Expend Types
 
 ## Quick Guide
