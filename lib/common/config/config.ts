@@ -62,7 +62,7 @@ Example call:
 	function GetConfigFilenameFromCmd(must = true): string {
 		const program = new Command();
 		program
-			.option("--config <filename>", 'config filename & path')
+			.option('--config <filename>', 'config filename & path')
 			.addHelpText('after', helpText)
 			.parse();
 
