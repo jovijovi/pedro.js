@@ -79,9 +79,6 @@ export namespace NSEvent {
 		signature: Bytes;   // Signature(optional)
 		data: IData;        // Event data
 
-		// SetSignature set event data signature
-		SetSignature(signature: Bytes);
-
 		// SetEventId set event id
 		SetEventId(id: string);
 
@@ -120,58 +117,68 @@ export namespace NSEvent {
 
 		// Marshal event to JSON
 		Marshal(): string;
-
-		// Unmarshal event
-		Unmarshal(s: string): Event;
 	}
 
 	// Event
 	export class Event implements IEvent {
-		signature: Bytes;
-		data: IData;
-
 		constructor() {
-			this.data = new Data();
+			this._data = new Data();
 		}
 
-		SetSignature(signature: Bytes) {
-			this.signature = signature;
+		private _signature: Bytes;
+
+		get signature(): Bytes {
+			return this._signature;
+		}
+
+		set signature(v: Bytes) {
+			this._signature = v;
+		}
+
+		private _data: IData;
+
+		get data(): IData {
+			return this._data;
+		}
+
+		set data(v: IData) {
+			this._data = v;
 		}
 
 		SetEventId(id: string) {
-			this.data.header.id = id;
+			this._data.header.id = id;
 		}
 
 		SetEventNamespace(namespace: string) {
-			this.data.header.namespace = namespace;
+			this._data.header.namespace = namespace;
 		}
 
 		SetEventVersion(version: string) {
-			this.data.header.version = version;
+			this._data.header.version = version;
 		}
 
 		SetRequestId(requestId: string) {
-			this.data.header.requestId = requestId;
+			this._data.header.requestId = requestId;
 		}
 
 		SetSender(sender: string) {
-			this.data.header.sender = sender;
+			this._data.header.sender = sender;
 		}
 
 		SetFlow(flow: string) {
-			this.data.flow = flow;
+			this._data.flow = flow;
 		}
 
 		SetName(name: string) {
-			this.data.name = name;
+			this._data.name = name;
 		}
 
 		SetSrc(src: string) {
-			this.data.src = src;
+			this._data.src = src;
 		}
 
 		SetPayload(payload: Payload) {
-			this.data.payload = payload;
+			this._data.payload = payload;
 		}
 
 		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string): Error {
@@ -183,21 +190,21 @@ export namespace NSEvent {
 				return new Error('payload raw is null');
 			}
 
-			this.data.payload.id = id;
-			this.data.payload.category = category;
-			this.data.payload.raw = raw;
+			this._data.payload.id = id;
+			this._data.payload.category = category;
+			this._data.payload.raw = raw;
 
 			if (hashAlgo) {
-				this.data.payload.digest = digest.Get(Buffer.from(raw as Uint8Array), hashAlgo);
+				this._data.payload.digest = digest.Get(Buffer.from(raw as Uint8Array), hashAlgo);
 			}
 
-			return null
+			return null;
 		}
 
 		// Sign event
 		Sign(certificate: string, hashAlgo: string): Bytes {
 			const sig = elliptic.ECDSA.Sign(JSON.stringify(this.data), certificate, hashAlgo);
-			this.SetSignature(sig);
+			this.signature = sig;
 			return sig;
 		};
 
@@ -210,37 +217,40 @@ export namespace NSEvent {
 		Marshal(): string {
 			return JSON.stringify(this);
 		};
-
-		Unmarshal(s: string): Event {
-			const plainObj = JSON.parse(s, (key, value) => {
-				switch (key) {
-					case 'header':
-						if (value) {
-							return Object.assign(new Header(), value);
-						}
-						break;
-
-					case 'payload':
-						if (value) {
-							return Object.assign(new Payload(), value);
-						}
-						break;
-				}
-
-				if (value && value.type && value.data && value.type == 'Buffer') {
-					return Buffer.from(value.data);
-				}
-
-				return value
-			});
-
-			plainObj.data = Object.assign(new Data(), plainObj.data);
-
-			return plainToClass(Event, plainObj);
-		}
 	}
 
 	export function New(): Event {
 		return new Event();
+	}
+
+	// Unmarshall event from JSON
+	// If you unmarshall an empty JSON, such as "{}", it'll return a new event object.
+	export function Unmarshal(s: string): Event {
+		const plainObj = JSON.parse(s, (key, value) => {
+			switch (key) {
+				case 'header':
+					if (value) {
+						return Object.assign(new Header(), value);
+					}
+					break;
+
+				case 'payload':
+					if (value) {
+						return Object.assign(new Payload(), value);
+					}
+					break;
+			}
+
+			if (value && value.type && value.data && value.type == 'Buffer') {
+				return Buffer.from(value.data);
+			}
+
+			return value;
+		});
+
+		// Convert the type from 'Object' to 'Data'
+		plainObj._data = Object.assign(new Data(), plainObj._data);
+
+		return plainToClass(Event, plainObj);
 	}
 }

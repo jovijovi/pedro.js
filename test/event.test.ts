@@ -143,12 +143,13 @@ test('Event Sign/Verify', () => {
 test('Event Marshal/Unmarshal', () => {
 	let evt1 = evtAfterSign;
 
-	// TEST Marshal/Unmarshal
+	// Test marshal
 	const evtJson = evt1.Marshal();
-	console.log("Event=", evtJson);
-	const evt2 = evt1.Unmarshal(evtJson);
+	console.log("Event1 Json=", evtJson);
 	console.log("Event1=", evt1);
 
+	// Test unmarshal
+	const evt2 = NSEvent.Unmarshal(evtJson);
 	console.log("Event2=", evt2);
 	console.log("Event2.Signature=", evt2.signature);
 
@@ -163,4 +164,7 @@ test('Event Marshal/Unmarshal', () => {
 
 	// Check not equal
 	expect(evt1).not.toEqual(evt2);
+
+	const evt3 = NSEvent.Unmarshal("{}");
+	console.log("Event3=", evt3);
 })
