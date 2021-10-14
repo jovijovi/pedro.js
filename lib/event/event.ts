@@ -110,7 +110,7 @@ export namespace NSEvent {
 		SetPayload(payload: Payload);
 
 		// AddPayload add event payload
-		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string);
+		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string): Error;
 
 		// Sign event
 		Sign(certificate: string, hashAlgo: string): Bytes;
