@@ -118,7 +118,7 @@ export namespace NSEvent {
 		// Verify event signature
 		Verify(certificate: string, hashAlgo: string): boolean;
 
-		// Marshal event
+		// Marshal event to JSON
 		Marshal(): string;
 
 		// Unmarshal event
@@ -206,7 +206,7 @@ export namespace NSEvent {
 			return elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
 		};
 
-		// Marshal event
+		// Marshal event to JSON
 		Marshal(): string {
 			return JSON.stringify(this);
 		};
