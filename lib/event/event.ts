@@ -3,7 +3,6 @@ import {NewUUID} from '../common/util/uuid';
 import {GetUTCTimeStamp, RFC3339_LIKE} from '../common/util/time';
 import * as elliptic from '../common/security/crypto/elliptic';
 import * as digest from '../common/security/crypto/digest';
-import {plainToClass} from 'class-transformer';
 
 export namespace NSEvent {
 	// Default event version
@@ -121,8 +120,11 @@ export namespace NSEvent {
 
 	// Event
 	export class Event implements IEvent {
-		constructor() {
-			this._data = new Data();
+		constructor(data: IData = new Data(), sig?: Bytes) {
+			this._data = data;
+			if (sig) {
+				this._signature = sig;
+			}
 		}
 
 		private _signature: Bytes;
@@ -214,8 +216,12 @@ export namespace NSEvent {
 		};
 
 		// Marshal event to JSON
+		// update the filed name: from '_data' to 'data', from '_signature' to 'signature'
 		Marshal(): string {
-			return JSON.stringify(this);
+			return JSON.stringify({
+				data: this._data,
+				signature: this._signature,
+			});
 		};
 	}
 
@@ -249,8 +255,7 @@ export namespace NSEvent {
 		});
 
 		// Convert the type from 'Object' to 'Data'
-		plainObj._data = Object.assign(new Data(), plainObj._data);
-
-		return plainToClass(Event, plainObj);
+		// and return a new Event initialized with 'data' & 'signature'
+		return new Event(Object.assign(new Data(), plainObj.data), plainObj.signature);
 	}
 }

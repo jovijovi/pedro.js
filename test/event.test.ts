@@ -141,6 +141,7 @@ test('Event Sign/Verify', () => {
 })
 
 test('Event Marshal/Unmarshal', () => {
+	// Get event1 from evtAfterSign
 	let evt1 = evtAfterSign;
 
 	// Test marshal
@@ -154,17 +155,19 @@ test('Event Marshal/Unmarshal', () => {
 	console.log("Event2.Signature=", evt2.signature);
 
 	// Check equal
-	expect(evt1).toEqual(evt2);
+	expect(evt2).toEqual(evt1);
 
 	// Check instance
 	console.log("Event2 is instance of Event:", evt2 instanceof NSEvent.Event);
 
+	// Test call event2 function after unmarshal
 	evt2.SetRequestId('new-req-id-123456');
 	console.log("Event2 updated=", evt2);
 
 	// Check not equal
-	expect(evt1).not.toEqual(evt2);
+	expect(evt2).not.toEqual(evt1);
 
+	// Unmarshal an empty JSON
 	const evt3 = NSEvent.Unmarshal("{}");
 	console.log("Event3=", evt3);
 })
