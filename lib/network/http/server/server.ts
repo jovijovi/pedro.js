@@ -21,7 +21,7 @@ export namespace server {
 	}
 
 	export function Run(handlers?: taskhandler.ITaskHandler) {
-		let networkConf = config.GetYmlConfig().network;
+		const networkConf = config.GetYmlConfig().network;
 		if (networkConf.httpServer.enable) {
 			RunWithoutTLS(networkConf.httpServer.port, handlers);
 		} else if (networkConf.httpsServer.enable) {

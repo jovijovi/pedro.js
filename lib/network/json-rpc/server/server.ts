@@ -39,7 +39,7 @@ export namespace server {
 
 	// Support proxy right now
 	export function Run(handler: IJsonRpcHandler, provider: string, relayMethods: string[], relayMethodPrefix: string[]) {
-		let networkConf = config.GetYmlConfig().network;
+		const networkConf = config.GetYmlConfig().network;
 		if (networkConf.jsonRpcProxy.enable) {
 			RunProxy(networkConf.jsonRpcProxy.port, handler, provider, relayMethods, relayMethodPrefix);
 		}
