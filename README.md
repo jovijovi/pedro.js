@@ -26,6 +26,12 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     Based on [ws](https://github.com/websockets/ws)
 
+- Cache
+
+  - Memory Cache Set
+
+    Based on [lru-cache](https://github.com/isaacs/node-lru-cache)
+
 - Message Queue
 
   - AWS SQS
