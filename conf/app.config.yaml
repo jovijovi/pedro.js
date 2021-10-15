@@ -13,6 +13,17 @@ network:
     port: 55650
     mutualTLS: false
 
+# Heartbeat configuration
+heartbeat:
+  # Set 'true' to enable heartbeat
+  enable: true
+
+  # Heartbeat port
+  port: 56789
+
+  # Set 'true' to enable heartbeat logger
+  logger: false
+
 web:
   cors:
     enable: false

@@ -28,6 +28,12 @@ export namespace config {
 		mutualTLS: boolean;
 	}
 
+	export class ConfHeartbeat {
+		enable: boolean;
+		port: number;
+		logger: boolean;
+	}
+
 	export class ConfJsonRpcProxy {
 		enable: boolean;
 		port: number;
@@ -49,6 +55,7 @@ export namespace config {
 	export class YmlConfig {
 		cluster: ConfCluster;
 		network: ConfNetwork;
+		heartbeat: ConfHeartbeat;
 		log: ConfLog;
 		custom: any;
 	}

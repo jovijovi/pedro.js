@@ -20,6 +20,12 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - JSON-RPC
 
+- WebSocket
+
+  - Heartbeat
+
+    Based on [ws](https://github.com/websockets/ws)
+
 - Message Queue
 
   - AWS SQS

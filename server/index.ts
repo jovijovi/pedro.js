@@ -1,5 +1,6 @@
 import * as core from 'express-serve-static-core';
 import {server} from '../lib/network/http/server';
+import {heartbeat} from '../lib/network/websocket/server';
 import {config} from '../lib/common/config';
 import * as log from '../lib/common/log';
 import {ITaskHandler} from '../lib/taskhandler';
@@ -38,6 +39,7 @@ function main() {
 	log.logo(logo);
 	sys.HandleSignals();
 	config.LoadConfig();
+	heartbeat.Run();
 	server.Run(AppHandlers);
 }
 
