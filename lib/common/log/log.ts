@@ -1,5 +1,6 @@
 // @filename: log.ts
 import * as log4js from 'log4js';
+import {Version} from "../version";
 
 log4js.configure({
 	appenders: {
@@ -42,5 +43,6 @@ export function RequestId(id?: string): log4js.Logger {
 }
 
 export function logo(msg: any, ...args: any[]) {
+	msg += JSON.stringify(Version.GetVersionInfo(), null, "    ");
 	logger.info(msg, ...args);
 }
