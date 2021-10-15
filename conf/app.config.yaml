@@ -54,10 +54,6 @@ log:
 security:
   readSecretFromEnv: false
 
-# Runtime env (Optional)
-env:
-  isCN: true
-
 # Custom config (Optional)
 custom:
   cu: abc
