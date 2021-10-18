@@ -121,4 +121,5 @@ dist
 .DS_Store
 
 /dist/
+/test/database
 /git.json

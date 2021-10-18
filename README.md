@@ -38,6 +38,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Database Helper
 
+  - LevelDB
+
   - MongoDB
 
     - Based on [Mongoose](https://github.com/Automattic/mongoose)
@@ -224,8 +226,6 @@ Done in 1.93s.
   - Redis
 
   - SQLite
-
-  - LevelDB
 
   - Elasticsearch
 
