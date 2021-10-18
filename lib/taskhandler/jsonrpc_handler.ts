@@ -1,3 +1,3 @@
 export interface IJsonRpcHandler {
-	Callback(params: any): void;
+	Callback(params: any): any;
 }
