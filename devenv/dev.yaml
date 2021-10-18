@@ -1,0 +1,50 @@
+version: '3.1'
+
+networks:
+  devenv-network-pedrojs:
+
+services:
+  mysql:
+    container_name: devenv_mysql_pedrojs
+    image: mysql:8.0.26
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - /opt/dev/pedrojs/mysql_data:/var/lib/mysql
+      - ./database/sql/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
+      - ./database/sql/table.sql:/docker-entrypoint-initdb.d/2_table.sql
+    ports:
+      - "3306:3306"
+    networks:
+      - devenv-network-pedrojs
+
+  mongo:
+    container_name: devenv_mongodb_pedrojs
+    image: mongo:4.4.10
+    command: --auth
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: test
+    volumes:
+      - /opt/dev/pedrojs/mongodb_data:/data/collection
+      - ./database/js/user.js:/docker-entrypoint-initdb.d/1_user.js
+    ports:
+      - "27017:27017"
+    networks:
+      - devenv-network-pedrojs
+
+  mongo-express:
+    container_name: devenv_mongo_express_pedrojs
+    image: mongo-express:0.54.0
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    networks:
+      - devenv-network-pedrojs
