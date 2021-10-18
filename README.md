@@ -44,6 +44,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Based on [Mongoose](https://github.com/Automattic/mongoose)
 
+  - MySQL
+
   - PostgreSQL
 
 - Logger
@@ -220,8 +222,6 @@ Done in 1.93s.
   - NSQ
 
 - Database Helper
-
-  - MySQL
 
   - Redis
 
