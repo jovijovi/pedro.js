@@ -42,6 +42,10 @@ export function RequestId(id?: string): log4js.Logger {
 	return logger;
 }
 
+export function Logger(): log4js.Logger {
+	return logger;
+}
+
 export function logo(msg: any, ...args: any[]) {
 	msg += JSON.stringify(Version.GetVersionInfo(), null, "    ");
 	logger.info(msg, ...args);
