@@ -13,10 +13,25 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes:
       - /opt/dev/pedrojs/mysql_data:/var/lib/mysql
-      - ./database/sql/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
-      - ./database/sql/table.sql:/docker-entrypoint-initdb.d/2_table.sql
+      - ./database/mysql/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
+      - ./database/mysql/table.sql:/docker-entrypoint-initdb.d/2_table.sql
     ports:
       - "3306:3306"
+    networks:
+      - devenv-network-pedrojs
+
+  postgres:
+    container_name: devenv_postgres_pedrojs
+    image: postgres:13.4
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - /opt/dev/pedrojs/postgres_data:/var/lib/postgresql/data
+      - ./database/postgres/database.sql:/docker-entrypoint-initdb.d/1_database.sql
+      - ./database/postgres/table.sql:/docker-entrypoint-initdb.d/2_table.sql
+    ports:
+      - "5432:5432"
     networks:
       - devenv-network-pedrojs
 
@@ -31,7 +46,7 @@ services:
       MONGO_INITDB_DATABASE: test
     volumes:
       - /opt/dev/pedrojs/mongodb_data:/data/collection
-      - ./database/js/user.js:/docker-entrypoint-initdb.d/1_user.js
+      - ./database/mongodb/user.js:/docker-entrypoint-initdb.d/1_user.js
     ports:
       - "27017:27017"
     networks:
@@ -46,5 +61,14 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    networks:
+      - devenv-network-pedrojs
+
+  adminer:
+    container_name: adminer_pedrojs
+    image: adminer:latest
+    restart: always
+    ports:
+      - "8080:8080"
     networks:
       - devenv-network-pedrojs
