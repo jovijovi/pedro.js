@@ -63,4 +63,7 @@ test('FSM', () => {
 	]));
 	console.log("Response2=", rsp2);
 	console.log("Current State2=", rsp2.state.value);
+
+	// Close FSM (unsafe)
+	fsm.Close();
 })

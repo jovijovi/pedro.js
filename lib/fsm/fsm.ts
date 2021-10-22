@@ -57,10 +57,13 @@ export namespace NSFSM {
 
 		// Trigger event
 		On(event: NSEvent.Event, handler?: (context: Context) => void, context?: Context): Response;
+
+		// Close FSM (unsafe)
+		Close();
 	}
 
 	class FSM implements IFSM {
-		private _id: string;
+		private readonly _id: string;
 		private _current: State;
 		private _mapper: Map<any, ITarget>;
 		private _events: Map<any, NSEvent.Event>;
@@ -163,6 +166,14 @@ export namespace NSFSM {
 		// Trigger event
 		On(event: NSEvent.Event, handler?: Handler, context?: Context): Response {
 			return this.transition(event, handler, context);
+		}
+
+		// Close FSM (unsafe)
+		Close() {
+			this._mapper.clear();
+			this._events.clear();
+			this._states.clear();
+			this._current = undefined;
 		}
 	}
 
