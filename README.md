@@ -132,7 +132,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - node `v16.12.0`
 - yarn `v1.22.17`
-- ts-node `v10.3.1`
+- ts-node `v10.4.0`
 - typescript `4.4.4`
 
 ### Makefile
