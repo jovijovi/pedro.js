@@ -48,6 +48,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - PostgreSQL
 
+  - Redis
+
+    - Based on [Node Redis](https://github.com/redis/node-redis)
+
 - Logger
 
   - Asynchronous logging
@@ -228,8 +232,6 @@ Done in 1.93s.
   - NSQ
 
 - Database Helper
-
-  - Redis
 
   - SQLite
 

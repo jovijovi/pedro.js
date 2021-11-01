@@ -4,6 +4,16 @@ networks:
   devenv-network-pedrojs:
 
 services:
+  redis:
+    container_name: devenv_redis_pedrojs
+    image: redis:6
+    command: redis-server
+    restart: always
+    ports:
+      - "6379:6379"
+    networks:
+      - devenv-network-pedrojs
+
   mysql:
     container_name: devenv_mysql_pedrojs
     image: mysql:8.0.26
