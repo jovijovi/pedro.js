@@ -4,7 +4,7 @@ import * as assert from 'assert';
 test('Connection', async () => {
 	// Connect
 	const engine = await Leveldb.Connect({
-		dbname: './test/database/world',
+		dbname: './test/database/leveldb/world',
 	});
 
 	// Test put
