@@ -3,6 +3,10 @@ version: '3.1'
 networks:
   devenv-network-pedrojs:
 
+volumes:
+  esdata01:
+    driver: local
+
 services:
   redis:
     container_name: devenv_redis_pedrojs
@@ -80,5 +84,122 @@ services:
     restart: always
     ports:
       - "8080:8080"
+    networks:
+      - devenv-network-pedrojs
+
+  elasticsearch:
+    image: elasticsearch:7.14.2
+    container_name: devenv_elasticsearch_pedrojs
+    restart: always
+    environment:
+      - discovery.type=single-node
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    networks:
+      - devenv-network-pedrojs
+
+  kibana:
+    image: kibana:7.14.2
+    container_name: devenv_kibana_pedrojs
+    restart: always
+    environment:
+      #- I18N_LOCALE=zh-CN
+      - XPACK_GRAPH_ENABLED=true
+      - TIMELION_ENABLED=true
+      - XPACK_MONITORING_COLLECTION_ENABLED=true
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - ELASTICSEARCH_USERNAME=elastic
+      - ELASTICSEARCH_PASSWORD=changeme
+    ports:
+      - "5601:5601"
+    networks:
+      - devenv-network-pedrojs
+    depends_on:
+      - elasticsearch
+
+  minio1:
+    container_name: devenv_minio_1_pedrojs
+    image: minio/minio:latest
+    restart: always
+    volumes:
+      - /opt/dev/pedrojs/minio/data1-1:/data1
+      - /opt/dev/pedrojs/minio/data1-2:/data2
+    ports:
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server http://minio{1...4}/data{1...2} --console-address ":9001"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - devenv-network-pedrojs
+
+  minio2:
+    container_name: devenv_minio_2_pedrojs
+    image: minio/minio:latest
+    restart: always
+    volumes:
+      - /opt/dev/pedrojs/minio/data2-1:/data1
+      - /opt/dev/pedrojs/minio/data2-2:/data2
+    ports:
+      - "9002:9002"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server http://minio{1...4}/data{1...2} --console-address ":9002"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - devenv-network-pedrojs
+
+  minio3:
+    container_name: devenv_minio_3_pedrojs
+    image: minio/minio:latest
+    restart: always
+    volumes:
+      - /opt/dev/pedrojs/minio/data3-1:/data1
+      - /opt/dev/pedrojs/minio/data3-2:/data2
+    ports:
+      - "9003:9003"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server http://minio{1...4}/data{1...2} --console-address ":9003"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    networks:
+      - devenv-network-pedrojs
+
+  minio4:
+    container_name: devenv_minio_4_pedrojs
+    image: minio/minio:latest
+    restart: always
+    volumes:
+      - /opt/dev/pedrojs/minio/data4-1:/data1
+      - /opt/dev/pedrojs/minio/data4-2:/data2
+    ports:
+      - "9004:9004"
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio123
+    command: server http://minio{1...4}/data{1...2} --console-address ":9004"
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9000/minio/health/live" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
     networks:
       - devenv-network-pedrojs
