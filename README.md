@@ -70,6 +70,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Get the digest by specified hash function
 
+    - Get fingerprint by specified algorithm
+
 - System
 
   - System signals handler
@@ -240,8 +242,6 @@ Done in 1.93s.
 - Security Suite
 
   - Crypto
-
-    - Get fingerprint by specified algorithm
 
     - Encrypt/Verify password by pbkdf2
 
