@@ -84,6 +84,12 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Utilities
 
+  - Converter
+
+    - Stream to Buffer
+
+    - Stream to String
+
   - File
 
     - Read dedupe line from file to map
