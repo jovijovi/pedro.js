@@ -112,6 +112,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Simple FSM (sync)
 
+- Object Storage
+
+  - S3 Client
+
 ## Quick Guide
 
 - Install dependency
@@ -286,8 +290,6 @@ Done in 1.93s.
 - Object Storage
 
   - OSS Helper
-
-  - S3 Client
 
   - S3 Helper
 
