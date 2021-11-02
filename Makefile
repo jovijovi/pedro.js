@@ -53,5 +53,9 @@ docker:
 	docker images|grep $(BIN_DIR_NAME)
 	@echo "[MAKEFILE] Build docker image done"
 
+clean:
+	yarn clean
+	@echo "[MAKEFILE] Cleaned"
+
 help:
 	@echo "make docker -- local docker"
