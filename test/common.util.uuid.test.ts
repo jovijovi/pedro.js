@@ -1,5 +1,5 @@
 import * as uuid from '../lib/common/util/uuid/uuid';
-import assert from "assert";
+import assert from 'assert';
 
 test('NewUUID', () => {
 	console.log(uuid.NewUUID());

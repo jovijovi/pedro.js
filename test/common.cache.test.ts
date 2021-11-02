@@ -1,5 +1,5 @@
 import {NSCacheSet} from '../lib/common/cache';
-import assert from "assert";
+import assert from 'assert';
 
 test('CacheSet', () => {
 	// New cache set

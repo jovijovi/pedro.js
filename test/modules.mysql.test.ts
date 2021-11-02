@@ -1,5 +1,5 @@
-import {Mysql} from "../lib/modules/mysql";
-import {DataTypes, Model} from "sequelize";
+import {Mysql} from '../lib/modules/mysql';
+import {DataTypes, Model} from 'sequelize';
 
 interface IMockAnimals extends Model {
 	id: number;

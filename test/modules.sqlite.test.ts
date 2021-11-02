@@ -1,5 +1,5 @@
-import {Sqlite} from "../lib/modules/sqlite";
-import {DataTypes, Model} from "sequelize";
+import {Sqlite} from '../lib/modules/sqlite';
+import {DataTypes, Model} from 'sequelize';
 
 interface IMockAnimals extends Model {
 	id: number;

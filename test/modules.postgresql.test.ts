@@ -1,4 +1,4 @@
-import {Postgresql} from "../lib/modules/postgresql";
+import {Postgresql} from '../lib/modules/postgresql';
 
 test('Connection', async () => {
 	// Connect

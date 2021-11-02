@@ -1,4 +1,4 @@
-import * as cert from "../lib/common/cert";
+import * as cert from '../lib/common/cert';
 
 const ecdsaCert = `
 -----BEGIN CERTIFICATE-----
