@@ -80,6 +80,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Generate random salt
 
+    - Encrypt/Verify password by pbkdf2
+
 - System
 
   - System signals handler
@@ -260,8 +262,6 @@ Done in 1.93s.
 - Security Suite
 
   - Crypto
-
-    - Encrypt/Verify password by pbkdf2
 
     - Encrypt/Decrypt message by RSA
 
