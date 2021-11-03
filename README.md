@@ -116,6 +116,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - S3 Client
 
+- Auditor
+
+  - Simple Auditor
+
 ## Quick Guide
 
 - Install dependency
