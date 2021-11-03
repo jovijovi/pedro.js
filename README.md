@@ -78,6 +78,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Get fingerprint by specified algorithm
 
+    - Generate random salt
+
 - System
 
   - System signals handler
