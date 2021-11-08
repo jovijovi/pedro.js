@@ -6,6 +6,8 @@ networks:
 volumes:
   esdata01:
     driver: local
+  dgraph:
+    driver: local
 
 services:
   redis:
@@ -83,7 +85,7 @@ services:
     image: adminer:latest
     restart: always
     ports:
-      - "8080:8080"
+      - "8088:8080"
     networks:
       - devenv-network-pedrojs
 
@@ -204,3 +206,87 @@ services:
       retries: 3
     networks:
       - devenv-network-pedrojs
+
+  dgraph-zero:
+    container_name: devenv_dgraph_zero_pedrojs
+    image: dgraph/dgraph:latest
+    restart: always
+    command: dgraph zero --my=dgraph-zero:5080
+    environment:
+      # FOR TEST ONLY
+      DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
+    volumes:
+      - /opt/dev/pedrojs/dgraph/zero:/dgraph
+    ports:
+      - "5080:5080"
+      - "6080:6080"
+    networks:
+      - devenv-network-pedrojs
+
+  dgraph-alpha1:
+    container_name: devenv_dgraph_alpha1_pedrojs
+    image: dgraph/dgraph:latest
+    restart: always
+    command: dgraph alpha --my=dgraph-alpha1:7080 --zero=dgraph-zero:5080
+    environment:
+      # FOR TEST ONLY
+      DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
+    volumes:
+      - /opt/dev/pedrojs/dgraph/alpha1:/dgraph
+    ports:
+      - "8080:8080"
+      - "9080:9080"
+    networks:
+      - devenv-network-pedrojs
+    depends_on:
+      - dgraph-zero
+
+  dgraph-alpha2:
+    container_name: devenv_dgraph_alpha2_pedrojs
+    image: dgraph/dgraph:latest
+    restart: always
+    command: dgraph alpha --my=dgraph-alpha2:7080 --zero=dgraph-zero:5080
+    environment:
+      # FOR TEST ONLY
+      DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
+    volumes:
+      - /opt/dev/pedrojs/dgraph/alpha2:/dgraph
+    ports:
+      - "8082:8080"
+      - "9082:9080"
+    networks:
+      - devenv-network-pedrojs
+    depends_on:
+      - dgraph-zero
+      - dgraph-alpha1
+
+  dgraph-alpha3:
+    container_name: devenv_dgraph_alpha3_pedrojs
+    image: dgraph/dgraph:latest
+    restart: always
+    command: dgraph alpha --my=dgraph-alpha3:7080 --zero=dgraph-zero:5080
+    environment:
+      # FOR TEST ONLY
+      DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
+    volumes:
+      - /opt/dev/pedrojs/dgraph/alpha3:/dgraph
+    ports:
+      - "8083:8080"
+      - "9083:9080"
+    networks:
+      - devenv-network-pedrojs
+    depends_on:
+      - dgraph-zero
+      - dgraph-alpha1
+      - dgraph-alpha2
+
+  dgraph-ratel:
+    container_name: devenv_dgraph_ratel_pedrojs
+    image: dgraph/ratel:latest
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - devenv-network-pedrojs
+    depends_on:
+      - dgraph-zero
