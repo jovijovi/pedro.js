@@ -38,6 +38,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Database Helper
 
+  - Dgraph
+
+    - HTTP client
+
   - LevelDB
 
   - MongoDB
