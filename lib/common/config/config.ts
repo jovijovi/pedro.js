@@ -86,7 +86,7 @@ Example call:
 	export function LoadConfig(filename?: string) {
 		let serviceConfigFilename: string;
 
-		if (filename == undefined) {
+		if (!filename) {
 			const confFile = GetConfigFilenameFromCmd();
 			serviceConfigFilename = path.resolve(!confFile ? defaultConfigFilename : confFile);
 			log.RequestId().info("Loading config file:", serviceConfigFilename);
@@ -95,12 +95,14 @@ Example call:
 			log.RequestId().info("Loading config file:", filename);
 		}
 
-		let contents = fs.readFileSync(serviceConfigFilename, 'utf8');
+		const contents = fs.readFileSync(serviceConfigFilename, 'utf8');
 
 		setting = yaml.parse(contents);
 
 		// Set log level
-		log.SetLogLevel(setting.log.level);
+		if (setting.log && setting.log.level) {
+			log.SetLogLevel(setting.log.level);
+		}
 	}
 
 	export function GetYmlConfig(): YmlConfig {
