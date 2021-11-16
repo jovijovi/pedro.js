@@ -128,6 +128,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Simple Auditor
 
+- Tracing
+
+  - Based on [OpenTelemetry](https://opentelemetry.io/)
+
 ## Quick Guide
 
 - Install dependency
@@ -302,8 +306,6 @@ Done in 1.93s.
   - OSS Helper
 
   - S3 Helper
-
-- Tracing
 
 ## Contributors
 

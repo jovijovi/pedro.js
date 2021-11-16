@@ -6,6 +6,7 @@ import * as log from '../lib/common/log';
 import {ITaskHandler} from '../lib/taskhandler';
 import * as sys from '../lib/common/sys';
 import {logo} from './logo';
+import {Tracing} from '../lib/tracing';
 
 function biz1(req, res) {
 	res.send('biz1');
@@ -40,6 +41,14 @@ function main() {
 	sys.HandleSignals();
 	config.LoadConfig();
 	heartbeat.Run();
+
+	Tracing.Init({
+		serviceName: "pedro-service",
+		tracerName: "foo",
+		tracerVersion: "1.0.0",
+		endpoint: "http://localhost:14268/api/traces",
+	});
+
 	server.Run(AppHandlers);
 }
 

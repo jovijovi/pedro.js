@@ -3,10 +3,12 @@ import * as bodyParser from 'body-parser';
 import * as log from '../../../common/log';
 import {config} from '../../../common/config';
 import * as taskhandler from '../../../taskhandler';
+import {Tracing} from '../../../tracing';
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(Tracing.Add);
 
 export namespace server {
 	function RunWithoutTLS(port: number, handlers: taskhandler.ITaskHandler) {
