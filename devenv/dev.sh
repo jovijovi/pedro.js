@@ -2,28 +2,37 @@
 
 set -e
 
-MODE=$1
+COMMAND=${1}
+SERVICE_NAME=${2}
 
 # Print the usage message
 function printHelp() {
-  echo "Usage: "
-  echo "  dev.sh <mode>"
-  echo "    <mode> - one of 'up', 'down'"
-  echo "      - 'up' - start the dev env with docker-compose up"
-  echo "      - 'down' - stop the dev env with docker-compose down"
-  echo "  dev.sh -h (print this message)"
+  echo "Setting up a development environment out-of-the-box."
   echo
-  echo "Example:"
-  echo "    dev.sh up"
-  echo "    dev.sh down"
+  echo "Usage: "
+  echo "  ./dev.sh COMMAND"
+  echo
+  echo "Commands:"
+  echo "  up        Setting up a development environment or a service"
+  echo "  down      Shut down the development environment"
+  echo "  stop      Stop a service in the development environment"
+  echo
+  echo "Examples:"
+  echo "  ./dev.sh up"
+  echo "  ./dev.sh down"
+  echo "  ./dev.sh up mysql"
+  echo "  ./dev.sh stop mysql"
 }
 
-if [[ "${MODE}" == "up" ]]; then
-  echo "## Starting dev env..."
-  docker-compose -f dev.yaml up -d
-elif [[ "${MODE}" == "down" ]]; then
-  echo "## Stopping dev env..."
+if [[ "${COMMAND}" == "up" ]]; then
+  echo "## Creating dev env..."
+  docker-compose -f dev.yaml up -d ${SERVICE_NAME}
+elif [[ "${COMMAND}" == "down" ]]; then
+  echo "## Shutting down dev env..."
   docker-compose -f dev.yaml down
+elif [[ "${COMMAND}" == "stop" ]]; then
+  echo "## Stopping service..."
+  docker-compose -f dev.yaml stop ${SERVICE_NAME}
 else
   printHelp
   exit 1
