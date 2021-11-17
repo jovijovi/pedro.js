@@ -1,5 +1,5 @@
 import {createClient} from 'redis';
-import {RedisClientType} from 'redis/dist/lib/client';
+import {RedisClientType} from '@node-redis/client/dist/lib/client';
 import * as log from '../../common/log';
 
 export namespace Redis {
@@ -71,7 +71,7 @@ export namespace Redis {
 			url: cfg.url,
 		});
 
-		client.on('error', (err) => log.RequestId().fatal('Connect redis failed, error=%o', err));
+		await client.on('error', (err) => log.RequestId().fatal('Connect redis failed, error=%o', err));
 
 		await client.connect();
 
