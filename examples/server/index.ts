@@ -1,12 +1,12 @@
 import * as core from 'express-serve-static-core';
-import {server} from '../lib/network/http/server';
-import {heartbeat} from '../lib/network/websocket/server';
-import {config} from '../lib/common/config';
-import * as log from '../lib/common/log';
-import {ITaskHandler} from '../lib/taskhandler';
-import * as sys from '../lib/common/sys';
+import {server} from '../../lib/network/http/server';
+import {heartbeat} from '../../lib/network/websocket/server';
+import {config} from '../../lib/common/config';
+import * as log from '../../lib/common/log';
+import {ITaskHandler} from '../../lib/taskhandler';
+import * as sys from '../../lib/common/sys';
 import {logo} from './logo';
-import {Tracing} from '../lib/tracing';
+import {Tracing} from '../../lib/tracing';
 
 function biz1(req, res) {
 	res.send('biz1');
