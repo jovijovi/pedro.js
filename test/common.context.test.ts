@@ -1,4 +1,5 @@
-import {NewContext} from '../lib/common/context';
+import {Born, NewContext} from '../lib/common/context';
+import {NewUUID32bits} from '../lib/common/util/uuid';
 
 test('NewContext', () => {
 	// New context by default
@@ -29,3 +30,40 @@ test('NewContext', () => {
 	expect(parentValue2).toMatch('value2');
 })
 
+test('Born Context Chain', () => {
+	// Born 1st generation
+	const ctx5 = Born({
+		max: 5,
+		idProvider: NewUUID32bits,
+	});
+	console.log("Tree=", ctx5);
+
+	for (let i = 0; i < 5; i++) {
+		const id = ctx5.Trace(i).id;
+		console.log("Ctx(%d) Id=", i, id);
+	}
+
+	// Born 2nd generation
+	const ctx10 = Born({
+		max: 10,
+		ctx: ctx5,
+	});
+	console.log("Tree=", ctx10);
+
+	for (let i = 5; i < 10; i++) {
+		const id = ctx10.Trace(i).id;
+		console.log("Ctx(%d) Id=", i, id);
+	}
+
+	// Born the next one
+	const ctx11 = Born({
+		max: ctx10.Length() + 1,
+		ctx: ctx10,
+	});
+	console.log("Tree=", ctx11);
+
+	for (let i = 10; i < 11; i++) {
+		const id = ctx11.Trace(i).id;
+		console.log("Ctx(%d) Id=", i, id);
+	}
+})
