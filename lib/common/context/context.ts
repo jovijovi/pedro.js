@@ -35,6 +35,11 @@ export class Context implements IContext {
 	get id(): string {
 		return this._id;
 	}
+
+	WithValue(key: any, value: any): Context {
+		this._context.set(key, value);
+		return this;
+	}
 }
 
 export function NewContext(opts?: IOptions): Context {
