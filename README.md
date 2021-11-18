@@ -136,6 +136,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Context chain (parent/child)
 
+- Options
+
+  - An easy-to-use options
+
 ## Quick Guide
 
 - Install dependency
