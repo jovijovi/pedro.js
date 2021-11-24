@@ -307,3 +307,18 @@ services:
       - "9411:9411"
     networks:
       - devenv-network-pedrojs
+
+  go-ipfs:
+    container_name: devenv_go_ipfs_pedrojs
+    image: ipfs/go-ipfs:latest
+    restart: always
+    volumes:
+      - /opt/dev/pedrojs/go-ipfs/export:/export
+      - /opt/dev/pedrojs/go-ipfs/data:/data/ipfs
+    ports:
+      - "4001:4001"
+      - "4001:4001/udp"
+      - "8180:8080"
+      - "5001:5001"
+    networks:
+      - devenv-network-pedrojs
