@@ -140,6 +140,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - An easy-to-use options
 
+- IPFS
+
+  - Based on [ipfs-http-client](https://github.com/ipfs/js-ipfs)
+
 ## Quick Guide
 
 - Install dependency
