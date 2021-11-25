@@ -21,6 +21,7 @@
     "dgraph-js-http": "^21.3.1",
     "express": "^4.17.1",
     "grpc": "^1.24.11",
+    "ipfs-http-client": "^54.0.2",
     "jaeger-client": "3.19.0",
     "jayson": "3.6.5",
     "level": "^7.0.1",
