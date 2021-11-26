@@ -12,7 +12,7 @@ export namespace Postgresql {
 	}
 
 	// Connect postgresql database
-	export function Connect(cfg: Config, logging: boolean = false): Sequelize {
+	export function Connect(cfg: Config, logging = false): Sequelize {
 		if (cfg.uri) {
 			return new Sequelize(cfg.uri, {
 				logging: logging,

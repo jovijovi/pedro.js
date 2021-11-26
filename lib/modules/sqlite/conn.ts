@@ -51,7 +51,7 @@ export namespace Sqlite {
 	}
 
 	// Connect sqlite database
-	export function Connect(cfg: Config, logging: boolean = false): Engine {
+	export function Connect(cfg: Config, logging = false): Engine {
 		if (!cfg.uri) {
 			throw new Error('Cannot found sqlite url');
 		}
