@@ -13,7 +13,7 @@ export interface OptionFunc<T> {
 
 // NewOptions returns new options
 export function NewOptions<T extends IOptions>(...optionFunc: OptionFunc<T>[]): T {
-	let opts = <T>{
+	const opts = <T>{
 		dryRun: false,
 		context: NewContext(),
 	}

@@ -21,7 +21,7 @@ export namespace NSCacheSet {
 
 		// New returns a new cache, default age 60s
 		New(name: string, opts?: LRUCache.Options<any, any>): LRUCache<any, any> {
-			let defaultOpts: LRUCache.Options<any, any> = {
+			const defaultOpts: LRUCache.Options<any, any> = {
 				max: 10,
 				maxAge: 1000 * 60,
 			};
@@ -53,7 +53,7 @@ export namespace NSCacheSet {
 
 		// Clear all cache in set
 		Clear() {
-			for (let cacheStoreKey in this._cacheStore) {
+			for (const cacheStoreKey in this._cacheStore) {
 				this._cacheStore[cacheStoreKey].reset();
 			}
 		}

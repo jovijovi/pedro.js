@@ -17,7 +17,7 @@ export async function ReadDedupeLineToMap(filename: string): Promise<Map<any, an
 		return null;
 	}
 
-	let lineMap = new Map();
+	const lineMap = new Map();
 
 	for await (const line of rl) {
 		lineMap.set(digest.GetString(line, 'sha256'), line);
