@@ -4,6 +4,7 @@ import * as log from '../../common/log';
 
 export namespace IPFS {
 	export interface Config extends Options {
+		enable?: boolean;
 	}
 
 	interface IEngine {
@@ -45,6 +46,8 @@ export namespace IPFS {
 	export function Connect(cfg: Config): Engine {
 		if (!cfg) {
 			throw new Error('Cannot found IPFS config');
+		} else if (!cfg.enable) {
+			return null;
 		}
 
 		// Config URL example:

@@ -7,6 +7,7 @@ test('Connection Failed', async () => {
 	// Connect
 	const engine = IPFS.Connect({
 		url: 'http://127.0.0.1:56789',
+		enable: true,
 	});
 
 	// Ping
@@ -21,6 +22,7 @@ test('Connection Successfully', async () => {
 	// Connect
 	const engine = IPFS.Connect({
 		url: 'http://127.0.0.1:5001',
+		enable: true,
 	});
 
 	// Ping
@@ -35,6 +37,7 @@ test('Add/Cat File', async () => {
 	// Connect
 	const engine = IPFS.Connect({
 		url: 'http://127.0.0.1:5001',
+		enable: true,
 	});
 
 	// Ping
