@@ -7,7 +7,9 @@ import {NodeTracerProvider} from '@opentelemetry/sdk-trace-node';
 import {ExporterConfig} from '@opentelemetry/exporter-jaeger/build/src/types';
 import {registerInstrumentations} from '@opentelemetry/instrumentation';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const {ExpressInstrumentation} = require('@opentelemetry/instrumentation-express');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const {HttpInstrumentation} = require('@opentelemetry/instrumentation-http');
 
 export namespace Tracing {
