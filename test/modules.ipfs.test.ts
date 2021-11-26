@@ -10,9 +10,11 @@ test('Connection Failed', async () => {
 	});
 
 	// Ping
-	if (!await engine.Ping()) {
+	const isOnline = await engine.Ping();
+	if (!isOnline) {
 		console.log("IPFS node is not online");
 	}
+	expect(isOnline).toBeFalsy();
 })
 
 test('Connection Successfully', async () => {
@@ -22,9 +24,11 @@ test('Connection Successfully', async () => {
 	});
 
 	// Ping
-	if (!await engine.Ping()) {
+	const isOnline = await engine.Ping();
+	if (!isOnline) {
 		console.log("IPFS node is not online");
 	}
+	expect(isOnline).toBeTruthy();
 })
 
 test('Add/Cat File', async () => {
@@ -34,9 +38,11 @@ test('Add/Cat File', async () => {
 	});
 
 	// Ping
-	if (!await engine.Ping()) {
+	const isOnline = await engine.Ping();
+	if (!isOnline) {
 		console.log("IPFS node is not online");
 	}
+	expect(isOnline).toBeTruthy();
 
 	// Add a file
 	const content = fs.readFileSync('./test/mock/hello.txt', 'utf8');

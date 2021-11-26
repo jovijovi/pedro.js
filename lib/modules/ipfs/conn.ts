@@ -1,6 +1,6 @@
 import {create} from 'ipfs-http-client';
 import {IPFSHTTPClient, Options} from 'ipfs-http-client/types/src/types';
-import * as log from "../../common/log";
+import * as log from '../../common/log';
 
 export namespace IPFS {
 	export interface Config extends Options {
@@ -26,10 +26,12 @@ export namespace IPFS {
 
 		async Ping(): Promise<boolean> {
 			try {
-				await this._client.isOnline();
-				log.RequestId().fatal('IPFS node(%s:%s) is online',
-					this._client.getEndpointConfig().host, this._client.getEndpointConfig().port);
-				return true;
+				const id = await this._client.id();
+				if (Boolean(id && id.addresses && id.addresses.length)) {
+					log.RequestId().fatal('IPFS node(%s:%s) is online',
+						this._client.getEndpointConfig().host, this._client.getEndpointConfig().port);
+					return true;
+				}
 			} catch (e) {
 				log.RequestId().fatal('IPFS node(%s:%s) is not online, error=%o',
 					this._client.getEndpointConfig().host, this._client.getEndpointConfig().port, e.message);
