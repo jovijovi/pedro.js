@@ -1,7 +1,9 @@
 {
-  "display": "Node 14",
+  "display": "Node 16",
   "compilerOptions": {
-    "lib": ["es2020"],
+    "lib": [
+      "es2020"
+    ],
     "module": "commonjs",
     "target": "es2020",
     "sourceMap": true,
@@ -13,10 +15,12 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
-    "node_modules",
-    "dist",
-    "test",
+    ".cicd",
     "conf",
-    ".cicd"
+    "devenv",
+    "dist",
+    "doc",
+    "node_modules",
+    "test"
   ]
 }
