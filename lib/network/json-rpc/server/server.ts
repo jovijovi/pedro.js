@@ -5,8 +5,7 @@ import {URL} from 'url';
 import {IJsonRpcHandler} from '../../../taskhandler/jsonrpc_handler';
 
 export namespace server {
-	function RunProxy(port: number, handler: IJsonRpcHandler, provider: string,
-	                  relayMethods: string[], relayMethodPrefix: string[]) {
+	function RunProxy(port: number, handler: IJsonRpcHandler, provider: string, relayMethods: string[], relayMethodPrefix: string[]) {
 		const methods = {
 			all: async function (params, callback) {
 				callback(null, await handler.Callback(params));

@@ -208,12 +208,12 @@ export namespace NSEvent {
 			const sig = elliptic.ECDSA.Sign(JSON.stringify(this.data), certificate, hashAlgo);
 			this.signature = sig;
 			return sig;
-		};
+		}
 
 		// Verify event signature
 		Verify(certificate: string, hashAlgo: string): boolean {
 			return elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
-		};
+		}
 
 		// Marshal event to JSON
 		// update the filed name: from '_data' to 'data', from '_signature' to 'signature'
@@ -222,7 +222,7 @@ export namespace NSEvent {
 				data: this._data,
 				signature: this._signature,
 			});
-		};
+		}
 	}
 
 	export function New(): Event {

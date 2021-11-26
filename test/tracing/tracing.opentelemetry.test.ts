@@ -1,7 +1,6 @@
 import * as opentelemetry from '@opentelemetry/api';
 import {Tracing} from '../../lib/tracing';
 
-
 beforeAll(() => {
 	Tracing.Init({
 		serviceName: "pedro-service",
