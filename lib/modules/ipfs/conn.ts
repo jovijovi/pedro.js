@@ -27,7 +27,7 @@ export namespace IPFS {
 		async Ping(): Promise<boolean> {
 			try {
 				const id = await this._client.id();
-				if (Boolean(id && id.addresses && id.addresses.length)) {
+				if (id && id.addresses && id.addresses.length) {
 					log.RequestId().fatal('IPFS node(%s:%s) is online',
 						this._client.getEndpointConfig().host, this._client.getEndpointConfig().port);
 					return true;
