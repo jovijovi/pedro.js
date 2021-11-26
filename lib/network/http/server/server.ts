@@ -20,6 +20,7 @@ export namespace server {
 
 	// TODO: RunWithTLS
 	function RunWithTLS(port: number, handlers: taskhandler.ITaskHandler) {
+		handlers ? console.log(port) : console.log(0);
 	}
 
 	export function Run(handlers?: taskhandler.ITaskHandler) {
