@@ -6,16 +6,18 @@ MODE=$1
 
 # Print the usage message
 function printHelp() {
-  echo "Usage: "
-  echo "  app.sh <mode>"
-  echo "    <mode> - one of 'up', 'down'"
-  echo "      - 'up' - start app"
-  echo "      - 'down' - stop app"
-  echo "  app.sh -h (print this message)"
+  echo "Run/Stop the app"
   echo
-  echo "Example:"
-  echo "    ./app.sh up"
-  echo "    ./app.sh down"
+  echo "Usage: "
+  echo "  ./app.sh COMMAND"
+  echo
+  echo "Commands:"
+  echo "  up        Run the app"
+  echo "  down      Stop the app"
+  echo
+  echo "Examples:"
+  echo "  ./app.sh up"
+  echo "  ./app.sh down"
 }
 
 if [[ "${MODE}" == "up" ]]; then
