@@ -2,6 +2,10 @@
 
 Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescriptlang.org).
 
+## Philosophy
+
+*Go home early from work, spend more time with family and friends, enjoy your life.*
+
 ## Features
 
 - HTTP/HTTPS 1.1
@@ -176,7 +180,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 ***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
 
-- node `v16.13.0`
+- node `v16.13.1`
 - yarn `v1.22.17`
 - ts-node `v10.4.0`
 - typescript `4.4.4`
@@ -224,10 +228,10 @@ Add below to package.json
 yarn test
 ```
 
-- Step 5: You will see the information like this
+- Step 5: You will get response like this
 
 ```text
-yarn run v1.22.11
+yarn run v1.22.17
 warning package.json: No license field
 $ jest
  PASS  test/log.test.ts
@@ -235,12 +239,12 @@ $ jest
 
 ......
 
-Test Suites: 1 passed, 1 total
-Tests:       1 passed, 1 total
+Test Suites: 30 passed, 30 total
+Tests:       64 passed, 64 total
 Snapshots:   0 total
-Time:        1.465 s, estimated 2 s
+Time:        11.797 s, estimated 14 s
 Ran all test suites.
-Done in 1.93s.
+Done in 12.49s.
 ```
 
 ## Roadmap
@@ -318,6 +322,8 @@ Done in 1.93s.
   - OSS Helper
 
   - S3 Helper
+
+- Blockchain
 
 ## Contributors
 
