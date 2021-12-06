@@ -32,7 +32,7 @@
     "pg-hstore": "^2.3.4",
     "redis": "4.0.0",
     "sequelize": "6.9.0",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "npm:@vscode/sqlite3@^5.0.7",
     "ws": "8.3.0",
     "yaml": "^1.10.2"
   },
