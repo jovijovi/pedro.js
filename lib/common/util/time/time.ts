@@ -42,3 +42,8 @@ export function GetDateByZone(timezone?: string): string {
 export function GetUnixTimestamp(timestamp: number, timezone?: string): string {
 	return dayjs.unix(timestamp).tz(timezone).format(ISO8601_UNIX_WITH_TZ_OFFSET);
 }
+
+// GetUnixTime returns unix timestamp (seconds)
+export function GetUnixTime(): number {
+	return Date.now() / 1e3;
+}
