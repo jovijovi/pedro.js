@@ -26,7 +26,7 @@
     "jayson": "3.6.5",
     "level": "^7.0.1",
     "log4js": "^6.3.0",
-    "mongoose": "6.1.0",
+    "mongoose": "6.1.1",
     "mysql2": "2.3.3",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
@@ -50,9 +50,9 @@
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "eslint": "^8.4.1",
-    "jest": "27.4.3",
+    "jest": "27.4.4",
     "ts-jest": "27.1.1",
     "ts-node": "10.4.0",
-    "typescript": "4.5.2"
+    "typescript": "4.5.3"
   }
 }
