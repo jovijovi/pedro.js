@@ -30,7 +30,7 @@
     "mysql2": "2.3.3",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
-    "redis": "4.0.0",
+    "redis": "4.0.1",
     "sequelize": "6.9.0",
     "sqlite3": "npm:@vscode/sqlite3@^5.0.7",
     "ws": "8.3.0",
@@ -47,12 +47,12 @@
     "@tsconfig/node16": "1.0.2",
     "@types/jest": "27.0.3",
     "@types/node": "16.11.12",
-    "@typescript-eslint/eslint-plugin": "^5.6.0",
-    "@typescript-eslint/parser": "^5.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^8.4.1",
-    "jest": "27.4.4",
+    "jest": "27.4.5",
     "ts-jest": "27.1.1",
     "ts-node": "10.4.0",
-    "typescript": "4.5.3"
+    "typescript": "4.5.4"
   }
 }
