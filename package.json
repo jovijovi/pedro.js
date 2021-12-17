@@ -5,7 +5,7 @@
     "@aws-sdk/client-s3": "3.44.0",
     "@aws-sdk/client-sqs": "3.43.0",
     "@elastic/elasticsearch": "^7.16.0",
-    "@grpc/grpc-js": "^1.4.4",
+    "@grpc/grpc-js": "^1.4.5",
     "@opentelemetry/api": "^1.0.3",
     "@opentelemetry/exporter-jaeger": "^1.0.1",
     "@opentelemetry/instrumentation-express": "^0.27.0",
@@ -20,7 +20,7 @@
     "commander": "8.3.0",
     "dayjs": "1.10.7",
     "dgraph-js-http": "^21.3.1",
-    "express": "^4.17.1",
+    "express": "^4.17.2",
     "ipfs-http-client": "^55.0.0",
     "jaeger-client": "3.19.0",
     "jayson": "3.6.6",
@@ -51,7 +51,7 @@
     "@typescript-eslint/parser": "^5.7.0",
     "eslint": "^8.4.1",
     "jest": "27.4.5",
-    "ts-jest": "27.1.1",
+    "ts-jest": "27.1.2",
     "ts-node": "10.4.0",
     "typescript": "4.5.4"
   }
