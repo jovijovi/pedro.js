@@ -1462,10 +1462,10 @@
   resolved "https://registry.npmjs.org/@opentelemetry/api-metrics/-/api-metrics-0.27.0.tgz#d8eca344ed1155f3ea8a8133ade827b4bb90efbf"
   integrity sha512-tB79288bwjkdhPNpw4UdOEy3bacVwtol6Que7cAu8KEJ9ULjRfSiwpYEwJY/oER3xZ7zNFz0uiJ7N1jSiotpVA==
 
-"@opentelemetry/api@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@opentelemetry/api/-/api-1.0.3.tgz#13a12ae9e05c2a782f7b5e84c3cbfda4225eaf80"
-  integrity sha512-puWxACExDe9nxbBB3lOymQFrLYml2dVOrd7USiVRnSbgXE+KwBu+HxFvxrzfqsiSda9IWsXJG1ef7C1O2/GmKQ==
+"@opentelemetry/api@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/@opentelemetry/api/-/api-1.0.4.tgz#a167e46c10d05a07ab299fc518793b0cff8f6924"
+  integrity sha512-BuJuXRSJNQ3QoKA6GWWDyuLpOUck+9hAXNMCnrloc1aWVoy6Xq6t9PUV08aBZ4Lutqq2LEHM486bpZqoViScog==
 
 "@opentelemetry/context-async-hooks@1.0.1":
   version "1.0.1"
@@ -1852,10 +1852,15 @@
   resolved "https://registry.npmjs.org/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
   integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
 
-"@types/node@*", "@types/node@17.0.2", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
+"@types/node@*", "@types/node@>=12.12.47", "@types/node@>=13.7.0":
   version "17.0.2"
   resolved "https://registry.npmjs.org/@types/node/-/node-17.0.2.tgz#a4c07d47ff737e8ee7e586fe636ff0e1ddff070a"
   integrity sha512-JepeIUPFDARgIs0zD/SKPgFsJEAF0X5/qO80llx59gOxFTboS9Amv3S+QfB7lqBId5sFXJ99BN0J6zFRvL9dDA==
+
+"@types/node@17.0.3":
+  version "17.0.3"
+  resolved "https://registry.npmjs.org/@types/node/-/node-17.0.3.tgz#4b086e316ed4504f49bd78135d48642bf50aa135"
+  integrity sha512-bAKB1GcA28FR/D8HHQ5U4FYk7nvoZdp7TZSy9oIyQ8gpYCzpeESa3LCK2TbeocXic7GwIXCkCItJg0DttO3ZaQ==
 
 "@types/node@^12.12.54":
   version "12.20.38"
@@ -5433,10 +5438,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.npmjs.org/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@6.12.1:
-  version "6.12.1"
-  resolved "https://registry.npmjs.org/sequelize/-/sequelize-6.12.1.tgz#c52c4a40a2761fdc95df873502b7dfac0c4b72a4"
-  integrity sha512-5XLBEapH/teme49zx4q6uN+5N4u50qSztW03Mc7T6uJmp1WdCXEcuGCxgGfZo0oQcG6OpkLgfZFn+ysr2iVSmA==
+sequelize@6.12.2:
+  version "6.12.2"
+  resolved "https://registry.npmjs.org/sequelize/-/sequelize-6.12.2.tgz#9692650eca4c607ff40e11e8a3ba25e774edfce8"
+  integrity sha512-MjrvyROlvCs44u0XXBsjAKTKSOCI6djFyimlak4Urr6XGSpka5+PD40PlDgJSuCRwIdvyDUdAQl0cw7E68YqqQ==
   dependencies:
     "@types/debug" "^4.1.7"
     debug "^4.3.3"
