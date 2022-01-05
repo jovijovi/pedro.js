@@ -106,7 +106,15 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Read dedupe line from file to map
 
+  - Queue
+
+    - A queue (FIFO), not async safe
+
   - Random
+
+  - Stack
+
+    - A stack (LIFO), not async safe
 
   - Time
 
@@ -183,7 +191,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 - node `v16.13.1`
 - yarn `v1.22.17`
 - ts-node `v10.4.0`
-- typescript `4.4.4`
+- typescript `4.5.4`
 
 ### Makefile
 
@@ -322,8 +330,6 @@ Done in 12.49s.
   - OSS Helper
 
   - S3 Helper
-
-- Blockchain
 
 ## Contributors
 
