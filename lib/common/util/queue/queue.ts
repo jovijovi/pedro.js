@@ -2,6 +2,7 @@
 // Not async safe
 export class Queue<T> {
 	private _store: T[] = [];
+	private _first: T;
 	private readonly _maxLength: number;
 
 	constructor(maxLength: number) {
@@ -17,5 +18,10 @@ export class Queue<T> {
 		if (this._store.length > this._maxLength) {
 			this._store.shift();
 		}
+		this._first = this._store[0];
+	}
+
+	First(): T {
+		return this._first;
 	}
 }
