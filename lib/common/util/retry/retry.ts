@@ -8,10 +8,10 @@ const DefaultRetryTimes = 3;
 const DefaultRetryInterval = 3;
 
 export interface Func<T> {
-	(arg: T): Error;
+	(arg: T): T;
 }
 
-export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes): Promise<any> {
+export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes): Promise<T> {
 	let rsp = undefined;
 
 	for (let i = 0; i < retryTimes; i++) {
