@@ -8,7 +8,9 @@ import {
 	GetUTCTimeStamp,
 	ISO8601,
 	ISO8601_UNIX_WITH_TZ_OFFSET,
-	RFC3339_LIKE
+	RFC3339_LIKE,
+	Sleep,
+	SleepSeconds
 } from '../../lib/common/util/time';
 
 test('GetLocalTimeStamp', () => {
@@ -61,4 +63,9 @@ test('GetUnixTimestamp', () => {
 	log.RequestId().info("GetUnixTimestamp(Asia/Singapore)=", GetUnixTimestamp(GetUnixTime(), 'Asia/Singapore'));
 	log.RequestId().info("GetUnixTimestamp(Asia/Tokyo)=", GetUnixTimestamp(GetUnixTime(), 'Asia/Tokyo'));
 	log.RequestId().info("GetUnixTimestamp(Australia/Sydney)=", GetUnixTimestamp(GetUnixTime(), 'Australia/Sydney'));
+})
+
+test('Sleep', () => {
+	Sleep(500);
+	SleepSeconds(1);
 })
