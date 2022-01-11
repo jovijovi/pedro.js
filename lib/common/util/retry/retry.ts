@@ -16,7 +16,7 @@ export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes): Promis
 
 	for (let i = 0; i < retryTimes; i++) {
 		try {
-			rsp = f(<T>{});
+			rsp = await f(<T>{});
 			break;
 		} catch (e) {
 			log.Logger().error('Try times=%d, error=%o', i + 1, e);
