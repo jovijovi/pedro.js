@@ -1,6 +1,6 @@
 import * as retry from '../../lib/common/util/retry'
 import {Func} from '../../lib/common/util/retry'
-import assert from "assert";
+import assert from 'assert';
 
 // Function example
 function transistor(input: number): Func<any> {
@@ -32,3 +32,18 @@ test('Retry', async () => {
 	assert.strictEqual(rsp3, undefined);
 	console.log("Rsp3=", rsp3);
 }, 30000)
+
+test('Retry Async', async () => {
+	const rsp1 = await retry.Run(async <T>(): Promise<number> => {
+		throw new Error('Mock error 1');
+	}, 2, 1);
+	assert.notEqual(rsp1, undefined);
+	console.log("Rsp1=", rsp1);
+
+	const rsp2 = await retry.Run(async <T>(): Promise<number> => {
+		return 42;
+	})
+	assert.strictEqual(rsp2, 42);
+	console.log("Rsp2=", rsp2);
+
+}, 15000)

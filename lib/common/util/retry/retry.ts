@@ -11,20 +11,20 @@ export interface Func<T> {
 	(arg: T): T;
 }
 
-export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes): Promise<T> {
+export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes, retryInterval = DefaultRetryInterval): Promise<T> {
 	let rsp = undefined;
 
-	for (let i = 0; i < retryTimes; i++) {
+	for (let i = 1; i <= retryTimes; i++) {
 		try {
 			rsp = await f(<T>{});
 			break;
 		} catch (e) {
-			log.Logger().error('Try times=%d, error=%o', i + 1, e);
-			if (i == retryTimes - 1) {
+			log.Logger().error('Try times=%d, error=%o', i, e);
+			if (i == retryTimes) {
 				rsp = e;
 				break;
 			}
-			await time.SleepSeconds(DefaultRetryInterval);
+			await time.SleepSeconds(retryInterval);
 		}
 	}
 
