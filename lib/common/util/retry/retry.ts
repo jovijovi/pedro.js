@@ -11,22 +11,17 @@ export interface Func<T> {
 	(arg: T): T;
 }
 
+// Retry running the function m times with n seconds interval
 export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes, retryInterval = DefaultRetryInterval): Promise<T> {
-	let rsp = undefined;
-
 	for (let i = 1; i <= retryTimes; i++) {
 		try {
-			rsp = await f(<T>{});
-			break;
+			return await f(<T>{});
 		} catch (e) {
 			log.Logger().error('Try times=%d, error=%o', i, e);
 			if (i == retryTimes) {
-				rsp = e;
-				break;
+				throw e;
 			}
 			await time.SleepSeconds(retryInterval);
 		}
 	}
-
-	return rsp;
 }

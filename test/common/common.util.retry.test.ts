@@ -3,8 +3,8 @@ import {Func} from '../../lib/common/util/retry'
 import assert from 'assert';
 
 // Function example
-function transistor(input: number): Func<any> {
-	return <T>(): Error => {
+function transistor(input: number): Func<string> {
+	return <T>(): string => {
 		const voltage = 1;
 		const delta = input - voltage;
 		if (delta > 0) {
@@ -13,37 +13,58 @@ function transistor(input: number): Func<any> {
 			throw new Error('too low');
 		}
 
-		return;
+		return "42";
 	};
 }
 
 // Test Retry
 // JEST: 30s timeout by default
 test('Retry', async () => {
-	const rsp1 = await retry.Run(transistor(0))
-	assert.notEqual(rsp1, undefined);
-	console.log("Rsp1=", rsp1);
+	try {
+		const rsp1 = await retry.Run(transistor(0))
+		console.log("Rsp1=", rsp1);
+	} catch (e) {
+		assert.notEqual(e, undefined);
+		console.log(e);
+	}
 
-	const rsp2 = await retry.Run(transistor(2))
-	assert.notEqual(rsp2, undefined);
-	console.log("Rsp2=", rsp2);
+	try {
+		const rsp2 = await retry.Run(transistor(2))
+		console.log("Rsp2=", rsp2);
+	} catch (e) {
+		assert.notEqual(e, undefined);
+		console.log(e);
+	}
 
-	const rsp3 = await retry.Run(transistor(1));
-	assert.strictEqual(rsp3, undefined);
-	console.log("Rsp3=", rsp3);
+	try {
+		const rsp3 = await retry.Run(transistor(1));
+		assert.strictEqual(rsp3, "42");
+		console.log("Rsp3=%o", rsp3);
+	} catch (e) {
+		console.error(e);
+	}
 }, 30000)
 
 test('Retry Async', async () => {
-	const rsp1 = await retry.Run(async <T>(): Promise<number> => {
-		throw new Error('Mock error 1');
-	}, 2, 1);
-	assert.notEqual(rsp1, undefined);
-	console.log("Rsp1=", rsp1);
+	try {
+		// Retry running the func, retry 2 time, interval 1s
+		const rsp1 = await retry.Run(async <T>(): Promise<number> => {
+			throw new Error('Mock error 1');
+		}, 2, 1);
+		console.log("Rsp1=", rsp1);
+	} catch (e) {
+		assert.notEqual(e, undefined);
+		console.log(e);
+	}
 
-	const rsp2 = await retry.Run(async <T>(): Promise<number> => {
-		return 42;
-	})
-	assert.strictEqual(rsp2, 42);
-	console.log("Rsp2=", rsp2);
+	try {
+		const rsp2 = await retry.Run(async <T>(): Promise<number> => {
+			return 42;
+		})
+		assert.strictEqual(rsp2, 42);
+		console.log("Rsp2=%o", rsp2);
+	} catch (e) {
+		console.error(e);
+	}
 
 }, 15000)
