@@ -24,4 +24,8 @@ export class Queue<T> {
 	First(): T {
 		return this._first;
 	}
+
+	Shift(): T {
+		return this._store.shift();
+	}
 }
