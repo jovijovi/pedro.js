@@ -5,7 +5,7 @@ export class Queue<T> {
 	private _first: T;
 	private readonly _maxLength: number;
 
-	constructor(maxLength: number) {
+	constructor(maxLength = 0) {
 		this._maxLength = maxLength;
 	}
 
@@ -15,7 +15,7 @@ export class Queue<T> {
 
 	Push(val: T) {
 		this._store.push(val);
-		if (this._store.length > this._maxLength) {
+		if (this._maxLength > 0 && this._store.length > this._maxLength) {
 			this._store.shift();
 		}
 		this._first = this._store[0];
