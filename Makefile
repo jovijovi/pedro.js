@@ -3,7 +3,7 @@ HUB:=$(if $(HUB),$(HUB),some_docker_image_repo)
 OS:=linux
 NODE_VER = 16
 TS_VER = $(shell tsc -v)
-ALPINE_VER := 3.14.2
+ALPINE_VER := 3.15
 
 prj_dir := $(shell pwd -L)
 git_br := $(shell git -C "${prj_dir}" rev-parse --abbrev-ref HEAD | grep -v HEAD || git describe --tags || git -C "${prj_dir}" rev-parse --short HEAD)
