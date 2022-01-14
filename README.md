@@ -112,6 +112,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Random
 
+  - Retry
+
+    - Retry running the function m times with n seconds interval
+
   - Stack
 
     - A stack (LIFO), not async safe
@@ -188,7 +192,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 ***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
 
-- node `v16.13.1`
+- node `v16.13.2`
 - yarn `v1.22.17`
 - ts-node `v10.4.0`
 - typescript `4.5.4`
