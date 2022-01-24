@@ -5,7 +5,7 @@ MAINTAINER pedro
 
 ADD conf /opt/app_src/conf
 ADD lib /opt/app_src/lib
-ADD server /opt/app_src/server
+ADD examples/server /opt/app_src/examples/server
 COPY package.json /opt/app_src/
 COPY tsconfig.json /opt/app_src/
 COPY yarn.lock /opt/app_src/
@@ -27,4 +27,4 @@ COPY --from=builder /opt/app_src/git.json /opt/app/
 USER pedro
 WORKDIR /opt/app
 ENTRYPOINT [ "node" ]
-CMD ["server/index.js", "--config", "./conf/app.config.yaml"]
+CMD ["examples/server/index.js", "--config", "./conf/app.config.yaml"]
