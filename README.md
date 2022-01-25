@@ -317,8 +317,6 @@ Done in 12.49s.
 
   - Smart String
 
-  - Retry
-
 - Job Scheduler
 
   - Workflow-based job scheduler
