@@ -33,6 +33,30 @@ test('Link Node', () => {
 	console.log("n5=%o", n5);
 })
 
+/*
+     3
+   /   \
+  1 --- 2
+*/
+test('Get out degree', () => {
+	const o = new Octopus(1);
+	const n2 = o.Push(2);
+	const n3 = o.Push(3);
+
+	const outDegree1 = o.Head().OutDegree();
+	const outDegree2 = n2.OutDegree();
+	const outDegree3 = n3.OutDegree();
+
+	console.log("Head=%o", o.Head());
+	console.log("OutDegree1=", outDegree1);
+	console.log("OutDegree2=", outDegree2);
+	console.log("OutDegree3=", outDegree3);
+
+	assert.strictEqual(outDegree1, 2);
+	assert.strictEqual(outDegree2, 2);
+	assert.strictEqual(outDegree3, 2);
+})
+
 test('Iterator', () => {
 	const o = new Octopus("1");
 	o.Push("2");

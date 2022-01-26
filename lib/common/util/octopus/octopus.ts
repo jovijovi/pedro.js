@@ -90,6 +90,11 @@ export class Node<T> implements INode<T> {
 		return next;
 	}
 
+	// OutDegree returns node's out degree
+	OutDegree(): number {
+		return this.header.links.size;
+	}
+
 	// Connect two nodes with a link
 	Link(node: Node<T>, direction: any = Next) {
 		if (node) {
