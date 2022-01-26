@@ -1,26 +1,51 @@
 import {Octopus, Parallel} from '../../lib/common/util/octopus';
 import assert from 'assert';
 
+/*
+     3
+   /   \
+  1 --- 2 -- 2.1 -- 2.2 -- 2.3
+*/
 test('New Octopus', () => {
 	const o = new Octopus(1);
+	assert.notStrictEqual(o, undefined);
 	const n2 = o.Push(2);
 	n2.Append(2.1, Parallel).Append(2.2).Append(2.3);
 	o.Push(3);
 	console.log("Octopus=%o", o);
 })
 
+/*
+  1 --- 2
+*/
 test('Get Head', () => {
 	const o = new Octopus("1");
 	o.Push("2");
-	console.log("Head=%o", o.Head());
+	const head = o.Head();
+	console.log("Head=%o", head);
+	assert.strictEqual(head.payload.value, "1");
 })
 
+/*
+  1 --- 2
+*/
 test('Get Tail', () => {
 	const o = new Octopus("1");
 	o.Push("2");
-	console.log("Head=%o", o.Tail());
+	const tail = o.Tail();
+	console.log("Head=%o", tail);
+	assert.strictEqual(tail.payload.value, "2");
 })
 
+/*
+       4
+     /   \
+    /     \
+   /       \
+  5 ------- 3
+   \       /
+    1 --- 2
+*/
 test('Link Node', () => {
 	const o = new Octopus("1");
 	o.Push("2");
@@ -57,6 +82,15 @@ test('Get out degree', () => {
 	assert.strictEqual(outDegree3, 2);
 })
 
+/*
+       4
+     /   \
+    /     \
+   /       \
+  5         3
+   \       /
+    1 --- 2
+*/
 test('Iterator', () => {
 	const o = new Octopus("1");
 	o.Push("2");
