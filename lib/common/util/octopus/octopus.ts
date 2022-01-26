@@ -75,6 +75,11 @@ export class Node<T> implements INode<T> {
 		}
 	}
 
+	// Links returns node's links
+	Links(): Links<T> {
+		return this.header.links;
+	}
+
 	Entries(direction: any = Next) {
 		let cur = this as Node<T>;
 		return {
