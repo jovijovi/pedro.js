@@ -100,27 +100,30 @@ export class Octopus<T> {
 		return this._tail;
 	}
 
-	// TODO:
 	[Symbol.iterator]() {
 		let cur = this._head;
 		return {
 			next: () => {
 				if (!cur) {
 					return {
-						done: true
-					};
-				} else if (cur === this._tail) {
-					return {
 						done: true,
-						value: cur
+						value: undefined
 					}
 				}
 
-				cur = cur.header.links.get(Next);
-				return {
+				const rsp = {
 					done: false,
 					value: cur
 				};
+				cur = cur.header.links.get(Next);
+
+				if (cur === this._head) {
+					// Traversed to the end(tail)
+					// To exit the iterator, set cur to undefined
+					cur = undefined;
+				}
+
+				return rsp;
 			}
 		}
 	}

@@ -1,10 +1,11 @@
 import {Octopus, Parallel} from '../../lib/common/util/octopus';
+import assert from 'assert';
 
 test('New Octopus', () => {
 	const o = new Octopus(1);
 	const n2 = o.Push(2);
 	n2.Append(2.1, Parallel).Append(2.2).Append(2.3);
-	const n3 = o.Push(3);
+	o.Push(3);
 	console.log("Octopus=%o", o);
 })
 
@@ -39,7 +40,10 @@ test('Iterator', () => {
 	o.Push("4");
 	o.Push("5");
 
+	let count = 0;
 	for (const n of o) {
-		console.log(n);
+		console.log("n=", n.payload.value);
+		count++;
 	}
+	assert.strictEqual(count, 5);
 })
