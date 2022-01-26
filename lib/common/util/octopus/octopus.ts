@@ -18,24 +18,70 @@ A data structure like an octopus.
 
 */
 
-/*
-  Examples:
-       N3
-     /    \
-    N1 -- N2 -- N4
+import {NewUUID} from '../uuid';
 
-    next: N1's next is N2
-    prev: N2's prev is N1
-    parallel: N2's parallel is N4
+/*
+Default edge names.
+Examples:
+
+     N3
+   /    \
+  N1 -- N2 -- N
+
+  next: N1's next is N2
+  prev: N2's prev is N1
+  parallel: N2's parallel is N4
 */
 export const Prev = "prev";
 export const Next = "next";
 export const Parallel = "parallel";
 
+// Directions
+export enum Direction {
+	None,       // A -- B
+	Forward,    // A -> B
+	Backward,   // A <- B
+}
+
+// Link interface
+interface ILink<T> {
+	id: string;             // Link UUID
+	src: string;            // Source node
+	dst: string;            // Destination node
+	direction: Direction;   // Link direction
+}
+
+class Link<T> implements ILink<T> {
+	readonly id: string;
+	readonly dst: string;
+	readonly src: string;
+	readonly direction: Direction;
+
+	constructor(src: string, dst: string, direction = Direction.Forward) {
+		this.id = NewUUID();
+		this.src = src;
+		this.dst = dst;
+		this.direction = direction;
+	}
+
+	Dst(direction = Direction.Forward): Node<T> {
+		switch (direction) {
+			case Direction.Forward || Direction.None:
+				return _nodes.get(this.dst);
+			case Direction.Backward:
+				return _nodes.get(this.src);
+		}
+	}
+}
+
+// TODO:
+type Nodes<T> = Map<string, Node<T>>
+const _nodes = new Map();
+
 // Links between nodes
-// map key: direction
-// map value: Node
-type Links<T> = Map<any, Node<T>>;
+// map key: edge name
+// map value: link
+type Links<T> = Map<any, Link<T>>
 
 // Header interface
 interface IHeader<T> {
@@ -69,23 +115,27 @@ class Payload<T> implements IPayload<T> {
 
 // Node
 export class Node<T> implements INode<T> {
+	id: string;
 	header: IHeader<T>;
 	payload: IPayload<T>;
 
 	constructor(val: T) {
-		this.header = new Header();
-		this.payload = new Payload();
+		this.id = NewUUID();
+		this.header = new Header<T>();
+		this.payload = new Payload<T>();
 
 		if (val) {
 			this.payload.value = val;
 		}
+
+		_nodes.set(this.id, this);
 	}
 
 	// Append a new node after current node
-	Append(val: T, direction: any = Next): Node<T> {
+	Append(val: T, edge: any = Next): Node<T> {
 		const next = new Node<T>(val);
-		next.header.links.set(Prev, this);
-		this.header.links.set(direction, next);
+		next.header.links.set(Prev, new Link<T>(next.id, this.id));
+		this.header.links.set(edge, new Link<T>(this.id, next.id));
 
 		return next;
 	}
@@ -96,19 +146,19 @@ export class Node<T> implements INode<T> {
 	}
 
 	// Connect two nodes with a link
-	Link(node: Node<T>, direction: any = Next) {
+	Link(node: Node<T>, edge: any = Next) {
 		if (node) {
-			this.header.links.set(direction, node);
+			this.header.links.set(edge, new Link<T>(this.id, node.id));
 		}
 	}
 
-	// Links returns node's links
+	// Links returns number of node's links
 	Links(): Links<T> {
 		return this.header.links;
 	}
 
 	// Entries return an iterator
-	Entries(direction: any = Next) {
+	Entries(edge: any = Next, direction = Direction.Forward) {
 		let cur = this as Node<T>;
 		return {
 			[Symbol.iterator]() {
@@ -126,7 +176,12 @@ export class Node<T> implements INode<T> {
 					done: false,
 					value: cur
 				};
-				cur = cur.header.links.get(direction);
+				const link = cur.header.links.get(edge);
+				if (link) {
+					cur = link.Dst(direction);
+				} else {
+					cur = undefined;
+				}
 
 				return rsp;
 			}
@@ -140,7 +195,7 @@ export class Octopus<T> {
 	private _tail: Node<T>;
 
 	constructor(val: T) {
-		this._head = this._tail = new Node(val);
+		this._head = this._tail = new Node<T>(val);
 	}
 
 	// Head returns octopus' head (1st node)
@@ -156,14 +211,14 @@ export class Octopus<T> {
 	// Push a new node to octopus
 	Push(val: T): Node<T> {
 		this._tail = this._tail.Append(val);
-		this._tail.header.links.set(Next, this._head);
-		this._head.header.links.set(Prev, this._tail);
+		this._tail.header.links.set(Next, new Link<T>(this._tail.id, this._head.id));
+		this._head.header.links.set(Prev, new Link<T>(this._head.id, this._tail.id));
 
 		return this._tail;
 	}
 
 	// Entries return an iterator
-	Entries(direction: any = Next) {
+	Entries(edge: any = Next, direction = Direction.Forward) {
 		let cur = this._head;
 		return {
 			[Symbol.iterator]() {
@@ -181,7 +236,12 @@ export class Octopus<T> {
 					done: false,
 					value: cur
 				};
-				cur = cur.header.links.get(direction);
+				const link = cur.header.links.get(edge);
+				if (link) {
+					cur = link.Dst(direction);
+				} else {
+					cur = undefined;
+				}
 
 				if (cur === this._head) {
 					// Traversed to the end(tail)
