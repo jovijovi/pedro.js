@@ -74,6 +74,31 @@ export class Node<T> implements INode<T> {
 			this.header.links.set(direction, node);
 		}
 	}
+
+	Entries(direction: any = Next) {
+		let cur = this as Node<T>;
+		return {
+			[Symbol.iterator]() {
+				return this;
+			},
+			next: () => {
+				if (!cur) {
+					return {
+						done: true,
+						value: undefined
+					}
+				}
+
+				const rsp = {
+					done: false,
+					value: cur
+				};
+				cur = cur.header.links.get(direction);
+
+				return rsp;
+			}
+		}
+	}
 }
 
 export class Octopus<T> {
@@ -100,9 +125,12 @@ export class Octopus<T> {
 		return this._tail;
 	}
 
-	[Symbol.iterator]() {
+	Entries(direction: any = Next) {
 		let cur = this._head;
 		return {
+			[Symbol.iterator]() {
+				return this;
+			},
 			next: () => {
 				if (!cur) {
 					return {
@@ -115,7 +143,7 @@ export class Octopus<T> {
 					done: false,
 					value: cur
 				};
-				cur = cur.header.links.get(Next);
+				cur = cur.header.links.get(direction);
 
 				if (cur === this._head) {
 					// Traversed to the end(tail)
