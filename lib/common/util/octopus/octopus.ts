@@ -21,8 +21,7 @@ A data structure like an octopus.
 import {NewUUID} from '../uuid';
 
 /*
-Default edge names.
-Examples:
+Default Link names. Examples:
 
      N3
    /    \
@@ -36,56 +35,68 @@ export const Prev = "prev";
 export const Next = "next";
 export const Parallel = "parallel";
 
-// Directions
-export enum Direction {
-	None,       // A -- B
-	Forward,    // A -> B
-	Backward,   // A <- B
-}
-
 // Link interface
-interface ILink<T> {
-	id: string;             // Link UUID
-	src: string;            // Source node
-	dst: string;            // Destination node
-	direction: Direction;   // Link direction
+interface ILink {
+	id: string;         // Link UUID
+	src: string;        // Source node
+	dst: string;        // Destination node
+	directed: boolean;  // Link direction
+	weight: number;     // Link weight
 }
 
-class Link<T> implements ILink<T> {
+class Link implements ILink {
 	readonly id: string;
-	readonly dst: string;
-	readonly src: string;
-	readonly direction: Direction;
+	readonly _src: string;
+	readonly _dst: string;
 
-	constructor(src: string, dst: string, direction = Direction.Forward) {
-		this.id = NewUUID();
-		this.src = src;
-		this.dst = dst;
-		this.direction = direction;
+	constructor(src: string, dst: string, directed = true, weight = 0, id = NewUUID()) {
+		this._src = src;
+		this._dst = dst;
+		this._directed = directed;
+		this._weight = weight;
+		this.id = id;
 	}
 
-	Dst(direction = Direction.Forward): Node<T> {
-		switch (direction) {
-			case Direction.Forward || Direction.None:
-				return _nodes.get(this.dst);
-			case Direction.Backward:
-				return _nodes.get(this.src);
-		}
+	private _directed: boolean;
+
+	get directed(): boolean {
+		return this._directed;
+	}
+
+	set directed(value: boolean) {
+		this._directed = value;
+	}
+
+	private _weight: number;
+
+	get weight(): number {
+		return this._weight;
+	}
+
+	set weight(value: number) {
+		this._weight = value;
+	}
+
+	get src(): string {
+		return this._src;
+	}
+
+	get dst(): string {
+		return this._dst;
 	}
 }
 
 // TODO:
 type Nodes<T> = Map<string, Node<T>>
-const _nodes = new Map();
 
 // Links between nodes
-// map key: edge name
+// map key: link name
 // map value: link
-type Links<T> = Map<any, Link<T>>
+type Links = Map<any, Link>
 
 // Header interface
-interface IHeader<T> {
-	links: Links<T>;
+interface IHeader {
+	links: Links;
 }
 
 // Payload interface
@@ -95,13 +106,13 @@ interface IPayload<T> {
 
 // Node interface
 interface INode<T> {
-	header: IHeader<T>;
+	header: IHeader;
 	payload: IPayload<T>;
 }
 
 // Header of node
-class Header<T> implements IHeader<T> {
-	links: Links<T>;
+class Header implements IHeader {
+	links: Links;
 
 	constructor() {
 		this.links = new Map();
@@ -116,26 +127,30 @@ class Payload<T> implements IPayload<T> {
 // Node
 export class Node<T> implements INode<T> {
 	id: string;
-	header: IHeader<T>;
-	payload: IPayload<T>;
+	header: Header;
+	payload: Payload<T>;
+	_connected: Nodes<T>;
 
-	constructor(val: T) {
-		this.id = NewUUID();
-		this.header = new Header<T>();
+	constructor(val: T, id = NewUUID()) {
+		this.id = id;
+		this.header = new Header();
 		this.payload = new Payload<T>();
 
 		if (val) {
 			this.payload.value = val;
 		}
 
-		_nodes.set(this.id, this);
+		this._connected = new Map<string, Node<T>>();
 	}
 
-	// Append a new node after current node
-	Append(val: T, edge: any = Next): Node<T> {
-		const next = new Node<T>(val);
-		next.header.links.set(Prev, new Link<T>(next.id, this.id));
-		this.header.links.set(edge, new Link<T>(this.id, next.id));
+	// Append a new node after current node (default)
+	Append(val: T, id = NewUUID(), linkName: any = Next): Node<T> {
+		const next = new Node<T>(val, id);
+		next.header.links.set(Prev, new Link(next.id, this.id));
+		this.header.links.set(linkName, new Link(this.id, next.id));
+
+		next._connected.set(id, this);
+		this._connected.set(id, next);
 
 		return next;
 	}
@@ -145,20 +160,27 @@ export class Node<T> implements INode<T> {
 		return this.header.links.size;
 	}
 
-	// Connect two nodes with a link
-	Link(node: Node<T>, edge: any = Next) {
-		if (node) {
-			this.header.links.set(edge, new Link<T>(this.id, node.id));
+	// Connect two nodes with a link (undirected)
+	Link(dst: Node<T>, linkName: any = Next) {
+		if (dst) {
+			this.header.links.set(linkName, new Link(this.id, dst.id, false));
 		}
 	}
 
-	// Links returns number of node's links
-	Links(): Links<T> {
+	// Points from src to dst (directed)
+	PointTo(dst: Node<T>, linkName: any = Next) {
+		if (dst) {
+			this.header.links.set(linkName, new Link(this.id, dst.id, true));
+		}
+	}
+
+	// Links return node's links
+	Links(): Links {
 		return this.header.links;
 	}
 
 	// Entries return an iterator
-	Entries(edge: any = Next, direction = Direction.Forward) {
+	Entries(linkName: any = Next) {
 		let cur = this as Node<T>;
 		return {
 			[Symbol.iterator]() {
@@ -176,9 +198,9 @@ export class Node<T> implements INode<T> {
 					done: false,
 					value: cur
 				};
-				const link = cur.header.links.get(edge);
+				const link = cur.header.links.get(linkName);
 				if (link) {
-					cur = link.Dst(direction);
+					cur = cur._connected.get(link.dst);
 				} else {
 					cur = undefined;
 				}
@@ -211,14 +233,14 @@ export class Octopus<T> {
 	// Push a new node to octopus
 	Push(val: T): Node<T> {
 		this._tail = this._tail.Append(val);
-		this._tail.header.links.set(Next, new Link<T>(this._tail.id, this._head.id));
-		this._head.header.links.set(Prev, new Link<T>(this._head.id, this._tail.id));
+		this._tail.header.links.set(Next, new Link(this._tail.id, this._head.id));
+		this._head.header.links.set(Prev, new Link(this._head.id, this._tail.id));
 
 		return this._tail;
 	}
 
 	// Entries return an iterator
-	Entries(edge: any = Next, direction = Direction.Forward) {
+	Entries(linkName: any = Next) {
 		let cur = this._head;
 		return {
 			[Symbol.iterator]() {
@@ -236,9 +258,9 @@ export class Octopus<T> {
 					done: false,
 					value: cur
 				};
-				const link = cur.header.links.get(edge);
+				const link = cur.header.links.get(linkName);
 				if (link) {
-					cur = link.Dst(direction);
+					cur = cur._connected.get(link.dst);
 				} else {
 					cur = undefined;
 				}
