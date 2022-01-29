@@ -18,85 +18,28 @@ A data structure like an octopus.
 
 */
 
-import {NewUUID} from '../uuid';
-
 /*
-Default Link names. Examples:
+  Examples:
+       N3
+     /    \
+    N1 -- N2 -- N4
 
-     N3
-   /    \
-  N1 -- N2 -- N
-
-  next: N1's next is N2
-  prev: N2's prev is N1
-  parallel: N2's parallel is N4
+    next: N1's next is N2
+    prev: N2's prev is N1
+    parallel: N2's parallel is N4
 */
 export const Prev = "prev";
 export const Next = "next";
 export const Parallel = "parallel";
 
-// Link interface
-interface ILink {
-	id: string;         // Link UUID
-	src: string;        // Source node
-	dst: string;        // Destination node
-	directed: boolean;  // Link direction
-	weight: number;     // Link weight
-}
-
-class Link implements ILink {
-	readonly id: string;
-	readonly _src: string;
-	readonly _dst: string;
-
-	constructor(src: string, dst: string, directed = true, weight = 0, id = NewUUID()) {
-		this._src = src;
-		this._dst = dst;
-		this._directed = directed;
-		this._weight = weight;
-		this.id = id;
-	}
-
-	private _directed: boolean;
-
-	get directed(): boolean {
-		return this._directed;
-	}
-
-	set directed(value: boolean) {
-		this._directed = value;
-	}
-
-	private _weight: number;
-
-	get weight(): number {
-		return this._weight;
-	}
-
-	set weight(value: number) {
-		this._weight = value;
-	}
-
-	get src(): string {
-		return this._src;
-	}
-
-	get dst(): string {
-		return this._dst;
-	}
-}
-
-// TODO:
-type Nodes<T> = Map<string, Node<T>>
-
 // Links between nodes
-// map key: link name
-// map value: link
-type Links = Map<any, Link>
+// map key: direction
+// map value: Node
+type Links<T> = Map<any, Node<T>>;
 
 // Header interface
-interface IHeader {
-	links: Links;
+interface IHeader<T> {
+	links: Links<T>;
 }
 
 // Payload interface
@@ -106,13 +49,13 @@ interface IPayload<T> {
 
 // Node interface
 interface INode<T> {
-	header: IHeader;
+	header: IHeader<T>;
 	payload: IPayload<T>;
 }
 
 // Header of node
-class Header implements IHeader {
-	links: Links;
+class Header<T> implements IHeader<T> {
+	links: Links<T>;
 
 	constructor() {
 		this.links = new Map();
@@ -126,31 +69,23 @@ class Payload<T> implements IPayload<T> {
 
 // Node
 export class Node<T> implements INode<T> {
-	id: string;
-	header: Header;
-	payload: Payload<T>;
-	_connected: Nodes<T>;
+	header: IHeader<T>;
+	payload: IPayload<T>;
 
-	constructor(val: T, id = NewUUID()) {
-		this.id = id;
+	constructor(val: T) {
 		this.header = new Header();
-		this.payload = new Payload<T>();
+		this.payload = new Payload();
 
 		if (val) {
 			this.payload.value = val;
 		}
-
-		this._connected = new Map<string, Node<T>>();
 	}
 
-	// Append a new node after current node (default)
-	Append(val: T, id = NewUUID(), linkName: any = Next): Node<T> {
-		const next = new Node<T>(val, id);
-		next.header.links.set(Prev, new Link(next.id, this.id));
-		this.header.links.set(linkName, new Link(this.id, next.id));
-
-		next._connected.set(id, this);
-		this._connected.set(id, next);
+	// Append a new node after current node
+	Append(val: T, direction: any = Next): Node<T> {
+		const next = new Node<T>(val);
+		next.header.links.set(Prev, this);
+		this.header.links.set(direction, next);
 
 		return next;
 	}
@@ -160,27 +95,20 @@ export class Node<T> implements INode<T> {
 		return this.header.links.size;
 	}
 
-	// Connect two nodes with a link (undirected)
-	Link(dst: Node<T>, linkName: any = Next) {
-		if (dst) {
-			this.header.links.set(linkName, new Link(this.id, dst.id, false));
+	// Connect two nodes with a link
+	Link(node: Node<T>, direction: any = Next) {
+		if (node) {
+			this.header.links.set(direction, node);
 		}
 	}
 
-	// Points from src to dst (directed)
-	PointTo(dst: Node<T>, linkName: any = Next) {
-		if (dst) {
-			this.header.links.set(linkName, new Link(this.id, dst.id, true));
-		}
-	}
-
-	// Links return node's links
-	Links(): Links {
+	// Links returns node's links
+	Links(): Links<T> {
 		return this.header.links;
 	}
 
 	// Entries return an iterator
-	Entries(linkName: any = Next) {
+	Entries(direction: any = Next) {
 		let cur = this as Node<T>;
 		return {
 			[Symbol.iterator]() {
@@ -198,12 +126,7 @@ export class Node<T> implements INode<T> {
 					done: false,
 					value: cur
 				};
-				const link = cur.header.links.get(linkName);
-				if (link) {
-					cur = cur._connected.get(link.dst);
-				} else {
-					cur = undefined;
-				}
+				cur = cur.header.links.get(direction);
 
 				return rsp;
 			}
@@ -217,7 +140,7 @@ export class Octopus<T> {
 	private _tail: Node<T>;
 
 	constructor(val: T) {
-		this._head = this._tail = new Node<T>(val);
+		this._head = this._tail = new Node(val);
 	}
 
 	// Head returns octopus' head (1st node)
@@ -233,14 +156,14 @@ export class Octopus<T> {
 	// Push a new node to octopus
 	Push(val: T): Node<T> {
 		this._tail = this._tail.Append(val);
-		this._tail.header.links.set(Next, new Link(this._tail.id, this._head.id));
-		this._head.header.links.set(Prev, new Link(this._head.id, this._tail.id));
+		this._tail.header.links.set(Next, this._head);
+		this._head.header.links.set(Prev, this._tail);
 
 		return this._tail;
 	}
 
 	// Entries return an iterator
-	Entries(linkName: any = Next) {
+	Entries(direction: any = Next) {
 		let cur = this._head;
 		return {
 			[Symbol.iterator]() {
@@ -258,12 +181,7 @@ export class Octopus<T> {
 					done: false,
 					value: cur
 				};
-				const link = cur.header.links.get(linkName);
-				if (link) {
-					cur = cur._connected.get(link.dst);
-				} else {
-					cur = undefined;
-				}
+				cur = cur.header.links.get(direction);
 
 				if (cur === this._head) {
 					// Traversed to the end(tail)
