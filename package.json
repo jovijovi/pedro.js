@@ -1,14 +1,14 @@
 {
-  "name": "pedro.js",
+  "name": "@jovijovi/pedro.js",
   "version": "0.1.0",
   "description": "Pedro.js is a microservice toolkit written in TypeScript",
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
   "keywords": [
+    "typescript",
     "microservice",
     "toolkit",
-    "typescript",
-    "apache"
+    "pedro"
   ],
   "repository": {
     "type": "git",
