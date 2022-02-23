@@ -1,6 +1,19 @@
 {
   "name": "pedro.js",
-  "version": "1.0.2",
+  "version": "0.1.0",
+  "description": "Pedro.js is a microservice toolkit written in TypeScript",
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "microservice",
+    "toolkit",
+    "typescript",
+    "apache"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "3.52.0",
     "@aws-sdk/client-sqs": "3.52.0",
