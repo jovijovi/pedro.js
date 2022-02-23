@@ -336,3 +336,7 @@ Done in 12.49s.
 ## Contributors
 
 [`jovijovi`](https://github.com/jovijovi)
+
+## License
+
+[MIT](LICENSE)
