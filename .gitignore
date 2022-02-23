@@ -121,5 +121,6 @@ dist
 .DS_Store
 
 /dist/
+/publish/
 /test/modules/database
 /git.json
