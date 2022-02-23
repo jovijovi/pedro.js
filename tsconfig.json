@@ -1,13 +1,16 @@
 {
-  "display": "Node 16",
   "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": false,
     "lib": [
       "es2020"
     ],
     "module": "commonjs",
+    "moduleResolution": "node",
     "target": "es2020",
     "sourceMap": true,
-    "removeComments": true,
+    "removeComments": false,
     "outDir": "dist",
     "esModuleInterop": true,
     "strict": false,
