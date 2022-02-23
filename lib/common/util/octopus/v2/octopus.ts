@@ -250,7 +250,7 @@ export class Octopus<T> {
 	private _tail: Node<T>;             // Tail
 	private _links: Links<T>;           // Link list
 	private _nodes: Nodes<T>;           // Node list
-	private _matrix: Matrix;            // Adjacency matrix
+	private readonly _matrix: Matrix;   // Adjacency matrix
 	private _connector = new Connector();
 
 	constructor(val: T) {
@@ -283,7 +283,7 @@ export class Octopus<T> {
 		this._matrix.push(entry);
 	}
 
-	// Push a new node to octopus
+	// Add a new node to octopus
 	Add(val: T): Node<T> {
 		const next = new Node<T>({
 			index: this._nodes.length,
