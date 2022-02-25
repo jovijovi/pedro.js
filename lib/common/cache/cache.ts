@@ -23,12 +23,12 @@ export namespace NSCacheSet {
 		New(name: string, opts?: LRUCache.Options<any, any>): LRUCache<any, any> {
 			const defaultOpts: LRUCache.Options<any, any> = {
 				max: 10,
-				maxAge: 1000 * 60,
+				ttl: 1000 * 60,
 			};
 
 			if (opts) {
 				defaultOpts.max = opts.max ? opts.max : 10;
-				defaultOpts.maxAge = opts.maxAge ? opts.maxAge : 1000 * 60;
+				defaultOpts.ttl = opts.ttl ? opts.ttl : 1000 * 60;
 			}
 
 			if (!this._cacheStore[name]) {

@@ -20,7 +20,7 @@ test('CacheSet', () => {
 	// New cache2
 	const cache2 = set.New("Cache2", {
 		max: 2,
-		maxAge: 1000 * 30,
+		ttl: 1000 * 30,
 	});
 	cache2.set('key2', 'value2');
 	console.log("Cache2.Key=%o", cache2.get('key2'));
