@@ -54,7 +54,7 @@ export namespace NSCacheSet {
 		// Clear all cache in set
 		Clear() {
 			for (const cacheStoreKey in this._cacheStore) {
-				this._cacheStore[cacheStoreKey].reset();
+				this._cacheStore[cacheStoreKey].clear();
 			}
 		}
 
