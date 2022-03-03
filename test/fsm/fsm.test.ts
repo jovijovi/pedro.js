@@ -1,5 +1,5 @@
 import {NSFSM} from '../../lib/fsm';
-import {NSEvent} from '../../lib/event';
+import {NSEvent} from '@jovijovi/pedrojs-event';
 
 test('FSM', () => {
 	// New event 1
