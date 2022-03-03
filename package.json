@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedro.js",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Pedro.js is a microservice toolkit written in TypeScript",
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
@@ -8,7 +8,8 @@
     "typescript",
     "microservice",
     "toolkit",
-    "pedro"
+    "pedro",
+    "pedro.js"
   ],
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
     "@aws-sdk/client-sqs": "3.53.0",
     "@elastic/elasticsearch": "^8.0.0",
     "@grpc/grpc-js": "^1.5.7",
+    "@jovijovi/pedrojs-common": "^1.0.5",
+    "@jovijovi/pedrojs-event": "^1.0.5",
+    "@jovijovi/pedrojs-network": "^1.0.5",
+    "@jovijovi/pedrojs-tracing": "^1.0.5",
+    "@jovijovi/pedrojs-types": "^1.0.5",
     "@opentelemetry/api": "^1.0.4",
     "@opentelemetry/exporter-jaeger": "^1.0.1",
     "@opentelemetry/instrumentation-express": "^0.28.0",
@@ -33,6 +39,7 @@
     "@types/level": "^6.0.0",
     "@types/lru-cache": "^7.4.0",
     "@types/ws": "^8.5.2",
+    "body-parser": "^1.19.2",
     "commander": "9.0.0",
     "dayjs": "1.10.8",
     "dgraph-js-http": "^21.3.1",
