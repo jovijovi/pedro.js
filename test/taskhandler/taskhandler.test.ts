@@ -1,8 +1,8 @@
-import {server} from '../../lib/network/http/server'
-import {config} from '../../lib/common/config';
+import {http} from '../../lib/network'
+import {config} from '@jovijovi/pedrojs-common/config';
 import * as core from 'express-serve-static-core';
-import * as log from '../../lib/common/log';
-import {ITaskHandler} from '../../lib/taskhandler';
+import * as log from '@jovijovi/pedrojs-common/log';
+import {ITaskHandler} from '../../lib/network/http';
 
 function biz1(req, res) {
 	log.RequestId().info("Req=", req);
@@ -29,5 +29,5 @@ const AppHandlers = new privateImplHandlers();
 
 test('TaskHandler', () => {
 	config.LoadConfig('./conf/app.config.yaml');
-	server.Run(AppHandlers);
+	http.server.Run(AppHandlers);
 })

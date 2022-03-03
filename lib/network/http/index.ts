@@ -1,2 +1,5 @@
-export * as response from './response';
-export * as server from './server';
+export {
+	server,
+	ITaskHandler,
+	response
+} from './server';

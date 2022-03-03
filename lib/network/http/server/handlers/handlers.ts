@@ -1,10 +1,7 @@
 import * as core from 'express-serve-static-core';
-import * as healthcheck from './healthcheck';
-import * as metricscheck from './metricscheck';
-
-export interface ITaskHandler {
-	RegisterHandlers(router: core.Express): void;
-}
+import * as healthcheck from './health';
+import * as metricscheck from './metrics';
+import {ITaskHandler} from '../interfaces';
 
 class implTaskHandler implements ITaskHandler {
 	RegisterHandlers(router: core.Express) {

@@ -1,7 +1,7 @@
-import {config} from '../../lib/common/config';
-import {heartbeat} from '../../lib/network/websocket/server';
+import {config} from '@jovijovi/pedrojs-common/config';
+import {websocket} from '../../lib/network';
 
 test('WebSocketServer', () => {
 	config.LoadConfig('./conf/app.config.yaml');
-	heartbeat.Run();
+	websocket.heartbeat.Run();
 })

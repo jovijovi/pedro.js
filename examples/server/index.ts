@@ -1,12 +1,12 @@
 import * as core from 'express-serve-static-core';
-import {server} from '../../lib/network/http/server';
-import {heartbeat} from '../../lib/network/websocket/server';
-import {config} from '../../lib/common/config';
-import * as log from '../../lib/common/log';
-import {ITaskHandler} from '../../lib/taskhandler';
-import * as sys from '../../lib/common/sys';
+import {http} from '@jovijovi/pedrojs-network';
+import {heartbeat} from '@jovijovi/pedrojs-network/websocket/server';
+import {config} from '@jovijovi/pedrojs-common/config';
+import * as log from '@jovijovi/pedrojs-common/log';
+import {ITaskHandler} from '@jovijovi/pedrojs-network/http/server/interfaces';
+import * as sys from '@jovijovi/pedrojs-common/sys';
+import {Tracing} from '@jovijovi/pedrojs-tracing';
 import {logo} from './logo';
-import {Tracing} from '../../lib/tracing';
 
 function biz1(req, res) {
 	res.send('biz1');
@@ -43,13 +43,13 @@ function main() {
 	heartbeat.Run();
 
 	Tracing.Init({
-		serviceName: "pedro-service",
+		serviceName: "pedro.js-service",
 		tracerName: "foo",
 		tracerVersion: "1.0.0",
 		endpoint: "http://localhost:14268/api/traces",
 	});
 
-	server.Run(AppHandlers);
+	http.server.Run(AppHandlers);
 }
 
 main();

@@ -1,7 +1,7 @@
-import * as log from '../../common/log';
-import {Metrics as mi} from '../../common/metrics';
-import * as response from '../../network/http/response';
-import {Tracing} from '../../tracing';
+import * as log from '@jovijovi/pedrojs-common/log';
+import {Metrics as mi} from '@jovijovi/pedrojs-common/metrics';
+import * as response from '../../response';
+import {Tracing} from '@jovijovi/pedrojs-tracing';
 
 export function Metrics(req, res) {
 	res.send(response.BuildResponse("200", "SuccessfulOperation", JSON.parse(mi.GetMetricsInfo().toJSON())));

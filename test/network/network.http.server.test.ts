@@ -1,6 +1,7 @@
-import {config} from '../../lib/common/config';
+import {config} from '@jovijovi/pedrojs-common/config';
+import {http} from '../../lib/network';
 
 test('HttpServer', () => {
 	config.LoadConfig('./conf/app.config.yaml');
-	// server.Run();
+	http.server.Run();
 })

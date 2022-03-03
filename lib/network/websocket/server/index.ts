@@ -1,2 +1,2 @@
-export * from './server';
-export * from './heartbeat';
+export {server} from './server';
+export {heartbeat} from './heartbeat';

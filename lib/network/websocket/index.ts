@@ -1,1 +1,4 @@
-export * as server from './server';
+export {
+	heartbeat,
+	server
+} from './server';

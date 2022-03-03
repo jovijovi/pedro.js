@@ -1,5 +1,5 @@
-import * as log from '../../common/log';
-import {Tracing} from '../../tracing';
+import * as log from '@jovijovi/pedrojs-common/log';
+import {Tracing} from '@jovijovi/pedrojs-tracing';
 
 export function Ping(req, res) {
 	res.send('pong');
