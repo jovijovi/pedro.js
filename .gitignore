@@ -120,7 +120,6 @@ dist
 /.vscode
 .DS_Store
 
-/dist/
-/publish/
+publish
 /test/modules/database
 /git.json
