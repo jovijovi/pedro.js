@@ -1,8 +1,8 @@
-import {Bytes} from '../types';
-import {NewUUID} from '../common/util/uuid';
-import {GetUTCTimeStamp, RFC3339_LIKE} from '../common/util/time';
-import * as elliptic from '../common/security/crypto/elliptic';
-import * as digest from '../common/security/crypto/digest';
+import {Bytes} from '@jovijovi/pedrojs-types';
+import {NewUUID} from '@jovijovi/pedrojs-common/util/uuid';
+import {GetUTCTimeStamp, RFC3339_LIKE} from '@jovijovi/pedrojs-common/util/time';
+import * as elliptic from '@jovijovi/pedrojs-common/security/crypto/elliptic';
+import * as digest from '@jovijovi/pedrojs-common/security/crypto/digest';
 
 export namespace NSEvent {
 	// Default event version
