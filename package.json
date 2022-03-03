@@ -55,12 +55,12 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "tsc --build && rm ./dist/test -rf && cp -ap conf ./dist",
+    "build": "yarn clean && tsc --build && rm ./dist/test -rf && cp -ap conf ./dist",
     "clean": "rm -rf ./dist/*",
     "dev-run": "ts-node ./server/index.ts",
-    "dist-run": "node ./dist/server/index.js",
-    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish && yarn clean",
-    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/lib ./publish/lib && cp -ap LICENSE ./publish && cp -ap package.json ./publish && cp -ap README.md ./publish"
+    "dist-run": "node ./dist/examples/server/index.js",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/lib ./publish/lib && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
   },
   "devDependencies": {
     "@tsconfig/node16": "1.0.2",
