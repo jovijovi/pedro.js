@@ -1,6 +1,17 @@
 import * as log from '../../lib/common/log';
 
+export const logo = `
+    ██████╗ ███████╗██████╗ ██████╗  ██████╗         ██╗███████╗
+    ██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔═══██╗        ██║██╔════╝
+    ██████╔╝█████╗  ██║  ██║██████╔╝██║   ██║        ██║███████╗
+    ██╔═══╝ ██╔══╝  ██║  ██║██╔══██╗██║   ██║   ██   ██║╚════██║
+    ██║     ███████╗██████╔╝██║  ██║╚██████╔╝██╗╚█████╔╝███████║
+    ╚═╝     ╚══════╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝ ╚════╝ ╚══════╝
+`;
+
 test('Log', () => {
+	log.logo(logo);
+
 	log.RequestId("reqId1").trace("This is a trace msg");
 	log.RequestId("reqId2").debug("This is a debug msg");
 	log.RequestId("reqId3").info("This is a info msg");
