@@ -1,0 +1,41 @@
+{
+  "name": "@jovijovi/pedrojs-common",
+  "version": "1.0.5",
+  "description": "Common packages for pedro.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@types/lru-cache": "^7.4.0",
+    "commander": "9.0.0",
+    "dayjs": "1.10.8",
+    "log4js": "^6.4.2",
+    "lru-cache": "7.4.0",
+    "yaml": "^1.10.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist/*",
+    "build": "yarn clean && tsc --build",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
+  },
+  "repository": {
+    "directory": "lib/common",
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
+  "keywords": [
+    "typescript",
+    "microservice",
+    "toolkit",
+    "pedro",
+    "common"
+  ],
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovijovi/pedro.js/issues"
+  },
+  "homepage": "https://github.com/jovijovi/pedro.js#readme"
+}
