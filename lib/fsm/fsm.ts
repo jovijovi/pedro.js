@@ -1,5 +1,5 @@
 import {Context} from './types';
-import {NSEvent} from '../event';
+import {NSEvent} from '@jovijovi/pedrojs-event';
 
 export namespace NSFSM {
 	interface IState {
