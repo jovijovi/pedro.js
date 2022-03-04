@@ -1,6 +1,6 @@
 import {create} from 'ipfs-http-client';
 import {IPFSHTTPClient, Options} from 'ipfs-http-client/types/src/types';
-import * as log from '../../common/log';
+import {log} from '@jovijovi/pedrojs-common';
 
 export namespace IPFS {
 	export interface Config extends Options {
