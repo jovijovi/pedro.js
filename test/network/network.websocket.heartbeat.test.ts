@@ -1,4 +1,4 @@
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config} from '@jovijovi/pedrojs-common';
 import {websocket} from '../../lib/network';
 
 test('WebSocketServer', () => {

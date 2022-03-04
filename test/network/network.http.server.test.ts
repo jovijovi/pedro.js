@@ -1,4 +1,4 @@
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config} from '@jovijovi/pedrojs-common';
 import {http} from '../../lib/network';
 
 test('HttpServer', () => {
