@@ -1,23 +1,22 @@
-import {Born, NewContext} from '../../lib/common/context';
-import {NewUUID32bits} from '../../lib/common/util/uuid';
+import {context, util} from '../../lib/common';
 
 test('NewContext', () => {
 	// New context by default
-	const ctx1 = NewContext();
+	const ctx1 = context.NewContext();
 	ctx1.context.set('key1', 'value1');
 	const value1 = ctx1.context.get('key1');
 	console.log("Context(%s) Key1=%s", ctx1.id, value1);
 	expect(value1).toMatch('value1');
 
 	// New context by id
-	const ctx2 = NewContext({id: '42'});
+	const ctx2 = context.NewContext({id: '42'});
 	ctx2.context.set('key2', 'value2');
 	const value2 = ctx2.context.get('key2');
 	console.log("Context(%s) Key2=%s", ctx2.id, value2);
 	expect(value2).toMatch('value2');
 
 	// New child context
-	const ctx3 = NewContext({
+	const ctx3 = context.NewContext({
 		parent: ctx2,
 		id: '43',
 	})
@@ -32,9 +31,9 @@ test('NewContext', () => {
 
 test('Born Context Chain', () => {
 	// Born 1st generation
-	const ctx5 = Born({
+	const ctx5 = context.Born({
 		max: 5,
-		idProvider: NewUUID32bits,
+		idProvider: util.uuid.NewUUID32bits,
 	});
 	console.log("Tree=", ctx5);
 
@@ -44,7 +43,7 @@ test('Born Context Chain', () => {
 	}
 
 	// Born 2nd generation
-	const ctx10 = Born({
+	const ctx10 = context.Born({
 		max: 10,
 		ctx: ctx5,
 	});
@@ -56,7 +55,7 @@ test('Born Context Chain', () => {
 	}
 
 	// Born the next one
-	const ctx11 = Born({
+	const ctx11 = context.Born({
 		max: ctx10.Length() + 1,
 		ctx: ctx10,
 	});

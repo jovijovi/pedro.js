@@ -1,5 +1,4 @@
-import {config} from '../../lib/common/config';
-import * as log from '../../lib/common/log';
+import {config, log} from '../../lib/common';
 
 test('LoadConfig', () => {
 	config.LoadConfig('./conf/app.config.yaml');

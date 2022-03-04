@@ -1,12 +1,11 @@
-import * as pbkdf2 from '../../lib/common/security/crypto/pbkdf2';
-import {NewSalt} from '../../lib/common/security/crypto/salt';
+import {security} from '../../lib/common';
 
 const _mockPassword = "secret";
 const _mockSalt = "salt";
 const _mockKey = "3745e482c6e0ade35da10139e797157f4a5da669dad7d5da88ef87e47471cc47ed941c7ad618e827304f083f8707f12b7cfdd5f489b782f10cc269e3c08d59ae";
 
 test('EncryptPassword', async () => {
-	const key = (await pbkdf2.EncryptPassword({
+	const key = (await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 100000,
@@ -18,7 +17,7 @@ test('EncryptPassword', async () => {
 })
 
 test('VerifyPassword', async () => {
-	const key = await pbkdf2.EncryptPassword({
+	const key = await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 1000,
@@ -28,7 +27,7 @@ test('VerifyPassword', async () => {
 	console.log("Key=", key.toString('hex'));
 
 	// Verify in buffer
-	const result1 = await pbkdf2.VerifyPassword({
+	const result1 = await security.crypto.pbkdf2.VerifyPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 1000,
@@ -40,7 +39,7 @@ test('VerifyPassword', async () => {
 	expect(result1).toBeTruthy();
 
 	// Verify in hex string
-	const result2 = await pbkdf2.VerifyPassword({
+	const result2 = await security.crypto.pbkdf2.VerifyPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 1000,
@@ -54,56 +53,56 @@ test('VerifyPassword', async () => {
 
 test('EncryptPassword with random salt', async () => {
 	// Encrypt password with new salt (64bytes by default)
-	console.log("Key(%d)=", 1, (await pbkdf2.EncryptPassword({
+	console.log("Key(%d)=", 1, (await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 100000,
 		password: _mockPassword,
-		salt: NewSalt(),
+		salt: security.crypto.salt.NewSalt(),
 	})).toString('hex'));
 
 	// Encrypt password with new salt (64bytes)
-	console.log("Key(%d)=", 2, (await pbkdf2.EncryptPassword({
+	console.log("Key(%d)=", 2, (await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 100000,
 		password: _mockPassword,
-		salt: NewSalt(64),
+		salt: security.crypto.salt.NewSalt(64),
 	})).toString('hex'));
 
 	// Encrypt password with new salt (32bytes)
-	console.log("Key(%d)=", 3, (await pbkdf2.EncryptPassword({
+	console.log("Key(%d)=", 3, (await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 100000,
 		password: _mockPassword,
-		salt: NewSalt(32),
+		salt: security.crypto.salt.NewSalt(32),
 	})).toString('hex'));
 
 	// Encrypt password with new salt (16bytes)
-	console.log("Key(%d)=", 4, (await pbkdf2.EncryptPassword({
+	console.log("Key(%d)=", 4, (await security.crypto.pbkdf2.EncryptPassword({
 		digest: "sha512",
 		keyLen: 64,
 		iterations: 100000,
 		password: _mockPassword,
-		salt: NewSalt(16),
+		salt: security.crypto.salt.NewSalt(16),
 	})).toString('hex'));
 
 	// Encrypt password with new salt (16bytes) & default iterations & default digest
-	console.log("Key(%d)=", 5, (await pbkdf2.EncryptPassword({
+	console.log("Key(%d)=", 5, (await security.crypto.pbkdf2.EncryptPassword({
 		keyLen: 64,
 		password: _mockPassword,
-		salt: NewSalt(16),
+		salt: security.crypto.salt.NewSalt(16),
 	})).toString('hex'));
 
 	// Encrypt password with iterations 42, and it'll occur an error
 	try {
-		console.log("Key(%d)=", 6, (await pbkdf2.EncryptPassword({
+		console.log("Key(%d)=", 6, (await security.crypto.pbkdf2.EncryptPassword({
 			digest: "sha512",
 			keyLen: 64,
 			iterations: 42,
 			password: _mockPassword,
-			salt: NewSalt(16),
+			salt: security.crypto.salt.NewSalt(16),
 		})).toString('hex'));
 	} catch (e) {
 		// When iterations < 1000, will occur an error
@@ -112,12 +111,12 @@ test('EncryptPassword with random salt', async () => {
 
 	// Encrypt password with new salt (8bytes), and it'll occurs an error
 	try {
-		console.log("Key(%d)=", 7, (await pbkdf2.EncryptPassword({
+		console.log("Key(%d)=", 7, (await security.crypto.pbkdf2.EncryptPassword({
 			digest: "sha512",
 			keyLen: 64,
 			iterations: 100000,
 			password: _mockPassword,
-			salt: NewSalt(8),
+			salt: security.crypto.salt.NewSalt(8),
 		})).toString('hex'));
 	} catch (e) {
 		// When salt size < 16, will occur an error

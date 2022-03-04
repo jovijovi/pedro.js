@@ -1,4 +1,4 @@
-import * as log from '../../lib/common/log';
+import {log} from '../../lib/common';
 
 export const logo = `
     ██████╗ ███████╗██████╗ ██████╗  ██████╗         ██╗███████╗

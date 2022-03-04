@@ -1,7 +1,7 @@
-import {Metrics} from '../../lib/common/metrics';
+import {metrics} from '../../lib/common';
 
 test('Metrics', () => {
-	const mi = Metrics.GetMetricsInfo();
+	const mi = metrics.GetMetricsInfo();
 	console.log("MetricsInfo=", mi);
 	console.log("MetricsInfoJSON=", mi.toJSON());
 })
