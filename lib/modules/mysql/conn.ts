@@ -1,5 +1,5 @@
 import {Sequelize} from 'sequelize';
-import * as log from '../../common/log';
+import {log} from '@jovijovi/pedrojs-common';
 
 export namespace Mysql {
 	export interface Config {
