@@ -1,7 +1,7 @@
 export * as auditor from './auditor';
-export * as cache from './cache';
+export {NSCacheSet as cache} from './cache';
 export * as cert from './cert';
-export * as config from './config';
+export {config} from './config';
 export * as context from './context';
 export * as log from './log';
 export {Metrics as metrics} from './metrics';
