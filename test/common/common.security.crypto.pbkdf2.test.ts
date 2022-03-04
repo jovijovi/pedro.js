@@ -96,7 +96,7 @@ test('EncryptPassword with random salt', async () => {
 		salt: NewSalt(16),
 	})).toString('hex'));
 
-	// Encrypt password with iterations 42 and it'll occurs an error
+	// Encrypt password with iterations 42, and it'll occur an error
 	try {
 		console.log("Key(%d)=", 6, (await pbkdf2.EncryptPassword({
 			digest: "sha512",
@@ -106,7 +106,7 @@ test('EncryptPassword with random salt', async () => {
 			salt: NewSalt(16),
 		})).toString('hex'));
 	} catch (e) {
-		// When iterations < 1000, will occurs an error
+		// When iterations < 1000, will occur an error
 		console.log(e)
 	}
 
@@ -120,7 +120,7 @@ test('EncryptPassword with random salt', async () => {
 			salt: NewSalt(8),
 		})).toString('hex'));
 	} catch (e) {
-		// When salt size < 16, will occurs an error
+		// When salt size < 16, will occur an error
 		console.log(e)
 	}
 })
