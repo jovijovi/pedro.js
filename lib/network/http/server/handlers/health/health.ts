@@ -1,4 +1,4 @@
-import * as log from '@jovijovi/pedrojs-common/log';
+import {log} from '@jovijovi/pedrojs-common';
 import * as response from '../../response';
 import {Version} from '@jovijovi/pedrojs-common/version';
 import {Tracing} from '@jovijovi/pedrojs-tracing';

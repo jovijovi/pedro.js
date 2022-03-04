@@ -1,5 +1,5 @@
 import {ServerOptions} from 'ws';
-import * as log from '@jovijovi/pedrojs-common/log';
+import {log} from '@jovijovi/pedrojs-common';
 
 export namespace server {
 	type wsServerInstance = (options: WebsocketOptions) => void;

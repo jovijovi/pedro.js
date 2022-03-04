@@ -1,4 +1,4 @@
-import * as log from '@jovijovi/pedrojs-common/log';
+import {log} from '@jovijovi/pedrojs-common';
 import {Tracing} from '@jovijovi/pedrojs-tracing';
 
 export function Ping(req, res) {

@@ -1,5 +1,4 @@
-import * as log from '@jovijovi/pedrojs-common/log';
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config, log} from '@jovijovi/pedrojs-common';
 import jayson from 'jayson/promise'
 import {URL} from 'url';
 import {IJsonRpcHandler} from '../interfaces';

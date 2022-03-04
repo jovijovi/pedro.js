@@ -1,6 +1,5 @@
 import {Data, WebSocketServer} from 'ws';
-import * as log from '@jovijovi/pedrojs-common/log';
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config, log} from '@jovijovi/pedrojs-common';
 import {server as wsServer} from './server';
 
 export namespace heartbeat {

@@ -1,7 +1,6 @@
 import express from 'express';
 import * as bodyParser from 'body-parser';
-import * as log from '@jovijovi/pedrojs-common/log';
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config, log} from '@jovijovi/pedrojs-common';
 import {RegisterHandlers} from './handlers';
 import {ITaskHandler} from './interfaces';
 import {Tracing} from '@jovijovi/pedrojs-tracing';

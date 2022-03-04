@@ -1,6 +1,6 @@
 // Response Builder
 
-import * as log from '@jovijovi/pedrojs-common/log';
+import {log} from '@jovijovi/pedrojs-common';
 
 // BuildResponse returns response by params
 export function BuildResponse(code: string, msg: string, body: any): any {
