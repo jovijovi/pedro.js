@@ -1,7 +1,7 @@
-import {Stack} from '../../lib/common/util/stack';
+import {util} from '../../lib/common';
 
 test('New Queue', () => {
-	const stack = new Stack(2);
+	const stack = new util.Stack(2);
 	stack.Push(1);
 	stack.Push('2');
 	stack.Push('3');
