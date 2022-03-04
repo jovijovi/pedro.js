@@ -274,15 +274,6 @@ export class Octopus<T> {
 		return this._tail;
 	}
 
-	private updateMatrix(entry: number[]) {
-		if (this._matrix[this._tail.index]) {
-			this._matrix[this._tail.index] = entry;
-		} else {
-			this._matrix.push(entry);
-		}
-		this._matrix.push(entry);
-	}
-
 	// Add a new node to octopus
 	Add(val: T): Node<T> {
 		const next = new Node<T>({
@@ -311,6 +302,15 @@ export class Octopus<T> {
 		// this._head.header.links.set(Prev, new Link(this._head.id, this._tail.id));
 
 		return this._tail;
+	}
+
+	private updateMatrix(entry: number[]) {
+		if (this._matrix[this._tail.index]) {
+			this._matrix[this._tail.index] = entry;
+		} else {
+			this._matrix.push(entry);
+		}
+		this._matrix.push(entry);
 	}
 
 	// // Entries return an iterator
