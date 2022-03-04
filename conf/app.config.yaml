@@ -12,6 +12,10 @@ network:
     enable: false
     port: 55650
     mutualTLS: false
+  jsonRpcProxy:
+    enable: true
+    port: 55750
+    mutualTLS: false
 
 # Heartbeat configuration
 heartbeat:
