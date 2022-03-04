@@ -1,1 +1,1 @@
-export * from './queue';
+export {Queue} from './queue';

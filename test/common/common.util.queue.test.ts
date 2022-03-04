@@ -1,8 +1,8 @@
-import {Queue} from '../../lib/common/util/queue';
+import {util} from '../../lib/common';
 import assert from 'assert';
 
 test('New Queue', () => {
-	const queue = new Queue(2);
+	const queue = new util.Queue(2);
 	queue.Push('1');
 	queue.Push('2');
 	queue.Push('3');
@@ -20,7 +20,7 @@ test('New Queue', () => {
 })
 
 test('Unlimited Queue', () => {
-	const queue = new Queue();
+	const queue = new util.Queue();
 	queue.Push('1');
 	queue.Push(2);
 	queue.Push(3.14);
