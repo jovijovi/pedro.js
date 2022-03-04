@@ -1,8 +1,5 @@
 import {Bytes} from '@jovijovi/pedrojs-types';
-import {NewUUID} from '@jovijovi/pedrojs-common/util/uuid';
-import {GetUTCTimeStamp, RFC3339_LIKE} from '@jovijovi/pedrojs-common/util/time';
-import * as elliptic from '@jovijovi/pedrojs-common/security/crypto/elliptic';
-import * as digest from '@jovijovi/pedrojs-common/security/crypto/digest';
+import {security, util} from '@jovijovi/pedrojs-common'
 
 export namespace NSEvent {
 	// Default event version
@@ -28,8 +25,8 @@ export namespace NSEvent {
 		version: string;
 
 		constructor() {
-			this.id = NewUUID();
-			this.timestamp = GetUTCTimeStamp(RFC3339_LIKE);
+			this.id = util.uuid.NewUUID();
+			this.timestamp = util.time.GetUTCTimeStamp(util.time.RFC3339_LIKE);
 			this.version = DefaultVersion;
 		}
 	}
@@ -197,7 +194,7 @@ export namespace NSEvent {
 			this._data.payload.raw = raw;
 
 			if (hashAlgo) {
-				this._data.payload.digest = digest.Get(Buffer.from(raw as Uint8Array), hashAlgo);
+				this._data.payload.digest = security.crypto.digest.Get(Buffer.from(raw as Uint8Array), hashAlgo);
 			}
 
 			return null;
@@ -205,14 +202,14 @@ export namespace NSEvent {
 
 		// Sign event
 		Sign(certificate: string, hashAlgo: string): Bytes {
-			const sig = elliptic.ECDSA.Sign(JSON.stringify(this.data), certificate, hashAlgo);
+			const sig = security.crypto.elliptic.ECDSA.Sign(JSON.stringify(this.data), certificate, hashAlgo);
 			this.signature = sig;
 			return sig;
 		}
 
 		// Verify event signature
 		Verify(certificate: string, hashAlgo: string): boolean {
-			return elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
+			return security.crypto.elliptic.ECDSA.Verify(JSON.stringify(this.data), certificate, Buffer.from(this.signature as Uint8Array), hashAlgo);
 		}
 
 		// Marshal event to JSON
