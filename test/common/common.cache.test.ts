@@ -1,9 +1,9 @@
-import {NSCacheSet} from '../../lib/common/cache';
+import {cache} from '../../lib/common';
 import assert from 'assert';
 
 test('CacheSet', () => {
 	// New cache set
-	const set = NSCacheSet.New();
+	const set = cache.New();
 
 	// New cache1
 	const cache1a = set.New("Cache1");

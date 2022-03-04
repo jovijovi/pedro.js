@@ -1,1 +1,1 @@
-export * from './cache';
+export {NSCacheSet} from './cache';
