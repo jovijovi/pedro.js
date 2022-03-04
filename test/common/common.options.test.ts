@@ -1,33 +1,33 @@
-import {IOptions, NewOptions, OptionFunc, WithContext, WithDryRun} from '../../lib/common/options';
-import {NewContext} from '../../lib/common/context';
+import {IOptionFunc, IOptions} from '../../lib/common/options';
+import {context, options} from '../../lib/common';
 
 interface IMyOptions extends IOptions {
 	name: string;
 	score?: number;
 }
 
-export function WithName(name: string): OptionFunc<any> {
+export function WithName(name: string): IOptionFunc<any> {
 	return <T extends IMyOptions>(o: T) => {
 		o.name = name;
 	};
 
 }
 
-export function WithScore(score: number): OptionFunc<any> {
+export function WithScore(score: number): IOptionFunc<any> {
 	return (o: IMyOptions) => {
 		o.score = score;
 	}
 }
 
 test('NewOptions', () => {
-	let opts = NewOptions();
+	let opts = options.NewOptions();
 	console.log("Options=", opts);
 })
 
 test('NewOptions with custom options', () => {
-	const opts = NewOptions<IMyOptions>(
-		WithContext(NewContext().WithValue('key1', 'value1')),
-		WithDryRun(true),
+	const opts = options.NewOptions<IMyOptions>(
+		options.WithContext(context.NewContext().WithValue('key1', 'value1')),
+		options.WithDryRun(true),
 		WithName('foo'),
 		WithScore(3.14),
 	);

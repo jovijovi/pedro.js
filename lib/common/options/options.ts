@@ -7,12 +7,12 @@ export interface IOptions {
 }
 
 // OptionFunc option initializer function interface
-export interface OptionFunc<T> {
+export interface IOptionFunc<T> {
 	(arg: T): T;
 }
 
 // NewOptions returns new options
-export function NewOptions<T extends IOptions>(...optionFunc: OptionFunc<T>[]): T {
+export function NewOptions<T extends IOptions>(...optionFunc: IOptionFunc<T>[]): T {
 	const opts = <T>{
 		dryRun: false,
 		context: NewContext(),
@@ -26,14 +26,14 @@ export function NewOptions<T extends IOptions>(...optionFunc: OptionFunc<T>[]): 
 }
 
 // WithContext set the context
-export function WithContext(c: Context): OptionFunc<any> {
+export function WithContext(c: Context): IOptionFunc<any> {
 	return <T extends IOptions>(o: T) => {
 		o.context = c;
 	};
 }
 
 // WithDryRun enable/disable dry run
-export function WithDryRun(isDryRun: boolean): OptionFunc<any> {
+export function WithDryRun(isDryRun: boolean): IOptionFunc<any> {
 	return <T extends IOptions>(o: T) => {
 		o.dryRun = isDryRun;
 	}
