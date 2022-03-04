@@ -1,5 +1,5 @@
 import {NSEvent} from '../../lib/event';
-import * as elliptic from '../../lib/common/security/crypto/elliptic';
+import {security} from '../../lib/common';
 import assert from 'assert';
 
 const ecdsaCert = `
@@ -107,7 +107,7 @@ test('AddPayload', () => {
 	const err = event.AddPayload('2f52ef17-d127-497e-b7ee-a09042c2054d',
 		'TestCategory',
 		Buffer.from('1234567890'),
-		elliptic.SHA256);
+		security.crypto.elliptic.SHA256);
 	if (!err) {
 		console.log("Error=", err);
 	}
@@ -130,10 +130,10 @@ test('Event Sign/Verify', () => {
 	);
 	console.log("Event=", evt);
 
-	const sig = evt.Sign(ecdsaPrivateKey, elliptic.SHA256);
+	const sig = evt.Sign(ecdsaPrivateKey, security.crypto.elliptic.SHA256);
 	console.log("Signature=", sig);
 
-	const result = evt.Verify(ecdsaCert, elliptic.SHA256);
+	const result = evt.Verify(ecdsaCert, security.crypto.elliptic.SHA256);
 	console.log("VerifyResult=", result);
 	assert.strictEqual(result, true);
 
