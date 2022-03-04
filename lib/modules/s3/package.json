@@ -1,0 +1,36 @@
+{
+  "name": "@jovijovi/pedrojs-s3",
+  "version": "1.0.8",
+  "description": "S3 package for pedro.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.53.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist/*",
+    "build": "yarn clean && tsc --build",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
+  },
+  "repository": {
+    "directory": "lib/modules/s3",
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
+  "keywords": [
+    "typescript",
+    "microservice",
+    "toolkit",
+    "pedro",
+    "s3"
+  ],
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovijovi/pedro.js/issues"
+  },
+  "homepage": "https://github.com/jovijovi/pedro.js#readme"
+}
