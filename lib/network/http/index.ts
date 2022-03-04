@@ -3,3 +3,5 @@ export {
 	ITaskHandler,
 	response
 } from './server';
+
+export * as http from './server';
