@@ -7,12 +7,12 @@ const DefaultRetryTimes = 3;
 // Retry interval by default (in seconds)
 const DefaultRetryInterval = 3;
 
-export interface Func<T> {
+export interface IFunc<T> {
 	(arg: T): T;
 }
 
 // Retry running the function m times with n seconds interval
-export async function Run<T>(f: Func<T>, retryTimes = DefaultRetryTimes, retryInterval = DefaultRetryInterval): Promise<T> {
+export async function Run<T>(f: IFunc<T>, retryTimes = DefaultRetryTimes, retryInterval = DefaultRetryInterval): Promise<T> {
 	for (let i = 1; i <= retryTimes; i++) {
 		try {
 			return await f(<T>{});
