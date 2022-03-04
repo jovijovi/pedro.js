@@ -1,7 +1,7 @@
 import {config, log} from '@jovijovi/pedrojs-common';
 import jayson from 'jayson/promise'
 import {URL} from 'url';
-import {IJsonRpcHandler} from '../interfaces';
+import {IJsonRpcHandler} from './interfaces';
 
 export namespace server {
 	function RunProxy(port: number, handler: IJsonRpcHandler, provider: string, relayMethods: string[], relayMethodPrefix: string[]) {

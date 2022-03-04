@@ -1,1 +1,1 @@
-export * as server from './server';
+export {server, IJsonRpcHandler} from './server';

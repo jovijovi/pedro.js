@@ -1,0 +1,40 @@
+{
+  "name": "@jovijovi/pedrojs-network-jsonrpc",
+  "version": "1.0.7",
+  "description": "JSON-RPC package for pedro.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@jovijovi/pedrojs-common": "^1.0.6",
+    "jayson": "3.6.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist/*",
+    "build": "yarn clean && tsc --build",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
+  },
+  "repository": {
+    "directory": "lib/network/json-rpc",
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
+  "keywords": [
+    "typescript",
+    "microservice",
+    "toolkit",
+    "pedro",
+    "network",
+    "jsonrpc",
+    "json-rpc",
+    "rpc"
+  ],
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovijovi/pedro.js/issues"
+  },
+  "homepage": "https://github.com/jovijovi/pedro.js#readme"
+}
