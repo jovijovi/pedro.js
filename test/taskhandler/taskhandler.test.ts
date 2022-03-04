@@ -1,7 +1,6 @@
 import {http} from '../../lib/network'
-import {config} from '@jovijovi/pedrojs-common/config';
+import {config, log} from '@jovijovi/pedrojs-common';
 import * as core from 'express-serve-static-core';
-import * as log from '@jovijovi/pedrojs-common/log';
 import {ITaskHandler} from '../../lib/network/http';
 
 function biz1(req, res) {
