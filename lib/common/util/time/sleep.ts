@@ -6,7 +6,7 @@ const SleepDays = async (d: number): Promise<number> => SleepHours(d * 24);
 
 export {
 	Sleep,
-	Sleep as sleepMilliseconds,
+	Sleep as SleepMilliseconds,
 	SleepSeconds,
 	SleepMinutes,
 	SleepHours,
