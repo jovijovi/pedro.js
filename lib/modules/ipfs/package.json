@@ -1,11 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-ipfs",
-  "version": "1.0.6",
+  "version": "1.0.9",
   "description": "IPFS package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@jovijovi/pedrojs-common": "^1.0.9",
     "ipfs-http-client": "^56.0.1"
   },
   "scripts": {
