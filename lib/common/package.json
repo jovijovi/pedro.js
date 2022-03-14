@@ -10,7 +10,7 @@
     "commander": "9.0.0",
     "dayjs": "1.10.8",
     "log4js": "^6.4.2",
-    "lru-cache": "7.4.0",
+    "lru-cache": "7.4.4",
     "yaml": "^1.10.2"
   },
   "scripts": {
@@ -30,7 +30,8 @@
     "microservice",
     "toolkit",
     "pedro",
-    "common"
+    "common",
+    "utilities"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
