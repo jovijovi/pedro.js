@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-sqlite",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "SQLite package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "^1.0.9",
+    "@jovijovi/pedrojs-common": "^1.0.11",
     "sequelize": "6.17.0",
     "sqlite3": "npm:@vscode/sqlite3@^5.0.7"
   },
