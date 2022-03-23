@@ -1,5 +1,5 @@
 import {Sequelize} from 'sequelize';
-import {log} from '@jovijovi/pedrojs-common';
+import {log} from '@jovijovi/pedrojs-log';
 
 export namespace Postgresql {
 	export interface Config {
