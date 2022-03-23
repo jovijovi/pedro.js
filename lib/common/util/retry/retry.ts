@@ -1,5 +1,5 @@
 import * as time from '../time';
-import * as log from '../../log';
+import {log} from '../../log';
 
 // Retry times by default
 const DefaultRetryTimes = 3;

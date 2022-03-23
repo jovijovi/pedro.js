@@ -1,4 +1,4 @@
-import * as log from '../log';
+import {log} from '../log';
 import * as time from '../util/time';
 
 export const SIGINT = 'SIGINT';

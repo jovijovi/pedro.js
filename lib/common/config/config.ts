@@ -1,7 +1,7 @@
 import yaml from 'yaml';
 import * as fs from 'fs'
 import path from 'path';
-import * as log from '../log';
+import {log} from '../log';
 import {Command} from 'commander';
 
 export namespace config {
