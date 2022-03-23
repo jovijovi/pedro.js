@@ -5,19 +5,19 @@ This submodule is part of [pedro.js](https://github.com/jovijovi/pedro.js) proje
 ## Install
 
 ```shell
-npm install @jovijovi/pedrojs-rdis
+npm install @jovijovi/pedrojs-redis
 ```
 
 or
 
 ```shell
-yarn add @jovijovi/pedrojs-rdis
+yarn add @jovijovi/pedrojs-redis
 ```
 
 ## Usage
 
 ```typescript
-import * as rdis from '@jovijovi/pedrojs-rdis'
+import * as redis from '@jovijovi/pedrojs-redis'
 ```
 
 ## License
