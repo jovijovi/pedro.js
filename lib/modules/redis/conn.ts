@@ -1,6 +1,6 @@
 import {createClient} from 'redis';
 import {RedisClientType} from '@node-redis/client/dist/lib/client';
-import {log} from '@jovijovi/pedrojs-common';
+import {log} from '@jovijovi/pedrojs-log';
 
 export namespace Redis {
 	export interface Config {
