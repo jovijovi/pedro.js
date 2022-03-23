@@ -1,10 +1,8 @@
 import * as core from 'express-serve-static-core';
 import {http} from '@jovijovi/pedrojs-network';
 import {heartbeat} from '@jovijovi/pedrojs-network/websocket/server';
-import {config} from '@jovijovi/pedrojs-common/config';
-import * as log from '@jovijovi/pedrojs-common/log';
+import {config, log, sys} from '@jovijovi/pedrojs-common';
 import {ITaskHandler} from '@jovijovi/pedrojs-network/http/server/interfaces';
-import * as sys from '@jovijovi/pedrojs-common/sys';
 import {Tracing} from '@jovijovi/pedrojs-tracing';
 import {logo} from './logo';
 
