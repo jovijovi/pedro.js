@@ -5,19 +5,19 @@ This submodule is part of [pedro.js](https://github.com/jovijovi/pedro.js) proje
 ## Install
 
 ```shell
-npm install @jovijovi/version
+npm install @jovijovi/pedrojs-version
 ```
 
 or
 
 ```shell
-yarn add @jovijovi/version
+yarn add @jovijovi/pedrojs-version
 ```
 
 ## Usage
 
 ```typescript
-import * as version from '@jovijovi/version'
+import * as version from '@jovijovi/pedrojs-version'
 ```
 
 ## License
