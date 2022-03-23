@@ -1,0 +1,38 @@
+{
+  "name": "@jovijovi/pedrojs-log",
+  "version": "1.0.12",
+  "description": "Log package for pedro.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "@jovijovi/pedrojs-version": "^1.0.12",
+    "log4js": "^6.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist/*",
+    "build": "yarn clean && tsc --build",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
+  },
+  "repository": {
+    "directory": "lib/common/log",
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
+  "keywords": [
+    "typescript",
+    "microservice",
+    "toolkit",
+    "pedro",
+    "common",
+    "log"
+  ],
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovijovi/pedro.js/issues"
+  },
+  "homepage": "https://github.com/jovijovi/pedro.js#readme"
+}

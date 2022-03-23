@@ -1,6 +1,6 @@
 // @filename: log.ts
 import * as log4js from 'log4js';
-import {Version} from '../version';
+import {Version} from '@jovijovi/pedrojs-version';
 
 log4js.configure({
 	appenders: {
