@@ -1496,11 +1496,12 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@jovijovi/pedrojs-common@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.0.13.tgz#926fb79005c661e16fd4003cd29ddc5be6d8f031"
-  integrity sha512-45yGEHT6ycSQXiRJ2FJOzHuvpDmLmgz+UWAoTmwYEaTcjT9sEZ2u9CAVWlIZ9dEEdD7DwBWsoOtGRas3Z5BcnA==
+"@jovijovi/pedrojs-common@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.0.14.tgz#c1212f5e056b67a0e3f60e7f4d68f82f9f1712a6"
+  integrity sha512-wmr9x+ad6oRY3aXP6rNhwVn41ucgCWERaA5KoG84e6/+hb60pBbVe19oupPuQsaaDezaJtiCln7wAhyWFaRG2g==
   dependencies:
+    "@jovijovi/pedrojs-version" "^1.0.12"
     "@types/lru-cache" "^7.4.0"
     commander "9.1.0"
     dayjs "1.11.0"
@@ -1508,12 +1509,12 @@
     lru-cache "7.7.1"
     yaml "^1.10.2"
 
-"@jovijovi/pedrojs-event@^1.0.13":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.0.13.tgz#336071ab1b8696e2d6c994def6c25922e008b5cf"
-  integrity sha512-daIL+PLrqKTEtilXX7tSfJ+uyZFIXnDu3TBQRKLF5jg5RrOi8FQmMwH8JULkHyH0U1LPyMoS2EPrY4LYJOfaDg==
+"@jovijovi/pedrojs-event@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.0.14.tgz#60b38206e10270aebda659ce46fa8c9902b37c09"
+  integrity sha512-qquQdCRUZHSde2GCbXFqWrmvhOqwDsUuRLLo16Ijhv/lmHZsosG+ljdCK4jPZaNP+EupXLZv6j3MoYIWPBpxMw==
   dependencies:
-    "@jovijovi/pedrojs-common" "^1.0.13"
+    "@jovijovi/pedrojs-common" "^1.0.14"
     "@jovijovi/pedrojs-types" "^1.0.5"
 
 "@jovijovi/pedrojs-log@^1.0.12":
@@ -1524,12 +1525,12 @@
     "@jovijovi/pedrojs-version" "^1.0.12"
     log4js "^6.4.2"
 
-"@jovijovi/pedrojs-network@^1.0.11":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.0.13.tgz#b557758c399956ff4bf8ad52e3f590fad8e58739"
-  integrity sha512-ucS29AoA3LOeRnmxuJHO55CfnZxPpZDg8rzG5t3zdrrzKWjfw2HM1rYqR45EfTLYCRsqwV2Z2VB3o4Pj9H9H1g==
+"@jovijovi/pedrojs-network@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.0.14.tgz#c3eefc353ca5ab8d94d896a180b426e5bd6c4eb7"
+  integrity sha512-vJDzAd1cZZg6kKpMhVY2/KXU9ZMiIrvuSwHxrbapyiIXQja4zQ7WPtRuYFx1udVECaq29VE8Lu8vwwqy9cNNSg==
   dependencies:
-    "@jovijovi/pedrojs-common" "^1.0.13"
+    "@jovijovi/pedrojs-common" "^1.0.14"
     "@jovijovi/pedrojs-tracing" "^1.0.5"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.13"
