@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-mongodb",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "MongoDB package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "mongoose": "6.2.7"
+    "mongoose": "6.2.8"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
