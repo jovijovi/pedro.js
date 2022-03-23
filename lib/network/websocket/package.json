@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-network-websocket",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "WebSocket package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "^1.0.13",
+    "@jovijovi/pedrojs-common": "^1.0.14",
     "@types/ws": "^8.5.3",
     "ws": "8.5.0"
   },
