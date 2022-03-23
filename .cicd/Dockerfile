@@ -16,8 +16,7 @@ RUN yarn install --frozen-lockfile && yarn build
 
 FROM node:${NODE_VER}-alpine as runtime
 
-RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
-    && apk add --no-cache bash \
+RUN apk add --no-cache bash \
     && addgroup -S pedro && adduser -S -G pedro pedro
 
 COPY --from=builder /opt/app_src/dist /opt/app
