@@ -1,5 +1,5 @@
 {
-  "name": "@jovijovi/version",
+  "name": "@jovijovi/pedrojs-version",
   "version": "1.0.12",
   "description": "Version package for pedro.js",
   "main": "index.js",
