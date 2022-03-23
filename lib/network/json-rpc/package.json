@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-network-jsonrpc",
-  "version": "1.0.11",
+  "version": "1.0.13",
   "description": "JSON-RPC package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "^1.0.11",
+    "@jovijovi/pedrojs-common": "^1.0.13",
     "jayson": "3.6.6"
   },
   "scripts": {
