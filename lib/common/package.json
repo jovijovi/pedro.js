@@ -6,6 +6,7 @@
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
+    "@jovijovi/pedrojs-version": "^1.0.12",
     "@types/lru-cache": "^7.4.0",
     "commander": "9.1.0",
     "dayjs": "1.11.0",
