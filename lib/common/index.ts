@@ -3,7 +3,7 @@ export {NSCacheSet as cache} from './cache';
 export * as cert from './cert';
 export {config} from './config';
 export * as context from './context';
-export * as log from './log';
+export {log} from './log';
 export {Metrics as metrics} from './metrics';
 export * as options from './options';
 export * as security from './security';
