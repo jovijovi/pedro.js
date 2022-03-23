@@ -1,7 +1,7 @@
 import * as jaeger from 'jaeger-client';
 import {opentracing} from 'jaeger-client';
 import * as http from 'http';
-import * as log from '../../lib/common/log';
+import {log} from '../../lib/common';
 
 test('Tracing', () => {
 	const config = {
