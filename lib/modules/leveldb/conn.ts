@@ -1,4 +1,4 @@
-import Level from 'level';
+import {Level} from 'level';
 
 export namespace Leveldb {
 	export interface Config {
@@ -7,12 +7,12 @@ export namespace Leveldb {
 	}
 
 	// Connect (or Create) database
-	export async function Connect(cfg: Config): Promise<Level.LevelDB> {
+	export async function Connect(cfg: Config): Promise<Level> {
 		if (!cfg.dbname) {
 			throw new Error('Cannot found leveldb database name');
 		}
 
-		const db = Level(cfg.dbname);
+		const db = new Level(cfg.dbname);
 		if (!db) {
 			throw new Error('Connect leveldb failed');
 		}

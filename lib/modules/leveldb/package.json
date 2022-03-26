@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-leveldb",
-  "version": "1.0.6",
+  "version": "1.0.15",
   "description": "LevelDB package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@types/level": "^6.0.0",
-    "level": "^7.0.1"
+    "level": "^8.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
