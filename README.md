@@ -1,5 +1,9 @@
 # Pedro.js
 
+[![npm](https://img.shields.io/npm/v/@jovijovi/pedro.js.svg)](https://www.npmjs.com/package/@jovijovi/pedro.js)
+[![GitHub Actions](https://github.com/jovijovi/pedro.js/workflows/Test/badge.svg)](https://github.com/jovijovi/pedro.js)
+[![Coverage](https://img.shields.io/codecov/c/github/jovijovi/pedro.js?label=\&logo=codecov\&logoColor=fff)](https://codecov.io/gh/jovijovi/pedro.js)
+
 <https://github.com/jovijovi/pedro.js>
 
 Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescriptlang.org).
