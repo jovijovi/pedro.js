@@ -26,14 +26,14 @@ jobs:
         run: yarn
 
       - name: Start devenv
-        run: cd ./devenv/ ; docker-compose -f dev.yaml up -d ; cd ..
+        run: cd ./devenv/ ; pwd ; docker-compose -f ci.yaml up -d ; sleep 10s ; docker ps ; cd ..
 
       - name: Test
         run: yarn test --coverage
 
       - name: Stop devenv
         if: always()
-        run: docker-compose -f ./devenv/dev.yaml down
+        run: docker-compose -f ./devenv/ci.yaml down
 
       - name: Upload coverage profile
         uses: codecov/codecov-action@v2
