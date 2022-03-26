@@ -20,8 +20,8 @@ export namespace NSCacheSet {
 		private _cacheStore: CacheStore = {};
 
 		// New returns a new cache, default age 60s
-		New(name: string, opts?: LRUCache.Options<any, any>): LRUCache<any, any> {
-			const defaultOpts: LRUCache.Options<any, any> = {
+		New(name: string, opts?: any): LRUCache<any, any> {
+			const defaultOpts = {
 				max: 10,
 				ttl: 1000 * 60,
 			};
