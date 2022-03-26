@@ -1,0 +1,41 @@
+name: Test
+
+on:
+  push:
+    branches: [ dev-ci ]
+  pull_request:
+    branches: [ dev-ci ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ 16 ]
+    name: Node ${{ matrix.node }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Use node ${{ matrix.node }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install
+        run: yarn
+
+      - name: Start devenv
+        run: cd ./devenv/ ; docker-compose -f app.yaml up -d ; cd ..
+
+      - name: Test
+        run: yarn test --coverage
+
+      - name: Stop devenv
+        if: always()
+        run: cd ./denenv/ ; docker-compose -f app.yaml down ; cd ..
+
+      - name: Upload coverage profile
+        uses: codecov/codecov-action@v2
+        with:
+          file: coverage/lcov.info
