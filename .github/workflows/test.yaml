@@ -23,12 +23,12 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install
-        run: yarn
+        run: yarn install --frozen-lockfile
 
       - name: Start devenv
         run: cd ./devenv/ ; pwd ; docker-compose -f ci.yaml up -d ; sleep 10s ; docker ps ; cd ..
 
-      - name: Test
+      - name: Test with coverage
         run: yarn test --coverage
 
       - name: Stop devenv
