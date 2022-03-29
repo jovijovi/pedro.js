@@ -81,7 +81,7 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage --forceExit",
     "build": "yarn clean && tsc --build && rm ./dist/test -rf && cp -ap conf ./dist",
     "clean": "rm -rf ./dist/*",
     "dev-run": "ts-node ./server/index.ts",
