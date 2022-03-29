@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-redis",
-  "version": "1.0.12",
+  "version": "1.0.17",
   "description": "Redis package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-log": "^1.0.12",
+    "@jovijovi/pedrojs-log": "^1.0.17",
     "redis": "4.0.4"
   },
   "scripts": {
