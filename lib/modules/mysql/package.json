@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-mysql",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "MySQL package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-log": "^1.0.17",
-    "sequelize": "6.17.0",
+    "sequelize": "6.18.0",
     "mysql2": "2.3.3"
   },
   "scripts": {
@@ -27,7 +27,8 @@
     "microservice",
     "toolkit",
     "pedro",
-    "mysql"
+    "mysql",
+    "client"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
