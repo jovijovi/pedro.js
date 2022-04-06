@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedrojs-common",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Common packages for pedro.js",
   "main": "index.js",
   "module": "index.js",
@@ -11,7 +11,7 @@
     "commander": "9.1.0",
     "dayjs": "1.11.0",
     "log4js": "^6.4.4",
-    "lru-cache": "7.7.1",
+    "lru-cache": "7.7.3",
     "yaml": "^1.10.2"
   },
   "scripts": {
@@ -32,7 +32,8 @@
     "toolkit",
     "pedro",
     "common",
-    "utilities"
+    "utilities",
+    "tools"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
