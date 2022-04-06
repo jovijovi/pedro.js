@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-mongodb",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "MongoDB package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "mongoose": "6.2.9"
+    "mongoose": "6.2.10"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,7 +25,9 @@
     "microservice",
     "toolkit",
     "pedro",
-    "mongodb"
+    "mongodb",
+    "mongoose",
+    "client"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
