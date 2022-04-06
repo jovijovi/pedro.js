@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-pg",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Postgres package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-log": "^1.0.17",
-    "sequelize": "6.17.0",
+    "sequelize": "6.18.0",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4"
   },
