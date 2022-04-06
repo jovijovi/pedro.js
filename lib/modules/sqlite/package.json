@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-sqlite",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "SQLite package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-log": "^1.0.17",
-    "sequelize": "6.17.0",
+    "sequelize": "6.18.0",
     "sqlite3": "npm:@vscode/sqlite3@^5.0.7"
   },
   "scripts": {
@@ -27,7 +27,9 @@
     "microservice",
     "toolkit",
     "pedro",
-    "sqlite"
+    "sqlite",
+    "sqlite3",
+    "client"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
