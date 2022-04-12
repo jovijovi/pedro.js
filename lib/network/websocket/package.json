@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-network-websocket",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "WebSocket package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "^1.0.18",
+    "@jovijovi/pedrojs-common": "^1.0.19",
     "@types/ws": "^8.5.3",
     "ws": "8.5.0"
   },
@@ -28,7 +28,8 @@
     "toolkit",
     "pedro",
     "network",
-    "websocket"
+    "websocket",
+    "server"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
