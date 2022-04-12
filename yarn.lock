@@ -1509,25 +1509,25 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@jovijovi/pedrojs-common@^1.0.18":
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.0.18.tgz#1281644f96b1ab8c82425d2200e6c7d0793b0998"
-  integrity sha512-TxWWwEK/uEo/+POQrpBwKABfmz5oMG2Cm19g6lKTpjUnwRNIigYs6XLJs560zY6GqlMcDVSObY9Jf2NP21NolQ==
+"@jovijovi/pedrojs-common@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.0.19.tgz#25e0d86164d86e9fda3eba126eaee3f689c07e05"
+  integrity sha512-nj5zduWCJRQdha2ZiOK+aJWiBfPuJHx+NiwYavTMPiiLh0LBmpfdyCoEzvdWEJ2mzPVm2NC/s/K8OGXMb6LVig==
   dependencies:
     "@jovijovi/pedrojs-version" "^1.0.12"
     "@types/lru-cache" "^7.6.1"
     commander "9.1.0"
     dayjs "1.11.0"
     log4js "^6.4.4"
-    lru-cache "7.7.3"
-    yaml "^1.10.2"
+    lru-cache "7.8.1"
+    yaml "^2.0.0"
 
-"@jovijovi/pedrojs-event@^1.0.18":
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.0.18.tgz#b17ddc4518ab78e61ee66f3439f985617f33f221"
-  integrity sha512-CwODq+34jcIIw6cB2gsedq26QlH+iXPkSJ3DhnGfKZwN7l4yLi/X1fxIiszkpiMtPYpHoc96h14rAPY5FLckIQ==
+"@jovijovi/pedrojs-event@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.0.19.tgz#d27be719112199ba09e2682cb124af15ea527ec4"
+  integrity sha512-1PIMRwrrDSvAS0cAsPyBUx4EppTpOr/tfOZoi3lf9W2Brm1J5j3I6ASvFwlGBgRnQGIn7BgO6QQG2xVrmnBA2w==
   dependencies:
-    "@jovijovi/pedrojs-common" "^1.0.18"
+    "@jovijovi/pedrojs-common" "^1.0.19"
     "@jovijovi/pedrojs-types" "^1.0.5"
 
 "@jovijovi/pedrojs-log@^1.0.17":
@@ -1538,12 +1538,12 @@
     "@jovijovi/pedrojs-version" "^1.0.12"
     log4js "^6.4.4"
 
-"@jovijovi/pedrojs-network@^1.0.18":
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.0.18.tgz#2e3fd396f358ef0826fe5a3dc2bff3f7a1c347b0"
-  integrity sha512-oWEawQ2TvYYmwC6on2n2YVhbGqKrPGwXCbnhTTrFrbxOzpMrnpPHFQyjSXZW3n9g7nePQPQUwfCGHWoYQbnQig==
+"@jovijovi/pedrojs-network@^1.0.19":
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.0.19.tgz#6b38435f42219528d1719f363c456961d98074c6"
+  integrity sha512-zmpkvlLkNtjEBxrevrn/QA8+gWBAgMszIodac91dDszcJ6WZz38d0J0yqE6wPzbTz3wcFaa3n5B/JmPIoFMFaQ==
   dependencies:
-    "@jovijovi/pedrojs-common" "^1.0.18"
+    "@jovijovi/pedrojs-common" "^1.0.19"
     "@jovijovi/pedrojs-tracing" "^1.0.5"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.13"
@@ -4709,11 +4709,6 @@ long@^4.0.0:
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
   integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
 
-lru-cache@7.7.3:
-  version "7.7.3"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.7.3.tgz#98cd19eef89ce6a4a3c4502c17c833888677c252"
-  integrity sha512-WY9wjJNQt9+PZilnLbuFKM+SwDull9+6IAguOrarOMoOHTcJ9GnXSO11+Gw6c7xtDkBkthR57OZMtZKYr+1CEw==
-
 lru-cache@7.8.1, lru-cache@^7.4.0:
   version "7.8.1"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.8.1.tgz#68ee3f4807a57d2ba185b7fd90827d5c21ce82bb"
@@ -6379,11 +6374,6 @@ yallist@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-2.1.2.tgz#1c11f9218f076089a47dd512f93c6699a6a81d52"
   integrity sha1-HBH5IY8HYImkfdUS+TxmmaaoHVI=
-
-yaml@^1.10.2:
-  version "1.10.2"
-  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
-  integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
 yaml@^2.0.0:
   version "2.0.0"
