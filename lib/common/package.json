@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedrojs-common",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Common packages for pedro.js",
   "main": "index.js",
   "module": "index.js",
@@ -8,11 +8,11 @@
   "dependencies": {
     "@jovijovi/pedrojs-version": "^1.0.12",
     "@types/lru-cache": "^7.6.1",
-    "commander": "9.1.0",
-    "dayjs": "1.11.0",
-    "log4js": "^6.4.4",
+    "commander": "9.2.0",
+    "dayjs": "1.11.1",
+    "log4js": "6.4.5",
     "lru-cache": "7.8.1",
-    "yaml": "^2.0.0"
+    "yaml": "2.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -33,7 +33,17 @@
     "pedro",
     "common",
     "utilities",
-    "tools"
+    "tools",
+    "auditor",
+    "cache",
+    "cert",
+    "log",
+    "context",
+    "metrics",
+    "options",
+    "security",
+    "crypto",
+    "sys"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
