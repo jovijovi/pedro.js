@@ -4,11 +4,13 @@ import {config, log} from '@jovijovi/pedrojs-common';
 import {RegisterHandlers} from './handlers';
 import {ITaskHandler} from './interfaces';
 import {Tracing} from '@jovijovi/pedrojs-tracing';
+import {RequestID} from '../middleware/requestid';
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(Tracing.Add);
+app.use(RequestID);
 
 export namespace server {
 	function RunWithoutTLS(port: number, handlers: ITaskHandler) {
