@@ -65,7 +65,7 @@
     "dgraph-js-http": "^21.3.1",
     "express": "^4.17.3",
     "express-request-id": "^2.0.1",
-    "ipfs-http-client": "^56.0.2",
+    "ipfs-http-client": "^56.0.3",
     "jaeger-client": "3.19.0",
     "jayson": "3.6.6",
     "level": "^8.0.0",
