@@ -198,7 +198,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 ***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
 
-- node `v16.14.2`
+- node `v16.15.0`
 - yarn `v1.22.18`
 - ts-node `v10.7.0`
 - typescript `4.6.3`
