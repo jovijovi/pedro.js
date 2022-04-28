@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-ipfs",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "IPFS package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-log": "^1.0.21",
-    "ipfs-http-client": "^56.0.2"
+    "@jovijovi/pedrojs-log": "1.0.22",
+    "ipfs-http-client": "56.0.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
