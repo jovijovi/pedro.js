@@ -112,6 +112,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
     - Read dedupe line from file to map
 
+  - NanoID
+
   - Queue
 
     - A queue (FIFO), not async safe
@@ -262,11 +264,11 @@ $ jest
 ......
 
 Test Suites: 37 passed, 37 total
-Tests:       85 passed, 85 total
+Tests:       87 passed, 87 total
 Snapshots:   0 total
-Time:        18.412 s, estimated 20 s
+Time:        25.024 s
 Ran all test suites.
-Done in 20.01s.
+Done in 26.60s.
 ```
 
 ## Roadmap
