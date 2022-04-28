@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-leveldb",
-  "version": "1.0.15",
+  "version": "1.0.22",
   "description": "LevelDB package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@types/level": "^6.0.0",
-    "level": "^8.0.0"
+    "@types/level": "6.0.1",
+    "level": "8.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,7 +26,8 @@
     "microservice",
     "toolkit",
     "pedro",
-    "leveldb"
+    "leveldb",
+    "client"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
