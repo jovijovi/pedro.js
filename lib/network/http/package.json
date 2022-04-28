@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedrojs-network-http",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "HTTP package for pedro.js",
   "main": "index.js",
   "module": "index.js",
