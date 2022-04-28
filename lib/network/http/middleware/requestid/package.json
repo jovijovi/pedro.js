@@ -1,0 +1,39 @@
+{
+  "name": "@jovijovi/express-request-id",
+  "version": "1.0.22",
+  "description": "HTTP package for pedro.js",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "nanoid": "^3.3.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist/*",
+    "build": "yarn clean && tsc --build",
+    "clean-pub": "rm -rf ./publish/* && mkdir -p ./publish",
+    "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
+  },
+  "repository": {
+    "directory": "lib/network/http/middleware/requestid",
+    "type": "git",
+    "url": "git+https://github.com/jovijovi/pedro.js.git"
+  },
+  "keywords": [
+    "typescript",
+    "microservice",
+    "toolkit",
+    "pedro",
+    "network",
+    "http",
+    "express",
+    "requestid"
+  ],
+  "author": "jovijovi <mageyul@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jovijovi/pedro.js/issues"
+  },
+  "homepage": "https://github.com/jovijovi/pedro.js#readme"
+}
