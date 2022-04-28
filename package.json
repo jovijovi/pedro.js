@@ -37,8 +37,8 @@
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {
-    "@aws-sdk/client-s3": "3.78.0",
-    "@aws-sdk/client-sqs": "3.78.0",
+    "@aws-sdk/client-s3": "3.79.0",
+    "@aws-sdk/client-sqs": "3.79.0",
     "@elastic/elasticsearch": "^8.1.0",
     "@grpc/grpc-js": "^1.6.7",
     "@jovijovi/pedrojs-common": "^1.0.21",
