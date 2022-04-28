@@ -18,6 +18,15 @@ yarn add @jovijovi/pedrojs-log
 
 ```typescript
 import {log} from '@jovijovi/pedrojs-log'
+
+// Print info log
+log.RequestId().info("Hello, world!");
+
+// Print trace log
+log.RequestId("reqId1").trace("This is a trace msg");
+
+// Print logo
+log.logo("MyLogo");
 ```
 
 ## License
