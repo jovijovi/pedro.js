@@ -7,3 +7,4 @@ export * as retry from './retry';
 export {Stack} from './stack';
 export * as time from './time';
 export * as uuid from './uuid';
+export * as nanoid from './nanoid';
