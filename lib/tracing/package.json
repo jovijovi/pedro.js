@@ -1,16 +1,16 @@
 {
   "name": "@jovijovi/pedrojs-tracing",
-  "version": "1.0.5",
+  "version": "1.0.23",
   "description": "Tracing package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@opentelemetry/api": "^1.0.4",
-    "@opentelemetry/exporter-jaeger": "^1.0.1",
-    "@opentelemetry/instrumentation-express": "^0.28.0",
-    "@opentelemetry/instrumentation-http": "^0.27.0",
-    "@opentelemetry/sdk-trace-node": "^1.0.1"
+    "@opentelemetry/api": "1.0.4",
+    "@opentelemetry/exporter-jaeger": "1.0.1",
+    "@opentelemetry/instrumentation-express": "0.28.0",
+    "@opentelemetry/instrumentation-http": "0.28.0",
+    "@opentelemetry/sdk-trace-node": "1.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
