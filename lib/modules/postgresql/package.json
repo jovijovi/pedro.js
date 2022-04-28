@@ -1,15 +1,15 @@
 {
   "name": "@jovijovi/pedrojs-pg",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Postgres package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-log": "^1.0.21",
+    "@jovijovi/pedrojs-log": "1.0.22",
     "sequelize": "6.19.0",
     "pg": "^8.7.3",
-    "pg-hstore": "^2.3.4"
+    "pg-hstore": "2.3.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
