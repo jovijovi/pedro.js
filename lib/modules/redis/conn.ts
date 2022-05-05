@@ -1,5 +1,4 @@
-import {createClient} from 'redis';
-import {RedisClientType} from '@node-redis/client/dist/lib/client';
+import {createClient, RedisClientType} from 'redis';
 import {log} from '@jovijovi/pedrojs-log';
 
 export namespace Redis {
@@ -13,7 +12,7 @@ export namespace Redis {
 		enable?: boolean;
 	}
 
-	export type RedisClient = RedisClientType<any, any>;
+	export type RedisClient = RedisClientType<any, any, any>;
 
 	interface IEngine {
 		client: RedisClient;
