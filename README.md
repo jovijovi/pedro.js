@@ -28,6 +28,8 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
       Get simple metrics info
 
+    - RequestId
+
 - JSON-RPC
 
 - WebSocket
@@ -50,7 +52,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - Dgraph
 
-    - HTTP client
+    - HTTP client helper
 
   - LevelDB
 
@@ -78,7 +80,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Configuration
 
-  - Custom config item in a microservice
+  - Custom config items
 
 - Security Suite
 
@@ -146,11 +148,11 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - Object Storage
 
-  - S3 Client
+  - S3 Client helper
 
 - Auditor
 
-  - Simple Auditor
+  - Simple assert
 
 - Tracing
 
@@ -166,7 +168,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - IPFS
 
-  - Based on [ipfs-http-client](https://github.com/ipfs/js-ipfs)
+  - IPFS helper based on [ipfs-http-client](https://github.com/ipfs/js-ipfs)
 
 ## Quick Guide
 
@@ -202,14 +204,20 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
 - node `v16.15.0`
 - yarn `v1.22.18`
-- ts-node `v10.7.0`
-- typescript `4.6.3`
+- ts-node `v10.8.0`
+- typescript `4.7.2`
 
 ### Makefile
 
+- Build
+
+```shell
+make build
+```
+
 - Make docker images
 
-```bash
+```shell
 make docker
 ```
 
@@ -222,13 +230,13 @@ make docker
 
 - Step 1: install packages
 
-```bash
+```shell
 yarn add --dev jest typescript ts-jest @types/jest
 ```
 
 - Step 2: Init ts-jest config
 
-```bash
+```shell
 yarn ts-jest config:init
 ```
 
@@ -244,7 +252,7 @@ Add below to package.json
 
 - Step 4: Run test
 
-```bash
+```shell
 yarn test
 ```
 
@@ -278,8 +286,6 @@ Done in 26.60s.
 - Task Handler
 
   - Support CORS by config
-
-  - RequestId
 
   - Real remote IP
 

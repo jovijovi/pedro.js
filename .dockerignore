@@ -118,7 +118,7 @@ dist
 
 # Custom
 .git
-.cicd
+/docker
 .vscode
 .idea
 

@@ -1,14 +1,14 @@
 {
   "name": "@jovijovi/pedrojs-sqlite",
-  "version": "1.0.26",
+  "version": "1.1.0",
   "description": "SQLite package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-log": "1.0.22",
-    "sequelize": "6.19.0",
-    "sqlite3": "^5.0.8"
+    "@jovijovi/pedrojs-log": "1.1.0",
+    "sequelize": "6.20.1",
+    "sqlite3": "npm:@vscode/sqlite3@^5.0.7"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -6,6 +6,6 @@ services:
     image: pedro.js:latest
     restart: always
     volumes:
-      - ./conf:/opt/app/conf
+      - ../conf:/opt/app/conf
     ports:
       - "55550:55550"

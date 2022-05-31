@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-fsm",
-  "version": "1.0.26",
+  "version": "1.1.0",
   "description": "FSM package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-event": "1.0.26"
+    "@jovijovi/pedrojs-event": "1.1.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

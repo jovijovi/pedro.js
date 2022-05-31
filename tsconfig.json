@@ -18,7 +18,7 @@
     "forceConsistentCasingInFileNames": true
   },
   "exclude": [
-    ".cicd",
+    "docker",
     "conf",
     "devenv",
     "dist",
