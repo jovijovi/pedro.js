@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-event",
-  "version": "1.0.26",
+  "version": "1.1.0",
   "description": "Event package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "1.0.26",
+    "@jovijovi/pedrojs-common": "1.1.0",
     "@jovijovi/pedrojs-types": "^1.0.5"
   },
   "scripts": {
