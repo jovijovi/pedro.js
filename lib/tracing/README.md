@@ -17,7 +17,7 @@ yarn add @jovijovi/pedrojs-tracing
 ## Usage
 
 ```typescript
-import * as tracing from '@jovijovi/pedrojs-fsm'
+import * as tracing from '@jovijovi/pedrojs-tracing'
 ```
 
 ## License
