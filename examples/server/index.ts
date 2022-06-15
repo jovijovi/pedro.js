@@ -5,6 +5,7 @@ import {config, log, sys} from '@jovijovi/pedrojs-common';
 import {ITaskHandler} from '@jovijovi/pedrojs-network/http/server/interfaces';
 import {Tracing} from '@jovijovi/pedrojs-tracing';
 import {logo} from './logo';
+import {TwoFAToken} from '@jovijovi/express-2fa-token';
 
 function biz1(req, res) {
 	res.send('biz1');
@@ -29,6 +30,10 @@ class privateImplHandlers implements ITaskHandler {
 	RegisterHandlers(router: core.Express) {
 		registerBizAPI(router);
 		registerAnotherBizAPI(router);
+	}
+
+	UseMiddleware(app: core.Express): void {
+		app.use(TwoFAToken);
 	}
 }
 
