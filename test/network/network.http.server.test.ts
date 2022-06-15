@@ -22,6 +22,11 @@ class privateImplHandlers implements ITaskHandler {
 	RegisterHandlers(router: core.Express) {
 		registerBizAPI(router);
 	}
+
+	UseMiddleware(app: core.Express) {
+		// Custom middleware
+		return;
+	}
 }
 
 const AppHandlers = new privateImplHandlers();
