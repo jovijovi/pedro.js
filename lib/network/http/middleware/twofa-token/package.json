@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/express-2fa-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "2FA token middleware for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/two-fa.js": "^0.2.1",
+    "@jovijovi/two-fa.js": "^0.2.2",
     "node-schedule": "^2.1.0"
   },
   "scripts": {
@@ -29,7 +29,8 @@
     "network",
     "http",
     "express",
-    "2fa",
+    "2FA",
+    "two-fa",
     "token",
     "authorization"
   ],
