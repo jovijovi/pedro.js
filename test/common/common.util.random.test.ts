@@ -36,3 +36,10 @@ test('RandLowercase', () => {
 		log.RequestId().info(result);
 	}
 })
+
+test('RandSeed', () => {
+	for (let i = 0; i < 10; i++) {
+		const seed = util.random.RandSeed();
+		log.RequestId().info("Seed=%o", seed);
+	}
+})

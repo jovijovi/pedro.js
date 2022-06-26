@@ -123,6 +123,10 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
     - A queue (FIFO), not async safe
 
   - Random
+    - Random int
+    - Random boolean
+    - Random case
+    - Random seed
 
   - Retry
 

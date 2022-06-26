@@ -1,4 +1,5 @@
 import * as crypto from 'crypto';
+import {MaxEntropyLength} from './params';
 
 // RandIntBetween random int, range: [0, n)
 export function RandIntBetween(min, max: number): number {
@@ -53,4 +54,9 @@ export function RandLowercase(input: string): string {
 	}
 
 	return output;
+}
+
+// RandSeed returns a random seed
+export function RandSeed(): string {
+	return String.fromCharCode(...crypto.randomFillSync(new Uint8Array(MaxEntropyLength)));
 }
