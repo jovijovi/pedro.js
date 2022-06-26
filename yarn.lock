@@ -118,17 +118,17 @@
   dependencies:
     tslib "^2.3.1"
 
-"@aws-sdk/client-s3@3.113.0":
-  version "3.113.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-s3/-/client-s3-3.113.0.tgz#fc416139a1d1f5a8e07ac6f3d453042c6d84c4f9"
-  integrity sha512-QHynLFWwhQFB2bULxMOlnIYzKPmE6ky5yRo0NPGklz4bnWc8RY/vSvlaii4JBxPee9TGxNM1/NCF0oMLUdXK3Q==
+"@aws-sdk/client-s3@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-s3/-/client-s3-3.118.0.tgz#ea534d2cfc8b52b219ba1fe435ff8722f76125a2"
+  integrity sha512-MdK2WQ5Bh2r92EKVJZorSiTDitevcqFfwcaeqL0L17qtylxu49s2ciWyAs+mAfIiYNjkNF2gLbLSnLO8vb+o8A==
   dependencies:
     "@aws-crypto/sha1-browser" "2.0.0"
     "@aws-crypto/sha256-browser" "2.0.0"
     "@aws-crypto/sha256-js" "2.0.0"
-    "@aws-sdk/client-sts" "3.112.0"
+    "@aws-sdk/client-sts" "3.118.0"
     "@aws-sdk/config-resolver" "3.110.0"
-    "@aws-sdk/credential-provider-node" "3.112.0"
+    "@aws-sdk/credential-provider-node" "3.118.0"
     "@aws-sdk/eventstream-serde-browser" "3.110.0"
     "@aws-sdk/eventstream-serde-config-resolver" "3.110.0"
     "@aws-sdk/eventstream-serde-node" "3.110.0"
@@ -156,7 +156,7 @@
     "@aws-sdk/node-config-provider" "3.110.0"
     "@aws-sdk/node-http-handler" "3.110.0"
     "@aws-sdk/protocol-http" "3.110.0"
-    "@aws-sdk/signature-v4-multi-region" "3.110.0"
+    "@aws-sdk/signature-v4-multi-region" "3.118.0"
     "@aws-sdk/smithy-client" "3.110.0"
     "@aws-sdk/types" "3.110.0"
     "@aws-sdk/url-parser" "3.110.0"
@@ -169,7 +169,7 @@
     "@aws-sdk/util-stream-browser" "3.110.0"
     "@aws-sdk/util-stream-node" "3.110.0"
     "@aws-sdk/util-user-agent-browser" "3.110.0"
-    "@aws-sdk/util-user-agent-node" "3.110.0"
+    "@aws-sdk/util-user-agent-node" "3.118.0"
     "@aws-sdk/util-utf8-browser" "3.109.0"
     "@aws-sdk/util-utf8-node" "3.109.0"
     "@aws-sdk/util-waiter" "3.110.0"
@@ -178,16 +178,16 @@
     fast-xml-parser "3.19.0"
     tslib "^2.3.1"
 
-"@aws-sdk/client-sqs@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sqs/-/client-sqs-3.112.0.tgz#8ab98eb056869fbca7e71fa2845e6daf24bf9a95"
-  integrity sha512-/7+8dZpsFiyvbYZwEl2LuZCcRP4OFOzUqrpCPvhiLIN9nUNNeh2+dFyrBIvNuAeuB1i+8DAjgluuoi0jvujD/w==
+"@aws-sdk/client-sqs@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sqs/-/client-sqs-3.118.0.tgz#150a3bc2ff40de3a888a094435fe11c7395c16fa"
+  integrity sha512-TQlWzfh0heY+xFePRjPsLVygtQDrrCeS/UJXhx7yl08KY5j0hGvvr7efQKzXDl0/NcNOfVMf84bh9P0nVUwkQA==
   dependencies:
     "@aws-crypto/sha256-browser" "2.0.0"
     "@aws-crypto/sha256-js" "2.0.0"
-    "@aws-sdk/client-sts" "3.112.0"
+    "@aws-sdk/client-sts" "3.118.0"
     "@aws-sdk/config-resolver" "3.110.0"
-    "@aws-sdk/credential-provider-node" "3.112.0"
+    "@aws-sdk/credential-provider-node" "3.118.0"
     "@aws-sdk/fetch-http-handler" "3.110.0"
     "@aws-sdk/hash-node" "3.110.0"
     "@aws-sdk/invalid-dependency" "3.110.0"
@@ -215,17 +215,17 @@
     "@aws-sdk/util-defaults-mode-browser" "3.110.0"
     "@aws-sdk/util-defaults-mode-node" "3.110.0"
     "@aws-sdk/util-user-agent-browser" "3.110.0"
-    "@aws-sdk/util-user-agent-node" "3.110.0"
+    "@aws-sdk/util-user-agent-node" "3.118.0"
     "@aws-sdk/util-utf8-browser" "3.109.0"
     "@aws-sdk/util-utf8-node" "3.109.0"
     entities "2.2.0"
     fast-xml-parser "3.19.0"
     tslib "^2.3.1"
 
-"@aws-sdk/client-sso@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sso/-/client-sso-3.112.0.tgz#5f308d34566441b94c633018af74036530e69ac6"
-  integrity sha512-FwFmiapxuVQiyMdDaBvCpajnJkVWEUHBdO+7rIpzgKHkODEPou5/AwboaGRPEFYULOyYeI0HiDFzpK0G6de+7Q==
+"@aws-sdk/client-sso@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sso/-/client-sso-3.118.0.tgz#1247c87c0d0a72b915cffadd3362844dbbb54d25"
+  integrity sha512-957zaPXhrEyYZx8lU0vl6Z37ARUa6TxFmITRZsKo/2K3wCs0lUOAxrtdP0SU02nWhdRbsYx6ATCSHd63fWOvdw==
   dependencies:
     "@aws-crypto/sha256-browser" "2.0.0"
     "@aws-crypto/sha256-js" "2.0.0"
@@ -254,20 +254,20 @@
     "@aws-sdk/util-defaults-mode-browser" "3.110.0"
     "@aws-sdk/util-defaults-mode-node" "3.110.0"
     "@aws-sdk/util-user-agent-browser" "3.110.0"
-    "@aws-sdk/util-user-agent-node" "3.110.0"
+    "@aws-sdk/util-user-agent-node" "3.118.0"
     "@aws-sdk/util-utf8-browser" "3.109.0"
     "@aws-sdk/util-utf8-node" "3.109.0"
     tslib "^2.3.1"
 
-"@aws-sdk/client-sts@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sts/-/client-sts-3.112.0.tgz#97aa584562b7b9b18ca09b5a025e3f5093e07a72"
-  integrity sha512-hSApRO2wg3jk9VRGM6SCZO3aFP7DKVSUqs6FrvlXlj+JU88ZKObjrGE61cCzXoD89Dh+b9t8A2T6W51Nzriaxw==
+"@aws-sdk/client-sts@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-sts/-/client-sts-3.118.0.tgz#0120c24c4b96d9ed0926a2efe1c7952d43f0ce89"
+  integrity sha512-t/4IwMl8npQyIxJ67qT9G4v6xqhB9Ijcwn4CWI75Pafes5zEjEnKf05EmKt+DOnm63aN25jniDK26jjbgWld4g==
   dependencies:
     "@aws-crypto/sha256-browser" "2.0.0"
     "@aws-crypto/sha256-js" "2.0.0"
     "@aws-sdk/config-resolver" "3.110.0"
-    "@aws-sdk/credential-provider-node" "3.112.0"
+    "@aws-sdk/credential-provider-node" "3.118.0"
     "@aws-sdk/fetch-http-handler" "3.110.0"
     "@aws-sdk/hash-node" "3.110.0"
     "@aws-sdk/invalid-dependency" "3.110.0"
@@ -294,7 +294,7 @@
     "@aws-sdk/util-defaults-mode-browser" "3.110.0"
     "@aws-sdk/util-defaults-mode-node" "3.110.0"
     "@aws-sdk/util-user-agent-browser" "3.110.0"
-    "@aws-sdk/util-user-agent-node" "3.110.0"
+    "@aws-sdk/util-user-agent-node" "3.118.0"
     "@aws-sdk/util-utf8-browser" "3.109.0"
     "@aws-sdk/util-utf8-node" "3.109.0"
     entities "2.2.0"
@@ -332,30 +332,30 @@
     "@aws-sdk/url-parser" "3.110.0"
     tslib "^2.3.1"
 
-"@aws-sdk/credential-provider-ini@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.112.0.tgz#46001d9e61957ddc5a253ba2c45be92474960b43"
-  integrity sha512-ebgZ6/jZdTGHQ3zfq/ccmS+7YmLk6yUWHDmh69VK+B1Dd+S1jFwbD9EQ+pYWCp/gEl9F620NSwb6KghRylPWEQ==
+"@aws-sdk/credential-provider-ini@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-ini/-/credential-provider-ini-3.118.0.tgz#3345adcd070135474165516cf35d312e2179c23c"
+  integrity sha512-q81CJh3RhDS/oVNB8UG5IOmDJ1JQwd/CVbR77vwJ10XQzs7oL+QaCNtEHMrI1mPj/Z7sHq8ObqeVZtvGn9mS/g==
   dependencies:
     "@aws-sdk/credential-provider-env" "3.110.0"
     "@aws-sdk/credential-provider-imds" "3.110.0"
-    "@aws-sdk/credential-provider-sso" "3.112.0"
+    "@aws-sdk/credential-provider-sso" "3.118.0"
     "@aws-sdk/credential-provider-web-identity" "3.110.0"
     "@aws-sdk/property-provider" "3.110.0"
     "@aws-sdk/shared-ini-file-loader" "3.110.0"
     "@aws-sdk/types" "3.110.0"
     tslib "^2.3.1"
 
-"@aws-sdk/credential-provider-node@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-node/-/credential-provider-node-3.112.0.tgz#66a87f8d759aabca06bf3205453e1a28301ddeac"
-  integrity sha512-7txS7P3BAaU4cksFw/PnoVskVvO8h/TPvOl/BxFtCiUdwA6FRltLvBeMlN08fwUoqgM6z06q8areBdeDqCHOSw==
+"@aws-sdk/credential-provider-node@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-node/-/credential-provider-node-3.118.0.tgz#5bb937c654dd38affd15bc7b2a68ec021d3d2a21"
+  integrity sha512-FLKmX63nnPXpP73n8dG/g0NqKvZ6KiDq8pPmYCkOv3vhvA/GHvbajhgKoQ4k7r13U4I+O+3caNyNpjPYV4ZIww==
   dependencies:
     "@aws-sdk/credential-provider-env" "3.110.0"
     "@aws-sdk/credential-provider-imds" "3.110.0"
-    "@aws-sdk/credential-provider-ini" "3.112.0"
+    "@aws-sdk/credential-provider-ini" "3.118.0"
     "@aws-sdk/credential-provider-process" "3.110.0"
-    "@aws-sdk/credential-provider-sso" "3.112.0"
+    "@aws-sdk/credential-provider-sso" "3.118.0"
     "@aws-sdk/credential-provider-web-identity" "3.110.0"
     "@aws-sdk/property-provider" "3.110.0"
     "@aws-sdk/shared-ini-file-loader" "3.110.0"
@@ -372,12 +372,12 @@
     "@aws-sdk/types" "3.110.0"
     tslib "^2.3.1"
 
-"@aws-sdk/credential-provider-sso@3.112.0":
-  version "3.112.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.112.0.tgz#1ef5e8f331040b8e5be9b011f8074c682bf068ba"
-  integrity sha512-b6rOrSXbNK3fGyPvNpyF5zdktmAoNOqHCTmFSUcxRxOipyRGb5JACsbjWthIQkpWkpNCT8GFNLEg9spXPFIdLA==
+"@aws-sdk/credential-provider-sso@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/credential-provider-sso/-/credential-provider-sso-3.118.0.tgz#594b3fd3597483125b6d089af658c9ae0beda032"
+  integrity sha512-slpvtOydNvYI1HOYzXsGYFfkj1w/9obuBXxMuDzm59yelkhFY8KxWKeh/lQPFmbUXCRYOrLFe/xHmpAXfheZFA==
   dependencies:
-    "@aws-sdk/client-sso" "3.112.0"
+    "@aws-sdk/client-sso" "3.118.0"
     "@aws-sdk/property-provider" "3.110.0"
     "@aws-sdk/shared-ini-file-loader" "3.110.0"
     "@aws-sdk/types" "3.110.0"
@@ -730,10 +730,10 @@
   dependencies:
     tslib "^2.3.1"
 
-"@aws-sdk/signature-v4-multi-region@3.110.0":
-  version "3.110.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.110.0.tgz#5fb3e0662d7a99e9618ae9e60a460c994efd1c3e"
-  integrity sha512-D5nlq6em9fU9EMmpjQtLItr2d6MmfM9yofOaeNQcgY8wFJEOCc2ADccq8dCO0F4twakAvjuUIkBAWMBviiuC7Q==
+"@aws-sdk/signature-v4-multi-region@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/signature-v4-multi-region/-/signature-v4-multi-region-3.118.0.tgz#2a61980dc1857b94b64936c5997ab9dac186f915"
+  integrity sha512-Uih3SR5d3XBeUtiMFkDERx7jLOZSXvVrhikA9p416FIPWZ5649sQ/esYsDvWBB39nbnYMx/QlsR+imCvh8XlhQ==
   dependencies:
     "@aws-sdk/protocol-http" "3.110.0"
     "@aws-sdk/signature-v4" "3.110.0"
@@ -902,10 +902,10 @@
     bowser "^2.11.0"
     tslib "^2.3.1"
 
-"@aws-sdk/util-user-agent-node@3.110.0":
-  version "3.110.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-node/-/util-user-agent-node-3.110.0.tgz#750abd6bb14f25a11e09d764f724b0d0e1c1248b"
-  integrity sha512-OQ915TPCCBwZWz5Np8zkNWn7U6KvrTZfFoCOy/VIemK3dUqmnBZ7HqGpuZx8SwJ2R9JE1x+j0niYSJ5fWJZZKA==
+"@aws-sdk/util-user-agent-node@3.118.0":
+  version "3.118.0"
+  resolved "https://registry.yarnpkg.com/@aws-sdk/util-user-agent-node/-/util-user-agent-node-3.118.0.tgz#5cb8d822ebe46b92101ff547ea373658d18ceb7b"
+  integrity sha512-7j21HNumxMkeUpgoMX8o3y66k+qMSEkCPCMGnoiiMtgfWX9SY0S/fLwR1nDBw8HI3NthRXfgWdAXUu8K3Kjp6g==
   dependencies:
     "@aws-sdk/node-config-provider" "3.110.0"
     "@aws-sdk/types" "3.110.0"
@@ -1524,25 +1524,25 @@
     "@jovijovi/two-fa.js" "^0.2.2"
     node-schedule "^2.1.0"
 
-"@jovijovi/pedrojs-common@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.3.tgz#1a2bf8333296d6ee9e2d8da618985f24b11ec885"
-  integrity sha512-+PstjsnxEYhiyJYYffvAjNChQ9kbADZ22MLZ5c/ac+LUOtc6NzNPcffpD+BHjcvJ4ug0meGDEcXsAvcCoIJA4g==
+"@jovijovi/pedrojs-common@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.5.tgz#c0366d120c1c7b939ff27e27ac127adc4766f0b8"
+  integrity sha512-M6ePd4Ay668vmReARMVmgudN4Dx/aUjgloup4YGDKwJoi5OQJ7vXfk8WQARJ+vNXZ32qIJx/uGwCgDRqJe2R8A==
   dependencies:
     "@jovijovi/pedrojs-version" "^1.0.12"
     commander "9.3.0"
     dayjs "1.11.3"
     log4js "6.5.2"
-    lru-cache "7.10.1"
+    lru-cache "7.10.2"
     nanoid "3.3.4"
     yaml "2.1.1"
 
-"@jovijovi/pedrojs-event@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.3.tgz#f1998a1084088174178f3ea3e6bee305447554a9"
-  integrity sha512-6TLMWuIe8e+kJC+aie87RdxwWrCB479eRNkRtDHu1BYDGonpti0OfPEzOyUpe+8fQ/iHeBQO5PMj3n6No7RoMw==
+"@jovijovi/pedrojs-event@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.5.tgz#3b26d5456768b0fe3e3e3650b25dddfd36c6fec7"
+  integrity sha512-jL5jl+cCXvZLN5NW0DL+bUbmztKSHj9PTfEWlwE7r164PjCNVmWNJfiar6atZNVysuYUz6GhjAOYyOnoiL2vPQ==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.3"
+    "@jovijovi/pedrojs-common" "1.1.5"
     "@jovijovi/pedrojs-types" "^1.0.5"
 
 "@jovijovi/pedrojs-log@1.1.0":
@@ -1553,13 +1553,13 @@
     "@jovijovi/pedrojs-version" "^1.0.12"
     log4js "6.5.2"
 
-"@jovijovi/pedrojs-network@1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.4.tgz#8417e8db460e9a026ae874d92eb72192d0254a00"
-  integrity sha512-B1JkX+qEbfZSXWgsxSjTl2DcFpYh3EfPJ0iG5url2BKNF5qbxHBQJqyzD1CdLI5nsRsZhsWwzAs0g3VihCfDfQ==
+"@jovijovi/pedrojs-network@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.5.tgz#2b30c5568ea743827cf0cbfd42ea11f2e7566452"
+  integrity sha512-IvpJpE62oyI2WPTtZURPrnqOpTuHzoL4DVqxEWOZutgSVuI6l7ixh480HBZnHXIVAEuCWSMPlz02u6oTpYKCrg==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.3"
-    "@jovijovi/pedrojs-tracing" "1.1.0"
+    "@jovijovi/pedrojs-common" "1.1.5"
+    "@jovijovi/pedrojs-tracing" "1.1.5"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.13"
     "@types/ws" "^8.5.3"
@@ -1569,15 +1569,15 @@
     nanoid "3.3.4"
     ws "8.8.0"
 
-"@jovijovi/pedrojs-tracing@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.0.tgz#761c13ede55af9ab34ce2b25d5ce95506a21abd4"
-  integrity sha512-UsoAJe6Ym4JiNyR8DqBiDpwjLqj7i9Yhg3vc6l2uEDDrnJm8ktXU4mH9RCufQkxsD+iHpnDdAiw6hfGY/L7NtA==
+"@jovijovi/pedrojs-tracing@1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.5.tgz#f54c3c05931388cce531c76a58fbfe55349f673a"
+  integrity sha512-gtTx5d8sfjZI/ppmQQZ79rfmyFSkb5M9PKsLOP32nZtPg58ghGyT87jgwVcaRb2iOFcXfXXxpLr20Z5NQJMBCA==
   dependencies:
     "@opentelemetry/api" "1.0.4"
-    "@opentelemetry/exporter-jaeger" "1.0.1"
-    "@opentelemetry/instrumentation-express" "0.29.0"
-    "@opentelemetry/instrumentation-http" "0.29.0"
+    "@opentelemetry/exporter-jaeger" "1.3.1"
+    "@opentelemetry/instrumentation-express" "0.30.0"
+    "@opentelemetry/instrumentation-http" "0.29.2"
     "@opentelemetry/sdk-trace-node" "1.0.1"
 
 "@jovijovi/pedrojs-types@1.0.5", "@jovijovi/pedrojs-types@^1.0.5":
@@ -1698,20 +1698,6 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@opentelemetry/api-metrics@0.28.0":
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.28.0.tgz#698acbb2f570ece49815fca8be6f3070ae41f016"
-  integrity sha512-UcrJqEiV20YTibYXUT0TDBtl4uLh4tMpAYSa1g1780QrVMlsOMAnBrdD3EYTMPog14Zw+2QzPnDJ4X7q67YrSA==
-  dependencies:
-    "@opentelemetry/api" "^1.0.0"
-
-"@opentelemetry/api-metrics@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.29.0.tgz#5f1643d376fad983e6de39b8fd64695bf72b5829"
-  integrity sha512-sFgfHhiBLP33EQOy8wkGBAGdeqjIOLe5zM6ypPZy/Vgzr2OsnV/LYbjvJynHW3ugGoWabvwQ0tghooC/klsu8w==
-  dependencies:
-    "@opentelemetry/api" "^1.0.0"
-
 "@opentelemetry/api-metrics@0.29.2":
   version "0.29.2"
   resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.29.2.tgz#daa823e0965754222b49a6ae6133df8b39ff8fd2"
@@ -1741,13 +1727,6 @@
   dependencies:
     "@opentelemetry/semantic-conventions" "1.0.1"
 
-"@opentelemetry/core@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-1.3.0.tgz#3a7cdf1d95ae26147d141a7fd58cc60759486aa9"
-  integrity sha512-g/YNvUhSPn+9PBOnDZtFmvGZR3fDFzzLVSHLAnAQfOLrJwVlZovSZpAXNOv8OGhn+JA3j1gY93gfjbgBZtoR7Q==
-  dependencies:
-    "@opentelemetry/semantic-conventions" "1.3.0"
-
 "@opentelemetry/core@1.3.1", "@opentelemetry/core@^1.0.0":
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/@opentelemetry/core/-/core-1.3.1.tgz#6eef5c5efca9a4cd7daa0cd4c7ff28ca2317c8d7"
@@ -1755,35 +1734,25 @@
   dependencies:
     "@opentelemetry/semantic-conventions" "1.3.1"
 
-"@opentelemetry/exporter-jaeger@1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/exporter-jaeger/-/exporter-jaeger-1.0.1.tgz#5fd03ec2e6e7878ee5348db4942717ecbdf8dea7"
-  integrity sha512-wDg2T62XtRqvLGRMCHCFs1RxxKhMf9Cy5SQCgvMYf6KA8iPJOYDAUE+V/zWTk7UBJnU9seW4JJgwvhxyLU5Fbg==
+"@opentelemetry/exporter-jaeger@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/exporter-jaeger/-/exporter-jaeger-1.3.1.tgz#00070e54abea51d5001acfaeb9fcfd537bf0d1d5"
+  integrity sha512-uJ9811zn5TTdazyTNc4xmcDnKC8H63VRGp23ujGTxBOCFUnFzfI/kUGUJ8/O7Xok9Ulop7wuuBW3onL1WedfjA==
   dependencies:
-    "@opentelemetry/core" "1.0.1"
-    "@opentelemetry/sdk-trace-base" "1.0.1"
-    "@opentelemetry/semantic-conventions" "1.0.1"
+    "@opentelemetry/core" "1.3.1"
+    "@opentelemetry/sdk-trace-base" "1.3.1"
+    "@opentelemetry/semantic-conventions" "1.3.1"
     jaeger-client "^3.15.0"
 
-"@opentelemetry/instrumentation-express@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-express/-/instrumentation-express-0.29.0.tgz#da47b7f40e81f2f4287af77c092e77a3a78785b8"
-  integrity sha512-7pSPNDw9mUlNBRDP20vBQfbVxdjrEz86WKVatIWz1lpJJSLofMFT/IgASt147wnHX05e6sb8wG7q6aRO61UVBg==
+"@opentelemetry/instrumentation-express@0.30.0":
+  version "0.30.0"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-express/-/instrumentation-express-0.30.0.tgz#4f5f45ce47c8f1ac75741284d3e59c861ced4269"
+  integrity sha512-OsCfM+ThAXh3wzsyHgXyA5HUoLMdLd6Asix2Jx8yxniruU/Gq8y4Cz7aLy/vXNckXHWO3fwwL5gb7K3dykTnAQ==
   dependencies:
     "@opentelemetry/core" "^1.0.0"
-    "@opentelemetry/instrumentation" "^0.28.0"
+    "@opentelemetry/instrumentation" "^0.29.2"
     "@opentelemetry/semantic-conventions" "^1.0.0"
     "@types/express" "4.17.13"
-
-"@opentelemetry/instrumentation-http@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-http/-/instrumentation-http-0.29.0.tgz#5f2606a9c2676a7d14be5d280fb84ef97a497bcd"
-  integrity sha512-6sWVRIC6XxTsdI0zCSfCZQXz+OFQF8Xt6Ufdhxn8GkDcl3kByaMIzKcA5Bl0tl6TNDelZsaXi0EteHZaT104LA==
-  dependencies:
-    "@opentelemetry/core" "1.3.0"
-    "@opentelemetry/instrumentation" "0.29.0"
-    "@opentelemetry/semantic-conventions" "1.3.0"
-    semver "^7.3.5"
 
 "@opentelemetry/instrumentation-http@0.29.2":
   version "0.29.2"
@@ -1795,32 +1764,12 @@
     "@opentelemetry/semantic-conventions" "1.3.1"
     semver "^7.3.5"
 
-"@opentelemetry/instrumentation@0.29.0":
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.29.0.tgz#9236487becba31cf5f74fc9086cebd1d101fb102"
-  integrity sha512-ROfEK7chRwCMo+5M9mvDQ9tZXskpqZJ1aWZmKqOR4uKkHaXGw6gA1nCxrEisfk6rVcE5SqZYrljYlB4ZXyp7RQ==
-  dependencies:
-    "@opentelemetry/api-metrics" "0.29.0"
-    require-in-the-middle "^5.0.3"
-    semver "^7.3.2"
-    shimmer "^1.2.1"
-
-"@opentelemetry/instrumentation@0.29.2":
+"@opentelemetry/instrumentation@0.29.2", "@opentelemetry/instrumentation@^0.29.2":
   version "0.29.2"
   resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.29.2.tgz#70e6d4e1a84508f5e9d8c7c426adcd7b0dba6c95"
   integrity sha512-LXx5V0ONNATQFCE8C5uqnxWSm4rcXLssdLHdXjtGdxRmURqj/JO8jYefqXCD0LzsqEQ6yxOx2GZ0dgXvhBVdTw==
   dependencies:
     "@opentelemetry/api-metrics" "0.29.2"
-    require-in-the-middle "^5.0.3"
-    semver "^7.3.2"
-    shimmer "^1.2.1"
-
-"@opentelemetry/instrumentation@^0.28.0":
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.28.0.tgz#152b1341be63991a9e940621e6b998b3d8d4ff9b"
-  integrity sha512-hcL+U02vp0vcouoMjoJArP0USBuBXnWF+sAt+Z5k77ROEcSCHZh0DkWigWGMyN8w3M5SpoqRlJiXLDM+9RtXNg==
-  dependencies:
-    "@opentelemetry/api-metrics" "0.28.0"
     require-in-the-middle "^5.0.3"
     semver "^7.3.2"
     shimmer "^1.2.1"
@@ -1847,6 +1796,14 @@
     "@opentelemetry/core" "1.0.1"
     "@opentelemetry/semantic-conventions" "1.0.1"
 
+"@opentelemetry/resources@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/resources/-/resources-1.3.1.tgz#9fd85ac4ffeefc35441404b384d5c1db8b243121"
+  integrity sha512-X8bl3X0YjlsHWy0Iv0KUETtZuRUznX4yr1iScKCtfy8AoRfZFc2xxWKMDJ0TrqYwSapgeg4YwpmRzUKmmnrbeA==
+  dependencies:
+    "@opentelemetry/core" "1.3.1"
+    "@opentelemetry/semantic-conventions" "1.3.1"
+
 "@opentelemetry/sdk-trace-base@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@opentelemetry/sdk-trace-base/-/sdk-trace-base-1.0.1.tgz#b88c72ac768eed58baab41552ce9070c57d5b7bf"
@@ -1855,6 +1812,15 @@
     "@opentelemetry/core" "1.0.1"
     "@opentelemetry/resources" "1.0.1"
     "@opentelemetry/semantic-conventions" "1.0.1"
+
+"@opentelemetry/sdk-trace-base@1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@opentelemetry/sdk-trace-base/-/sdk-trace-base-1.3.1.tgz#958083dbab928eefd17848959ac8810c787bec7f"
+  integrity sha512-Or95QZ+9QyvAiwqj+K68z8bDDuyWF50c37w17D10GV1dWzg4Ezcectsu/GB61QcBxm3Y4br0EN5F5TpIFfFliQ==
+  dependencies:
+    "@opentelemetry/core" "1.3.1"
+    "@opentelemetry/resources" "1.3.1"
+    "@opentelemetry/semantic-conventions" "1.3.1"
 
 "@opentelemetry/sdk-trace-node@1.0.1":
   version "1.0.1"
@@ -1872,11 +1838,6 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.0.1.tgz#9349c3860a53468fa2108b5df09aa843f22dbf94"
   integrity sha512-7XU1sfQ8uCVcXLxtAHA8r3qaLJ2oq7sKtEwzZhzuEXqYmjW+n+J4yM3kNo0HQo3Xp1eUe47UM6Wy6yuAvIyllg==
-
-"@opentelemetry/semantic-conventions@1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/semantic-conventions/-/semantic-conventions-1.3.0.tgz#0d740709fd65845c9cab215d5581e9fa80c59520"
-  integrity sha512-7lmGpLL/7EHQcLVBxxOesgQQS7JSxzF/Xqx7VNMxAQbo14dzJEX6Ks0hb4LHqEMpCrKpErWXi4JxYCGrRJgx9A==
 
 "@opentelemetry/semantic-conventions@1.3.1", "@opentelemetry/semantic-conventions@^1.0.0":
   version "1.3.1"
@@ -2816,9 +2777,9 @@ camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001358:
-  version "1.0.30001358"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001358.tgz#473d35dabf5e448b463095cab7924e96ccfb8c00"
-  integrity sha512-hvp8PSRymk85R20bsDra7ZTCpSVGN/PAz9pSAjPSjKC+rNmnUk5vCRgJwiTT/O4feQ/yu/drvZYpKxxhbFuChw==
+  version "1.0.30001359"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001359.tgz#a1c1cbe1c2da9e689638813618b4219acbd4925e"
+  integrity sha512-Xln/BAsPzEuiVLgJ2/45IaqD9jShtk3Y33anKb4+yLwQzws3+v6odKfpgES/cDEaZMLzSChpIGdbOYtH9MyuHw==
 
 catering@^2.1.0, catering@^2.1.1:
   version "2.1.1"
@@ -3168,9 +3129,9 @@ electron-fetch@^1.7.2:
     encoding "^0.1.13"
 
 electron-to-chromium@^1.4.164:
-  version "1.4.167"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.167.tgz#72424aebc85df12c5331d37b1bcfd1ae01322c55"
-  integrity sha512-lPHuHXBwpkr4RcfaZBKm6TKOWG/1N9mVggUpP4fY3l1JIUU2x4fkM8928smYdZ5lF+6KCTAxo1aK9JmqT+X71Q==
+  version "1.4.170"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.170.tgz#0415fc489402e09bfbe1f0c99bbf4d73f31d48d4"
+  integrity sha512-rZ8PZLhK4ORPjFqLp9aqC4/S1j4qWFsPPz13xmWdrbBkU/LlxMcok+f+6f8YnQ57MiZwKtOaW15biZZsY5Igvw==
 
 emittery@^0.10.2:
   version "0.10.2"
@@ -4008,9 +3969,9 @@ ipfs-unixfs@^6.0.3:
     protobufjs "^6.10.2"
 
 ipfs-utils@^9.0.6:
-  version "9.0.6"
-  resolved "https://registry.yarnpkg.com/ipfs-utils/-/ipfs-utils-9.0.6.tgz#b7657b8be101e0bb64402aeb631c64168075a5e4"
-  integrity sha512-/WfdwOIiJVb3uqfKRQ9Eo+vCEKsDgp7h4Pdc37MRwAiFciZ7xKAkEqsfXubV0VQi8x5jWTifeHn8WEPBLL451w==
+  version "9.0.7"
+  resolved "https://registry.yarnpkg.com/ipfs-utils/-/ipfs-utils-9.0.7.tgz#b8644b9d053e4dd258f69773b146ac243921aa1f"
+  integrity sha512-Umvb0Zydy2zZiTmQBGLfLISr8vOmXX8cxEIP+N8zGHrtRShG/j32yl1xd/BtS+Hbg0FIbVm3opwvxB2gmta0YA==
   dependencies:
     any-signal "^3.0.0"
     buffer "^6.0.1"
@@ -4845,10 +4806,10 @@ long@^4.0.0:
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
   integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
 
-lru-cache@7.10.1:
-  version "7.10.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.10.1.tgz#db577f42a94c168f676b638d15da8fb073448cab"
-  integrity sha512-BQuhQxPuRl79J5zSXRP+uNzPOyZw2oFI9JLRQ80XswSvg21KMKNtQza9eF42rfI/3Z40RvzBdXgziEkudzjo8A==
+lru-cache@7.10.2:
+  version "7.10.2"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.10.2.tgz#aab494e0768ce94f199ef553ffe0a362f2a58bb9"
+  integrity sha512-9zDbhgmXAUvUMPV81A705K3tVzcPiZL3Bf5/5JC/FjYJlLZ5AJCeqIRFHJqyBppiLosqF+uKB7p8/RDXylqBIw==
 
 lru-cache@^4.1.3:
   version "4.1.5"
@@ -5868,10 +5829,10 @@ sequelize-pool@^7.1.0:
   resolved "https://registry.yarnpkg.com/sequelize-pool/-/sequelize-pool-7.1.0.tgz#210b391af4002762f823188fd6ecfc7413020768"
   integrity sha512-G9c0qlIWQSK29pR/5U2JF5dDQeqqHRragoyahj/Nx4KOOQ3CPPfzxnfqFPCSB7x5UgjOgnZ61nSxz+fjDpRlJg==
 
-sequelize@6.21.0:
-  version "6.21.0"
-  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.0.tgz#8b3858a1257a4e8741faece714683a43dc44dafa"
-  integrity sha512-QItP+QMoZL7KWaYtmRRb41sQ9Ua+dpWQbdREO4jYIUBg5hUfRiGq2i2/gAa25B84ft0EzDPY3UvCQS945ytNvA==
+sequelize@6.21.1:
+  version "6.21.1"
+  resolved "https://registry.yarnpkg.com/sequelize/-/sequelize-6.21.1.tgz#91d3030c42e0a31125b501686e348bf4bd73a963"
+  integrity sha512-vbRreGOdBFLoGUrSINaNVLnaGZGSjhLq2b80tBezuqxbumMG3V2QkCnsvgggQ+LoRVYxERwWin1BL7YO4b5PSQ==
   dependencies:
     "@types/debug" "^4.1.7"
     "@types/validator" "^13.7.1"
@@ -6382,9 +6343,9 @@ unpipe@1.0.0, unpipe@~1.0.0:
   integrity sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==
 
 update-browserslist-db@^1.0.0:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.0.3.tgz#6c47cb996f34afb363e924748e2f6e4d983c6fc1"
-  integrity sha512-ufSazemeh9Gty0qiWtoRpJ9F5Q5W3xdIPm1UZQqYQv/q0Nyb9EMHUB2lu+O9x1re9WsorpMAUu4Y6Lxcs5n+XQ==
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/update-browserslist-db/-/update-browserslist-db-1.0.4.tgz#dbfc5a789caa26b1db8990796c2c8ebbce304824"
+  integrity sha512-jnmO2BEGUjsMOe/Fg9u0oczOe/ppIDZPebzccl1yDWGLFP16Pa1/RM5wEoKYPG2zstNcDuAStejyxsOuKINdGA==
   dependencies:
     escalade "^3.1.1"
     picocolors "^1.0.0"
