@@ -1,4 +1,5 @@
 import {Sequelize} from 'sequelize';
+import {sqlite3} from 'sqlite3';
 import {log} from '@jovijovi/pedrojs-log';
 
 export namespace Sqlite {
@@ -57,6 +58,8 @@ export namespace Sqlite {
 		}
 
 		const s = new Sequelize(cfg.uri, {
+			dialectModule: sqlite3,
+			dialect: 'sqlite',
 			logging: logging,
 		})
 
