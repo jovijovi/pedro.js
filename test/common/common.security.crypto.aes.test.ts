@@ -8,6 +8,13 @@ test('Encrypt/Decrypt', () => {
 	const cipherText = security.crypto.aes.Encrypt(mockUserKey, mockPlainText);
 	console.log("cipherText=", cipherText);
 
+	try {
+		// Try to decrypt with invalid cipherText
+		security.crypto.aes.Decrypt(mockUserKey, '');
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
 	const plainText = security.crypto.aes.Decrypt(mockUserKey, cipherText);
 	console.log("plainText=", plainText);
 

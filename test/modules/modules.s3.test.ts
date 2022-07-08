@@ -148,3 +148,57 @@ test('Delete Bucket', async () => {
 	// Close
 	engine.destroy();
 })
+
+test('Error: Connection failed', async () => {
+	// Invalid AK
+	try {
+		await S3.Connect({
+			accessKey: "",
+			secretKey: "minio123",
+			endpoint: "http://localhost:9000",
+			region: "local",
+			forcePathStyle: true,
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	// Invalid SK
+	try {
+		await S3.Connect({
+			accessKey: "minio",
+			secretKey: "",
+			endpoint: "http://localhost:9000",
+			region: "local",
+			forcePathStyle: true,
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	// Invalid endpoint
+	try {
+		await S3.Connect({
+			accessKey: "minio",
+			secretKey: "minio123",
+			endpoint: "",
+			region: "local",
+			forcePathStyle: true,
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	// Invalid region
+	try {
+		await S3.Connect({
+			accessKey: "minio",
+			secretKey: "minio123",
+			endpoint: "http://localhost:9000",
+			region: "",
+			forcePathStyle: true,
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+})

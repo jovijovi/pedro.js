@@ -83,3 +83,14 @@ test('Connection', async () => {
 	// Close
 	await engine.Close();
 })
+
+test('Error: Connection failed', async () => {
+	try {
+		const engine = Sqlite.Connect({
+			uri: '',
+		});
+		await engine.Ping();
+	} catch (e) {
+		console.log("Expected Error=", e);
+	}
+})

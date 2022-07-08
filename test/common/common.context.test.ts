@@ -66,3 +66,11 @@ test('Born Context Chain', () => {
 		console.log("Ctx(%d) Id=", i, id);
 	}
 })
+
+test('Born Context Chain root with random ID provider', () => {
+	// Born 1st generation
+	const root = context.Born({
+		max: 5,
+	});
+	console.log("Root=", root);
+})

@@ -26,3 +26,14 @@ test('Connection', async () => {
 
 	assert.notStrictEqual(value2, value1);
 })
+
+test('Error: Connection failed', async () => {
+	try {
+		// Connect
+		await Leveldb.Connect({
+			dbname: '',
+		});
+	} catch (e) {
+		console.debug("Expect Error=", e);
+	}
+})
