@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-network",
-  "version": "1.1.5",
+  "version": "1.1.9",
   "description": "Network package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@jovijovi/pedrojs-common": "1.1.5",
-    "@jovijovi/pedrojs-tracing": "1.1.5",
+    "@jovijovi/pedrojs-common": "1.1.9",
+    "@jovijovi/pedrojs-tracing": "1.1.9",
     "@types/body-parser": "1.19.2",
     "@types/express": "4.17.13",
     "@types/ws": "^8.5.3",
