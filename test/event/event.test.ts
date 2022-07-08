@@ -119,6 +119,40 @@ test('AddPayload', () => {
 	assert.strictEqual(Buffer.from(event.data.payload.digest as Uint8Array).toString('hex'), mockEventPayloadHashString);
 })
 
+test('Error: AddPayload with invalid params', () => {
+	const event = NSEvent.New();
+
+	// Add payload with invalid id
+	try {
+		event.AddPayload('',
+			'TestCategory',
+			Buffer.from('1234567890'),
+			security.crypto.elliptic.SHA256);
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	// Add payload with invalid category
+	try {
+		event.AddPayload('2f52ef17-d127-497e-b7ee-a09042c2054d',
+			'',
+			Buffer.from('1234567890'),
+			security.crypto.elliptic.SHA256);
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	// Add payload with invalid raw
+	try {
+		event.AddPayload('2f52ef17-d127-497e-b7ee-a09042c2054d',
+			'TestCategory',
+			undefined,
+			security.crypto.elliptic.SHA256);
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+})
+
 test('Event Sign/Verify', () => {
 	const evt = NSEvent.New();
 	evt.SetEventNamespace('namespace');

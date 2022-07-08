@@ -39,3 +39,12 @@ test('CacheSet', () => {
 	assert.strictEqual(b, null);
 })
 
+test('Get empty set', () => {
+	// New cache set
+	const set = cache.New();
+
+	// New cache1
+	set.New("Cache1", {});
+	const empty = set.Get(null);
+	assert.strictEqual(empty, null);
+})

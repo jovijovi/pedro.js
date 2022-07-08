@@ -69,4 +69,35 @@ test('Connection', async () => {
 		}
 	})
 	console.log("FindAll=", await Animal.findAll());
+
+	// Close
+	await engine.close();
 })
+
+test('Connection in another way', async () => {
+	// Connect
+	// URI: mysql://root:example@localhost:3306/mock_pedro
+	const engine = Mysql.Connect({
+		db: "mock_pedro",
+		ip: "localhost",
+		port: 3306,
+		secret: "example",
+		user: "root",
+		uri: "",
+	});
+
+	// Ping
+	await Mysql.Ping(engine);
+
+	// Close
+	await engine.close();
+
+	// Ping again
+	// It will be failed if ping again since the client is already closed
+	try {
+		await Mysql.Ping(engine);
+	} catch (e) {
+		console.debug("Expect Error=", e);
+	}
+})
+

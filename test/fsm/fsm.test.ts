@@ -12,7 +12,12 @@ test('FSM', () => {
 	evt2.SetName('CloseDoor');
 	evt2.SetSrc('DoorOpened');
 
-	// New a FSM
+	// New event 3 (invalid event)
+	const evt3 = NSEvent.New();
+	evt3.SetName('Knock Knock');
+	evt3.SetSrc('DoorClosed');
+
+	// New an FSM
 	const fsm = NSFSM.New({
 		id: 'test-id-1',
 		initial: NSFSM.NewState('DoorClosed'),
@@ -63,6 +68,22 @@ test('FSM', () => {
 	]));
 	console.log("Response2=", rsp2);
 	console.log("Current State2=", rsp2.state.value);
+
+	// "Knock Knock" (invalid event)
+	const rsp3 = fsm.On(evt3);
+	console.log("Response3=", rsp3);
+	console.log("Current State3=", rsp3.state.value);
+
+	// Open door again
+	const rsp4 = fsm.On(evt1, (ctx) => {
+		console.log(ctx.get('who'), ctx.get('what'), "an error!");
+		throw new Error("An mock error!");
+	}, new Map([
+		['who', 'FooBar'],
+		['what', 'throw'],
+	]));
+	console.log("Response4=", rsp4);
+	console.log("Current State4=", rsp4.state.value);
 
 	// Close FSM (unsafe)
 	fsm.Close();

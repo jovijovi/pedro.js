@@ -58,3 +58,37 @@ test('Connection', async () => {
 	console.log(`Number of items named "Pedro": ${data.all.length}`);
 	data.all.forEach(person => console.log("Name=", person.name));
 })
+
+test('Error: Connection failed', async () => {
+	try {
+		// Connect with invalid URI
+		await Dgraph.Connect({
+			uri: '',
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	try {
+		// Connect with invalid userid & password
+		await Dgraph.Connect({
+			userid: 'foobar',
+			password: 'example',
+			uri: 'http://localhost:8080',
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+
+	try {
+		// Connect with invalid cert
+		await Dgraph.Connect({
+			ca: './test/mock/hello.txt',
+			cert: './test/mock/hello.txt',
+			key: './test/mock/hello.txt',
+			uri: 'http://localhost:8080',
+		});
+	} catch (e) {
+		console.debug("Expected Error=", e);
+	}
+}, 10000)

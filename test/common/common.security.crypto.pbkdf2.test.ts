@@ -95,7 +95,7 @@ test('EncryptPassword with random salt', async () => {
 		salt: security.crypto.salt.NewSalt(16),
 	})).toString('hex'));
 
-	// Encrypt password with iterations 42, and it'll occur an error
+	// Encrypt password with iterations 42, and it'll return an error
 	try {
 		console.log("Key(%d)=", 6, (await security.crypto.pbkdf2.EncryptPassword({
 			digest: "sha512",
@@ -105,11 +105,11 @@ test('EncryptPassword with random salt', async () => {
 			salt: security.crypto.salt.NewSalt(16),
 		})).toString('hex'));
 	} catch (e) {
-		// When iterations < 1000, will occur an error
+		// When iterations < 1000, will return an error
 		console.log(e)
 	}
 
-	// Encrypt password with new salt (8bytes), and it'll occurs an error
+	// Encrypt password with new salt (8bytes), and it'll return an error
 	try {
 		console.log("Key(%d)=", 7, (await security.crypto.pbkdf2.EncryptPassword({
 			digest: "sha512",
@@ -119,7 +119,21 @@ test('EncryptPassword with random salt', async () => {
 			salt: security.crypto.salt.NewSalt(8),
 		})).toString('hex'));
 	} catch (e) {
-		// When salt size < 16, will occur an error
+		// When salt size < 16, will return an error
+		console.log(e)
+	}
+
+	// Encrypt password with invalid digest, and it'll return an error
+	try {
+		console.log("Key(%d)=", 7, (await security.crypto.pbkdf2.EncryptPassword({
+			digest: "FooBarDigest",
+			keyLen: 64,
+			iterations: 100000,
+			password: _mockPassword,
+			salt: security.crypto.salt.NewSalt(16),
+		})).toString('hex'));
+	} catch (e) {
+		// It will return an error if with invalid digest
 		console.log(e)
 	}
 })
