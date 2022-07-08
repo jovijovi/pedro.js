@@ -3,7 +3,31 @@ import {IPFS} from '../../lib/modules/ipfs';
 
 const _mockCID = 'QmYAXgX8ARiriupMQsbGXtKdDyGzWry1YV3sycKw1qqmgH';
 
-test('Connection Failed', async () => {
+test('Error: Connection failed', async () => {
+	try {
+		// Connect with empty config
+		await IPFS.Connect(null);
+	} catch (e) {
+		console.debug("Expect Error=", e);
+	}
+
+	try {
+		// Connect with invalid URL
+		await IPFS.Connect({
+			url: '',
+			enable: true,
+		});
+	} catch (e) {
+		console.debug("Expect Error=", e);
+	}
+
+	// Connect disabled
+	const emptyEngine = IPFS.Connect({
+		url: 'http://127.0.0.1:56789',
+		enable: false,
+	});
+	expect(emptyEngine).toBeNull();
+
 	// Connect
 	const engine = IPFS.Connect({
 		url: 'http://127.0.0.1:56789',
@@ -16,7 +40,7 @@ test('Connection Failed', async () => {
 		console.log("IPFS node is not online");
 	}
 	expect(isOnline).toBeFalsy();
-})
+}, 10000)
 
 test('Connection Successfully', async () => {
 	// Connect
@@ -31,7 +55,7 @@ test('Connection Successfully', async () => {
 		console.log("IPFS node is not online");
 	}
 	expect(isOnline).toBeTruthy();
-})
+}, 10000)
 
 test('Add/Cat File', async () => {
 	// Connect
@@ -65,4 +89,4 @@ test('Add/Cat File', async () => {
 	const chunkString = chunks.toString();
 	console.log("Data=", chunkString);
 	expect(chunkString).toMatch(content);
-})
+}, 10000)

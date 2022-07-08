@@ -7,6 +7,12 @@ test('NewNanoID', () => {
 	assert.strictEqual(id.length, 32);
 })
 
+test('NewNanoID with null', () => {
+	const id = util.nanoid.NewNanoID(null);
+	console.log("NewNanoID=", id);
+	assert.strictEqual(id.length, 32);
+})
+
 test('CustomNanoID', () => {
 	const regExp = new RegExp('^[a-c1-3]+$')
 
