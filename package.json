@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedro.js",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Pedro.js is a microservice toolkit written in TypeScript",
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
@@ -70,7 +70,7 @@
     "level": "^8.0.0",
     "log4js": "^6.6.0",
     "lru-cache": "7.12.0",
-    "mongoose": "^6.4.3",
+    "mongoose": "^6.4.4",
     "mysql2": "^2.3.3",
     "nanoid": "3.3.4",
     "node-schedule": "^2.1.0",
