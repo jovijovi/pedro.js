@@ -1,15 +1,14 @@
 import {env} from 'process';
 import {twofa} from '@jovijovi/two-fa.js';
-import cron = require('node-schedule');
 
 const key = env.AUTH_2FA_KEY;
 const defaultHeader = 'Authorization';
 const maxCodeLimit = 2;
 const validCode: string[] = [];
 
-cron.scheduleJob('*/30 * * * * *', function () {
+const timer = setInterval(() => {
 	if (!key) {
-		cron.gracefulShutdown();
+		clearInterval(timer);
 		return;
 	}
 
@@ -18,7 +17,7 @@ cron.scheduleJob('*/30 * * * * *', function () {
 	if (validCode.length > maxCodeLimit) {
 		validCode.shift();
 	}
-});
+}, 30 * 1000);
 
 export function TwoFAToken(req, res, next) {
 	if (!key) {

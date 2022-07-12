@@ -57,7 +57,7 @@ test('Connection', async () => {
 	console.log("Data=", data);
 	console.log(`Number of items named "Pedro": ${data.all.length}`);
 	data.all.forEach(person => console.log("Name=", person.name));
-})
+}, 20000)
 
 test('Error: Connection failed', async () => {
 	try {
