@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-log",
-  "version": "1.1.9",
+  "version": "1.1.12",
   "description": "Log package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-version": "^1.0.12",
-    "log4js": "6.6.0"
+    "log4js": "6.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
