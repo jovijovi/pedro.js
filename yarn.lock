@@ -1538,42 +1538,42 @@
   dependencies:
     "@jovijovi/two-fa.js" "^0.2.5"
 
-"@jovijovi/pedrojs-common@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.9.tgz#a8cfb95f5ccbfe0db222ba2cdab59b6fa7949bf4"
-  integrity sha512-IxlZp5m/C4qEvifyNPJNxx4f2cp7B4OmjoCt3LHNY9uPgFsyufR0Nd3oi+RjDXcnY3jx6u8j5m2b5MkH7vsJfg==
+"@jovijovi/pedrojs-common@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.12.tgz#cbd386e73029224077ba026da3b5518b47e60265"
+  integrity sha512-sTbaXBeD+CwtQxNsqOqdbdFqN/m1UNl6iRjZDcmhAhiYzHQ3/z4jLcP5mFy9IKdqc1VIF24SsIcoYr0COEy1WA==
   dependencies:
     "@jovijovi/pedrojs-version" "^1.0.12"
-    commander "9.3.0"
-    dayjs "1.11.3"
-    log4js "6.6.0"
-    lru-cache "7.12.0"
+    commander "9.4.0"
+    dayjs "1.11.4"
+    log4js "6.6.1"
+    lru-cache "7.13.2"
     nanoid "3.3.4"
     yaml "2.1.1"
 
-"@jovijovi/pedrojs-event@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.9.tgz#c08b4a8dd9172be99035c8bc051eeb50bdcbbbcf"
-  integrity sha512-rA/7VJbXspxaIZ2imZ8znSjkJlhUh2gvd8K0KNhAL2bjngblQUwMy80lW8OmFus4y7lXwprhzyFHTpCPazbJMg==
+"@jovijovi/pedrojs-event@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.12.tgz#93cfad2bfa5e2b9355b774bc4033147682058823"
+  integrity sha512-ZHKZUIXdcx+Z8zW6dZR9rXExSDDNo6r8EMZWWbuIfKc3lCzPscih9dchxWOi5TOThr6BtOUhmCzY96+/DEHAfQ==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.9"
+    "@jovijovi/pedrojs-common" "1.1.12"
     "@jovijovi/pedrojs-types" "^1.0.5"
 
-"@jovijovi/pedrojs-log@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-log/-/pedrojs-log-1.1.9.tgz#5e6b124ea5e5b04e272e42578f7c758f11290cf9"
-  integrity sha512-x8g6K9bWEc0oaKq3X1/HCxGlmnKq8c6snMtWkaZFvzhucCuOCiAuDUEVZ7MNHF05xsxxpVLVn9oe4Ny8WHLpjg==
+"@jovijovi/pedrojs-log@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-log/-/pedrojs-log-1.1.12.tgz#b3fc5ab561334df4a1ce5cc2ff404b58a79be9e4"
+  integrity sha512-1mBbVtJCSdRW+6q13G2Z8cBHq9awUk8SZ/WBSDJLQyU3F6HC/SR5oPuwBcCnLCabqkCuZ1pY8GIcEuI01VZ9tQ==
   dependencies:
     "@jovijovi/pedrojs-version" "^1.0.12"
-    log4js "6.6.0"
+    log4js "6.6.1"
 
-"@jovijovi/pedrojs-network@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.9.tgz#d3f048c8d444595bf3fb9b8271404c59d8962ff4"
-  integrity sha512-/CVVEXniUgChlGP4KyQFbZ17L3Dub8yODZJMsL8feiW+1XV/vbRUDJp/PpB7G63CX9jMD+ZGbGJD/UNxw1cT8Q==
+"@jovijovi/pedrojs-network@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.12.tgz#3d26094b8c68abe31698a8eab308bd42fa9d5705"
+  integrity sha512-NA/iJ6Mubr7COvnDLi+K3nyegekp2rbmDJvFQsFH1rrShqv0ucrE1V+5IMno18k7u/gnxnzVeej6KWTCYXfFsw==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.9"
-    "@jovijovi/pedrojs-tracing" "1.1.9"
+    "@jovijovi/pedrojs-common" "1.1.12"
+    "@jovijovi/pedrojs-tracing" "1.1.12"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.13"
     "@types/ws" "^8.5.3"
@@ -1581,17 +1581,17 @@
     express "4.18.1"
     jayson "3.6.6"
     nanoid "3.3.4"
-    ws "8.8.0"
+    ws "8.8.1"
 
-"@jovijovi/pedrojs-tracing@1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.9.tgz#9debc6476481ed717cde2940d95e4755ae406d6f"
-  integrity sha512-PFh03cv9Mh80JdP2OYMFYnlkRqYsQAlOZvWvCvtgiGoyJvv+pdHVsGqNZYEYt82Nic/XBhYfv4VA2E9+WH+E0g==
+"@jovijovi/pedrojs-tracing@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.12.tgz#773d7e6276e4b50e9f68d8bd361ce95328db3686"
+  integrity sha512-uLBsEdTTBVwA9j5MkOcYkLfqYiZ5oNoFSXmR9x9lh3BrfER0gpCkBY8ZzEBXpgm+lLpsU6zNpKd6iGLAxENW+A==
   dependencies:
     "@opentelemetry/api" "1.1.0"
     "@opentelemetry/exporter-jaeger" "1.4.0"
     "@opentelemetry/instrumentation-express" "0.30.0"
-    "@opentelemetry/instrumentation-http" "0.30.0"
+    "@opentelemetry/instrumentation-http" "0.31.0"
     "@opentelemetry/sdk-trace-node" "1.4.0"
 
 "@jovijovi/pedrojs-types@1.0.5", "@jovijovi/pedrojs-types@^1.0.5":
@@ -1719,13 +1719,6 @@
   dependencies:
     "@opentelemetry/api" "^1.0.0"
 
-"@opentelemetry/api-metrics@0.30.0":
-  version "0.30.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.30.0.tgz#b5defd10756e81d1c7ce8669ff8a8d2465ba0be8"
-  integrity sha512-jSb7iiYPY+DSUKIyzfGt0a5K1QGzWY5fSWtUB8Alfi27NhQGHBeuYYC5n9MaBP/HNWw5GpEIhXGEYCF9Pf8IEg==
-  dependencies:
-    "@opentelemetry/api" "^1.0.0"
-
 "@opentelemetry/api-metrics@0.31.0":
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.31.0.tgz#0ed4cf4d7c731f968721c2b303eaf5e9fd42f736"
@@ -1777,16 +1770,6 @@
     "@opentelemetry/semantic-conventions" "^1.0.0"
     "@types/express" "4.17.13"
 
-"@opentelemetry/instrumentation-http@0.30.0":
-  version "0.30.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-http/-/instrumentation-http-0.30.0.tgz#312ef25defbff750dd9082356bb9a9137ed5fd82"
-  integrity sha512-OhiuzR2mhlTcaXD1dYW/dqnC/zjIKHp2NWMUyDHEd4xS6NZAiTU5mNDv57Y9on+/VwYXWUZZ2tB7AOVPsFUIOg==
-  dependencies:
-    "@opentelemetry/core" "1.4.0"
-    "@opentelemetry/instrumentation" "0.30.0"
-    "@opentelemetry/semantic-conventions" "1.4.0"
-    semver "^7.3.5"
-
 "@opentelemetry/instrumentation-http@0.31.0":
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-http/-/instrumentation-http-0.31.0.tgz#5c6dea9cdb636543c6ed1f1a4e55d4422e50fa89"
@@ -1796,16 +1779,6 @@
     "@opentelemetry/instrumentation" "0.31.0"
     "@opentelemetry/semantic-conventions" "1.5.0"
     semver "^7.3.5"
-
-"@opentelemetry/instrumentation@0.30.0":
-  version "0.30.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.30.0.tgz#97cca611bd276439cc4e01e0516e50cbbb1e3459"
-  integrity sha512-9bjRx81B6wbJ7CGWc/WCUfcb0QIG5UIcjnPTzwYIURjYPd8d0ZzRlrnqEdQG62jn4lSPEvnNqTlyC7qXtn9nAA==
-  dependencies:
-    "@opentelemetry/api-metrics" "0.30.0"
-    require-in-the-middle "^5.0.3"
-    semver "^7.3.2"
-    shimmer "^1.2.1"
 
 "@opentelemetry/instrumentation@0.31.0":
   version "0.31.0"
@@ -2933,11 +2906,6 @@ color-support@^1.1.2, color-support@^1.1.3:
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
   integrity sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==
 
-commander@9.3.0:
-  version "9.3.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-9.3.0.tgz#f619114a5a2d2054e0d9ff1b31d5ccf89255e26b"
-  integrity sha512-hv95iU5uXPbK83mjrJKuZyFM/LBAoCV/XhVGkS5Je6tl7sxr6A0ITMw5WoRV46/UaJ46Nllm3Xt7IaJhXTIkzw==
-
 commander@9.4.0:
   version "9.4.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
@@ -3009,15 +2977,10 @@ dag-jose@^1.0.0:
     "@ipld/dag-cbor" "^6.0.3"
     multiformats "^9.0.2"
 
-date-format@^4.0.11, date-format@^4.0.13:
+date-format@^4.0.13:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/date-format/-/date-format-4.0.13.tgz#87c3aab3a4f6f37582c5f5f63692d2956fa67890"
   integrity sha512-bnYCwf8Emc3pTD8pXnre+wfnjGtfi5ncMDKy7+cWZXbmRAsdWkOQHrfC1yz/KiwP5thDp2kCHWYWKBX4HP1hoQ==
-
-dayjs@1.11.3:
-  version "1.11.3"
-  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.3.tgz#4754eb694a624057b9ad2224b67b15d552589258"
-  integrity sha512-xxwlswWOlGhzgQ4TKzASQkUhqERI3egRNqgV4ScR8wlANA/A9tZ7miXa44vTTKEq5l7vWoL5G57bG3zA+Kow0A==
 
 dayjs@1.11.4:
   version "1.11.4"
@@ -3564,7 +3527,7 @@ flat-cache@^3.0.4:
     flatted "^3.1.0"
     rimraf "^3.0.2"
 
-flatted@^3.1.0, flatted@^3.2.5, flatted@^3.2.6:
+flatted@^3.1.0, flatted@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.6.tgz#022e9218c637f9f3fc9c35ab9c9193f05add60b2"
   integrity sha512-0sQoMh9s0BYsm+12Huy/rkKxVu4R1+r96YX5cG44rHV0pQ6iC3Q+mkoMFaGWObMFYQxCVT+ssG1ksneA2MI9KQ==
@@ -4817,18 +4780,7 @@ lodash@^4.17.20, lodash@^4.17.21:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
-log4js@6.6.0:
-  version "6.6.0"
-  resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.6.0.tgz#e8fd00143d1e0ecf1d10959bb69b90b1b30137f3"
-  integrity sha512-3v8R7fd45UB6THucSht6wN2/7AZEruQbXdjygPZcxt5TA/msO6si9CN5MefUuKXbYnJHTBnYcx4famwcyQd+sA==
-  dependencies:
-    date-format "^4.0.11"
-    debug "^4.3.4"
-    flatted "^3.2.5"
-    rfdc "^1.3.0"
-    streamroller "^3.1.1"
-
-log4js@^6.6.1:
+log4js@6.6.1, log4js@^6.6.1:
   version "6.6.1"
   resolved "https://registry.yarnpkg.com/log4js/-/log4js-6.6.1.tgz#48f23de8a87d2f5ffd3d913f24ca9ce77895272f"
   integrity sha512-J8VYFH2UQq/xucdNu71io4Fo+purYYudyErgBbswWKO0MC6QVOERRomt5su/z6d3RJSmLyTGmXl3Q/XjKCf+/A==
@@ -4853,11 +4805,6 @@ long@^5.0.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/long/-/long-5.2.0.tgz#2696dadf4b4da2ce3f6f6b89186085d94d52fd61"
   integrity sha512-9RTUNjK60eJbx3uz+TEGF7fUr29ZDxR5QzXcyDpeSfeH28S9ycINflOgOlppit5U+4kNTe83KQnMEerw7GmE8w==
-
-lru-cache@7.12.0:
-  version "7.12.0"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.12.0.tgz#be2649a992c8a9116efda5c487538dcf715f3476"
-  integrity sha512-OIP3DwzRZDfLg9B9VP/huWBlpvbkmbfiBy8xmsXp4RPmE4A3MhwNozc5ZJ3fWnSg8fDcdlE/neRTPG2ycEKliw==
 
 lru-cache@7.13.2:
   version "7.13.2"
@@ -5720,7 +5667,7 @@ receptacle@^1.3.2:
   dependencies:
     ms "^2.1.1"
 
-redis@^4.2.0:
+redis@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/redis/-/redis-4.2.0.tgz#1278a265b8aa1e096a585d103bdead027cd04e43"
   integrity sha512-bCR0gKVhIXFg8zCQjXEANzgI01DDixtPZgIUZHBCmwqixnu+MK3Tb2yqGjh+HCLASQVVgApiwhNkv+FoedZOGQ==
@@ -6078,7 +6025,7 @@ stream-to-it@^0.2.2:
   dependencies:
     get-iterator "^1.0.2"
 
-streamroller@^3.1.1, streamroller@^3.1.2:
+streamroller@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/streamroller/-/streamroller-3.1.2.tgz#abd444560768b340f696307cf84d3f46e86c0e63"
   integrity sha512-wZswqzbgGGsXYIrBYhOE0yP+nQ6XRk7xDcYwuQAGTYXdyAUmvgVFE0YU1g5pvQT0m7GBaQfYcSnlHbapuK0H0A==
@@ -6548,11 +6495,6 @@ write-file-atomic@^4.0.1:
   dependencies:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.7"
-
-ws@8.8.0:
-  version "8.8.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.0.tgz#8e71c75e2f6348dbf8d78005107297056cb77769"
-  integrity sha512-JDAgSYQ1ksuwqfChJusw1LSJ8BizJ2e/vVu5Lxjq3YvNJNlROv1ui4i+c/kUUrPheBvQl4c5UbERhTwKa6QBJQ==
 
 ws@8.8.1:
   version "8.8.1"
