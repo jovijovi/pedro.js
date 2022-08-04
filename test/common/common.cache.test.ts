@@ -1,7 +1,7 @@
-import {cache} from '../../lib/common';
+import {cache, util} from '../../lib/common';
 import assert from 'assert';
 
-test('CacheSet', () => {
+test('CacheSet', async () => {
 	// New cache set
 	const set = cache.New();
 
@@ -19,11 +19,23 @@ test('CacheSet', () => {
 
 	// New cache2
 	const cache2 = set.New("Cache2", {
-		max: 2,
-		ttl: 1000 * 30,
+		max: 4,
+		ttl: 1000 * 4,
+		updateAgeOnGet: true,
 	});
 	cache2.set('key2', 'value2');
-	console.log("Cache2.Key=%o", cache2.get('key2'));
+	cache2.set('key3', 'value3');
+	cache2.set('key4', 'value4');
+	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	await util.time.SleepSeconds(2);
+	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	await util.time.SleepSeconds(2);
+	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	await util.time.SleepSeconds(2);
+	console.log("Cache2.Key2=%o", cache2.get('key2'));
+	console.log("Cache2.Key3=%o", cache2.get('key3'));
+	console.log("Cache2.Key4=%o", cache2.get('key4'));
+	console.log("Cache2.Key2=%o", cache2.get('key2'));
 	assert.strictEqual(cache2.get('key2'), 'value2');
 
 	// Clear cache set
@@ -37,14 +49,19 @@ test('CacheSet', () => {
 	assert.strictEqual(a, null);
 	const b = set.Get("Cache2");
 	assert.strictEqual(b, null);
-})
+}, 100000)
 
 test('Get empty set', () => {
 	// New cache set
 	const set = cache.New();
 
 	// New cache1
-	set.New("Cache1", {});
+	try {
+		set.New("Cache1", {});
+	} catch (e) {
+		console.debug("Expected error=", e);
+	}
+
 	const empty = set.Get(null);
 	assert.strictEqual(empty, null);
 })
