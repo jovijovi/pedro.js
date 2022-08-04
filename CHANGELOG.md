@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.1.13](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.13)
+
+Fixes:
+
+- (common/cache): pass through custom options
+
+## [v1.1.12](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.12)
+
+Build:
+
+- Bump packages
+
 ## [v1.1.10](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.10)
 
 Fixes:
@@ -15,7 +27,7 @@ Build:
 
 Features:
 
-- feat(modules/sqlite): specify the sqlite3 module explicitly
+- (modules/sqlite): specify the sqlite3 module explicitly
 
 Test:
 
@@ -35,7 +47,7 @@ Build:
 
 Features:
 
-- feat(common/util/random): random seed
+- (common/util/random): random seed
 
 Build:
 
@@ -51,8 +63,8 @@ Build:
 
 Features:
 
-- feat(network/http): use custom middleware
-- feat(network/http/middleware/twofa-token): API authorization based on 2FA
+- (network/http): use custom middleware
+- (network/http/middleware/twofa-token): API authorization based on 2FA
 
 ## [v1.1.0](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.0)
 
