@@ -5,6 +5,11 @@ export namespace NSCacheSet {
 		[name: string]: LRUCache<any, any>;
 	}
 
+	const defaultOpts = {
+		max: 10,
+		ttl: 1000 * 60,
+	};
+
 	interface ICacheSet {
 		// New returns a new cache
 		New(name: string, opts?: LRUCache.Options<any, any>): LRUCache<any, any>;
@@ -21,18 +26,8 @@ export namespace NSCacheSet {
 
 		// New returns a new cache, default age 60s
 		New(name: string, opts?: any): LRUCache<any, any> {
-			const defaultOpts = {
-				max: 10,
-				ttl: 1000 * 60,
-			};
-
-			if (opts) {
-				defaultOpts.max = opts.max ? opts.max : 10;
-				defaultOpts.ttl = opts.ttl ? opts.ttl : 1000 * 60;
-			}
-
 			if (!this._cacheStore[name]) {
-				this._cacheStore[name] = new LRUCache(defaultOpts);
+				this._cacheStore[name] = new LRUCache(opts ? opts : defaultOpts);
 			}
 
 			return this._cacheStore[name];
