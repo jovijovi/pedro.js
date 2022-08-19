@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedro.js",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "Pedro.js is a microservice toolkit written in TypeScript",
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
