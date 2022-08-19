@@ -26,17 +26,36 @@ test('CacheSet', async () => {
 	cache2.set('key2', 'value2');
 	cache2.set('key3', 'value3');
 	cache2.set('key4', 'value4');
+	console.log("###################################");
 	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
 	await util.time.SleepSeconds(2);
 	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
 	await util.time.SleepSeconds(2);
 	console.log("Cache2.Key2=%o", cache2.get('key2'));  // Update age(ttl) by 'get'
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
 	await util.time.SleepSeconds(2);
 	console.log("Cache2.Key2=%o", cache2.get('key2'));
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
 	console.log("Cache2.Key3=%o", cache2.get('key3'));
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
 	console.log("Cache2.Key4=%o", cache2.get('key4'));
 	console.log("Cache2.Key2=%o", cache2.get('key2'));
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	console.log("Cache2.Key3 TTL=", cache2.getRemainingTTL('key3'));
+	console.log("###################################");
 	assert.strictEqual(cache2.get('key2'), 'value2');
+	await util.time.SleepSeconds(2);
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	await util.time.SleepSeconds(2);
+	console.log("Cache2.Key2 TTL=", cache2.getRemainingTTL('key2'));
+	assert.strictEqual(cache2.get('key2'), undefined);
 
 	// Clear cache set
 	set.Clear();
