@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedrojs-common",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Common packages for pedro.js",
   "main": "index.js",
   "module": "index.js",
@@ -8,9 +8,9 @@
   "dependencies": {
     "@jovijovi/pedrojs-version": "^1.0.12",
     "commander": "9.4.0",
-    "dayjs": "1.11.4",
+    "dayjs": "1.11.5",
     "log4js": "6.6.1",
-    "lru-cache": "7.13.2",
+    "lru-cache": "7.14.0",
     "nanoid": "3.3.4",
     "yaml": "2.1.1"
   },
