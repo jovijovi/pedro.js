@@ -1,6 +1,6 @@
 ARG NODE_VER
 
-FROM node:${NODE_VER} as builder
+FROM node:${NODE_VER}-alpine as builder
 MAINTAINER pedro
 
 ADD conf /opt/app_src/conf

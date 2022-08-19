@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.14](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.14)
+
+Build:
+
+- Bump node version
+- Bump packages
+- Compile code in node-alpine
+
 ## [v1.1.13](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.13)
 
 Fixes:
