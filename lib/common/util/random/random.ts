@@ -1,7 +1,7 @@
 import * as crypto from 'crypto';
 import {MaxEntropyLength} from './params';
 
-// RandIntBetween random int, range: [0, n)
+// RandIntBetween random int, range: [min, max)
 export function RandIntBetween(min, max: number): number {
 	return crypto.randomInt(min, max);
 }
