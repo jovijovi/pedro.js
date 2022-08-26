@@ -1,5 +1,5 @@
-import {util} from '../../lib/common'
-import {IFunc} from '../../lib/common/util/retry'
+import {util} from '../../lib/common';
+import {IFunc} from '../../lib/common/util/retry';
 import assert from 'assert';
 
 // Function example
@@ -21,7 +21,7 @@ function transistor(input: number): IFunc<string> {
 // JEST: 30s timeout by default
 test('Retry', async () => {
 	try {
-		const rsp1 = await util.retry.Run(transistor(0))
+		const rsp1 = await util.retry.Run(transistor(0));
 		console.log("Rsp1=", rsp1);
 	} catch (e) {
 		assert.notEqual(e, undefined);
@@ -29,7 +29,7 @@ test('Retry', async () => {
 	}
 
 	try {
-		const rsp2 = await util.retry.Run(transistor(2))
+		const rsp2 = await util.retry.Run(transistor(2));
 		console.log("Rsp2=", rsp2);
 	} catch (e) {
 		assert.notEqual(e, undefined);
@@ -50,17 +50,17 @@ test('Retry Async', async () => {
 		// Retry running the func, retry 2 time, interval 1s
 		const rsp1 = await util.retry.Run(async <T>(): Promise<number> => {
 			throw new Error('Mock error 1');
-		}, 2, 1);
+		}, 3, util.retry.RandomRetryInterval(1, 3), false);
 		console.log("Rsp1=", rsp1);
 	} catch (e) {
 		assert.notEqual(e, undefined);
-		console.log(e);
+		console.log(e.message);
 	}
 
 	try {
 		const rsp2 = await util.retry.Run(async <T>(): Promise<number> => {
 			return 42;
-		})
+		}, 3, util.retry.RandomRetryInterval());
 		assert.strictEqual(rsp2, 42);
 		console.log("Rsp2=%o", rsp2);
 	} catch (e) {
