@@ -6,6 +6,14 @@ export function RandIntBetween(min, max: number): number {
 	return crypto.randomInt(min, max);
 }
 
+// RandUIntBetween random uint, range: [min, max)
+export function RandUIntBetween(min, max: number): number {
+	if (min < 0 || max < 0) {
+		throw new Error(`invalid range`);
+	}
+	return crypto.randomInt(min, max);
+}
+
 // RandBoolean random boolean, range: [true, false]
 export function RandBoolean(): boolean {
 	return RandIntBetween(0, 2) > 0;

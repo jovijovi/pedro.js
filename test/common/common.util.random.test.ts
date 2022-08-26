@@ -9,6 +9,20 @@ test('RandIntBetween', () => {
 	}
 })
 
+test('RandUIntBetween', () => {
+	for (let i = 0; i < 10; i++) {
+		const result = util.random.RandUIntBetween(0, 3);
+		assert.notStrictEqual(result, 3);
+		log.RequestId().info(util.random.RandUIntBetween(0, 3));
+	}
+
+	try {
+		console.debug(util.random.RandUIntBetween(-1, 1));
+	} catch (e) {
+		console.debug("Expected error=", e);
+	}
+})
+
 test('RandBoolean', () => {
 	for (let i = 0; i < 10; i++) {
 		const result = util.random.RandBoolean();
