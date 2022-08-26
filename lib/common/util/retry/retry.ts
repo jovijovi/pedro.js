@@ -12,7 +12,7 @@ const DefaultRetryInterval = 3;
 const DefaultRetryMinInterval = DefaultRetryInterval;
 
 // Retry max interval (in seconds)
-const DefaultRetryMaxInterval = 10;
+const DefaultRetryMaxInterval = DefaultRetryMinInterval * 3;
 
 export interface IFunc<T> {
 	(arg: T): T;
