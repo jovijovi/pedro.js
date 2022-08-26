@@ -211,7 +211,7 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 - node `v16.17.0`
 - yarn `v1.22.19`
 - ts-node `v10.9.1`
-- typescript `4.7.4`
+- typescript `4.8.2`
 
 ### Makefile
 
@@ -277,12 +277,12 @@ $ jest
 
 ......
 
-Test Suites: 37 passed, 37 total
-Tests:       87 passed, 87 total
+Test Suites: 39 passed, 39 total
+Tests:       104 passed, 104 total
 Snapshots:   0 total
-Time:        25.024 s
+Time:        25.455 s, estimated 30 s
 Ran all test suites.
-Done in 26.60s.
+Done in 26.21s.
 ```
 
 ## Roadmap
