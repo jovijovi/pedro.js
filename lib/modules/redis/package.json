@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-redis",
-  "version": "1.1.12",
+  "version": "1.1.18",
   "description": "Redis package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-log": "^1.1.12",
-    "redis": "4.2.0"
+    "redis": "4.3.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
