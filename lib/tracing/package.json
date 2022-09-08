@@ -1,6 +1,6 @@
 {
   "name": "@jovijovi/pedrojs-tracing",
-  "version": "1.1.15",
+  "version": "1.1.18",
   "description": "Tracing package for pedro.js",
   "main": "index.js",
   "module": "index.js",
@@ -8,7 +8,7 @@
   "dependencies": {
     "@opentelemetry/api": "1.1.0",
     "@opentelemetry/exporter-jaeger": "1.4.0",
-    "@opentelemetry/instrumentation-express": "0.30.0",
+    "@opentelemetry/instrumentation-express": "0.31.0",
     "@opentelemetry/instrumentation-http": "0.32.0",
     "@opentelemetry/sdk-trace-node": "1.4.0"
   },
