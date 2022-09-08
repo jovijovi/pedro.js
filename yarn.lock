@@ -1598,13 +1598,13 @@
     "@jovijovi/pedrojs-version" "^1.0.12"
     log4js "6.6.1"
 
-"@jovijovi/pedrojs-network@1.1.15":
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.15.tgz#2c3c67ca0623650fe307ff19b4d8ff492e9559e0"
-  integrity sha512-C1hpP7NZ8RYyKGRMkcy9uGyNdLPtBPA/xET/dW6kL4SCYjT5ma+GULdSl5vsNiN2iQm3QpdMPShVVKQn61YERg==
+"@jovijovi/pedrojs-network@1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.18.tgz#91f7d05e2bc3909518291c1ab2ef577526289c68"
+  integrity sha512-ttZD3C4nLPIjc4w4QnmoZFyP084vev0AEkUuE92Qx69pYb9bLJaCXF52Rfbm6n2YNa4E9Adcb/dSMITZRPjP8w==
   dependencies:
     "@jovijovi/pedrojs-common" "1.1.15"
-    "@jovijovi/pedrojs-tracing" "1.1.15"
+    "@jovijovi/pedrojs-tracing" "1.1.18"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.13"
     "@types/ws" "^8.5.3"
@@ -1613,17 +1613,6 @@
     jayson "4.0.0"
     nanoid "3.3.4"
     ws "8.8.1"
-
-"@jovijovi/pedrojs-tracing@1.1.15":
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.15.tgz#959ef79705b91412d7f36e2ae201471de9ae8392"
-  integrity sha512-DWupF79jevCAsW4+/68lQJREnuLgKOSAmrg4APGHhqEM1Mh2ifbFiV9PBb/VUpIv/nCYmfMZqNk7MZkJ+uClWQ==
-  dependencies:
-    "@opentelemetry/api" "1.1.0"
-    "@opentelemetry/exporter-jaeger" "1.4.0"
-    "@opentelemetry/instrumentation-express" "0.30.0"
-    "@opentelemetry/instrumentation-http" "0.32.0"
-    "@opentelemetry/sdk-trace-node" "1.4.0"
 
 "@jovijovi/pedrojs-tracing@1.1.18":
   version "1.1.18"
@@ -1754,13 +1743,6 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@opentelemetry/api-metrics@0.29.2":
-  version "0.29.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.29.2.tgz#daa823e0965754222b49a6ae6133df8b39ff8fd2"
-  integrity sha512-yRdF5beqKuEdsPNoO7ijWCQ9HcyN0Tlgicf8RS6gzGOI54d6Hj7yKquJ6+X9XV+CSRbRWJYb+lOsXyso7uyX2g==
-  dependencies:
-    "@opentelemetry/api" "^1.0.0"
-
 "@opentelemetry/api-metrics@0.32.0":
   version "0.32.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/api-metrics/-/api-metrics-0.32.0.tgz#0f09f78491a4b301ddf54a8b8a38ffa99981f645"
@@ -1807,16 +1789,6 @@
     "@opentelemetry/semantic-conventions" "1.4.0"
     jaeger-client "^3.15.0"
 
-"@opentelemetry/instrumentation-express@0.30.0":
-  version "0.30.0"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-express/-/instrumentation-express-0.30.0.tgz#4f5f45ce47c8f1ac75741284d3e59c861ced4269"
-  integrity sha512-OsCfM+ThAXh3wzsyHgXyA5HUoLMdLd6Asix2Jx8yxniruU/Gq8y4Cz7aLy/vXNckXHWO3fwwL5gb7K3dykTnAQ==
-  dependencies:
-    "@opentelemetry/core" "^1.0.0"
-    "@opentelemetry/instrumentation" "^0.29.2"
-    "@opentelemetry/semantic-conventions" "^1.0.0"
-    "@types/express" "4.17.13"
-
 "@opentelemetry/instrumentation-express@0.31.0":
   version "0.31.0"
   resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-express/-/instrumentation-express-0.31.0.tgz#7ef2308b7785611ee8dd97437e7bd4fd6341f9d6"
@@ -1843,16 +1815,6 @@
   integrity sha512-y6ADjHpkUz/v1nkyyYjsQa/zorhX+0qVGpFvXMcbjU4sHnBnC02c6wcc93sIgZfiQClIWo45TGku1KQxJ5UUbQ==
   dependencies:
     "@opentelemetry/api-metrics" "0.32.0"
-    require-in-the-middle "^5.0.3"
-    semver "^7.3.2"
-    shimmer "^1.2.1"
-
-"@opentelemetry/instrumentation@^0.29.2":
-  version "0.29.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation/-/instrumentation-0.29.2.tgz#70e6d4e1a84508f5e9d8c7c426adcd7b0dba6c95"
-  integrity sha512-LXx5V0ONNATQFCE8C5uqnxWSm4rcXLssdLHdXjtGdxRmURqj/JO8jYefqXCD0LzsqEQ6yxOx2GZ0dgXvhBVdTw==
-  dependencies:
-    "@opentelemetry/api-metrics" "0.29.2"
     require-in-the-middle "^5.0.3"
     semver "^7.3.2"
     shimmer "^1.2.1"
