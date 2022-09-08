@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.1.18](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.18)
+
+Features:
+
+- (common/util/random): RandUIntBetween
+- (common/util/retry): verbose log & random retry interval
+- (common/util/retry): set DefaultRetryMaxInterval to be 3 times DefaultRetryMinInterval
+
+Build:
+
+- Bump packages
+
 ## [v1.1.14](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.14)
 
 Build:
