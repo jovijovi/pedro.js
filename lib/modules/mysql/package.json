@@ -1,13 +1,13 @@
 {
   "name": "@jovijovi/pedrojs-mysql",
-  "version": "1.1.14",
+  "version": "1.1.18",
   "description": "MySQL package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-log": "^1.1.12",
-    "sequelize": "^6.21.4",
+    "sequelize": "^6.21.6",
     "mysql2": "^2.3.3"
   },
   "scripts": {
