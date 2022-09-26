@@ -37,8 +37,8 @@
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {
-    "@aws-sdk/client-s3": "3.171.0",
-    "@aws-sdk/client-sqs": "3.171.0",
+    "@aws-sdk/client-s3": "3.178.0",
+    "@aws-sdk/client-sqs": "3.178.0",
     "@grpc/grpc-js": "^1.7.1",
     "@jovijovi/express-2fa-token": "1.1.0",
     "@jovijovi/pedrojs-common": "1.1.15",
@@ -93,12 +93,12 @@
   "devDependencies": {
     "@tsconfig/node16": "1.0.3",
     "@types/jest": "29.0.3",
-    "@types/node": "18.7.18",
+    "@types/node": "18.7.21",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
-    "eslint": "^8.23.1",
+    "eslint": "^8.24.0",
     "jest": "29.0.3",
-    "ts-jest": "29.0.1",
+    "ts-jest": "29.0.2",
     "ts-node": "10.9.1",
     "typescript": "4.8.3"
   }
