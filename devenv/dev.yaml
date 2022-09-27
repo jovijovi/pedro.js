@@ -38,7 +38,7 @@ services:
 
   postgres:
     container_name: devenv_postgres_pedrojs
-    image: postgres:13.4
+    image: postgres:13.8
     restart: always
     environment:
       POSTGRES_PASSWORD: example
