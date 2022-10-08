@@ -22,14 +22,14 @@ test('Error: Connection failed', async () => {
 	}
 
 	// Connect disabled
-	const emptyEngine = IPFS.Connect({
+	const emptyEngine = await IPFS.Connect({
 		url: 'http://127.0.0.1:56789',
 		enable: false,
 	});
 	expect(emptyEngine).toBeNull();
 
 	// Connect
-	const engine = IPFS.Connect({
+	const engine = await IPFS.Connect({
 		url: 'http://127.0.0.1:56789',
 		enable: true,
 	});
@@ -44,7 +44,7 @@ test('Error: Connection failed', async () => {
 
 test('Connection Successfully', async () => {
 	// Connect
-	const engine = IPFS.Connect({
+	const engine = await IPFS.Connect({
 		url: 'http://127.0.0.1:5001',
 		enable: true,
 	});
@@ -59,7 +59,7 @@ test('Connection Successfully', async () => {
 
 test('Add/Cat File', async () => {
 	// Connect
-	const engine = IPFS.Connect({
+	const engine = await IPFS.Connect({
 		url: 'http://127.0.0.1:5001',
 		enable: true,
 	});

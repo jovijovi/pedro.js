@@ -1,5 +1,4 @@
-import {create} from 'ipfs-http-client';
-import {IPFSHTTPClient, Options} from 'ipfs-http-client/types/src/types';
+import {create, IPFSHTTPClient, Options} from 'ipfs-http-client';
 import {log} from '@jovijovi/pedrojs-log';
 
 export namespace IPFS {
@@ -43,7 +42,7 @@ export namespace IPFS {
 	}
 
 	// Connect IPFS node and returns a HTTP client
-	export function Connect(cfg: Config): Engine {
+	export async function Connect(cfg: Config): Promise<Engine> {
 		if (!cfg) {
 			throw new Error('Cannot found IPFS config');
 		} else if (!cfg.enable) {

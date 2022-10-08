@@ -1,5 +1,20 @@
 # Changelog
 
+## [v1.1.22](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.22)
+
+Fixes:
+
+- (modules/ipfs): 'Connect' is an async function
+
+Test:
+
+- (common/util/time): test UTC
+- (devenv): bump postgres from 13.4 to 13.8
+
+Build:
+
+- Bump packages
+
 ## [v1.1.18](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.18)
 
 Features:
