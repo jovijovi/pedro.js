@@ -1,18 +1,18 @@
 {
   "name": "@jovijovi/pedrojs-common",
-  "version": "1.1.15",
+  "version": "1.1.22",
   "description": "Common packages for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
     "@jovijovi/pedrojs-version": "^1.0.12",
-    "commander": "9.4.0",
+    "commander": "9.4.1",
     "dayjs": "1.11.5",
-    "log4js": "6.6.1",
+    "log4js": "6.7.0",
     "lru-cache": "7.14.0",
     "nanoid": "3.3.4",
-    "yaml": "2.1.1"
+    "yaml": "2.1.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
