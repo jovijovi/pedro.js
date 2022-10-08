@@ -176,7 +176,18 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
 
   - IPFS helper based on [ipfs-http-client](https://github.com/ipfs/js-ipfs)
 
-## Quick Guide
+## Development
+
+### Env
+
+***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
+
+- node `v16.17.1`
+- yarn `v1.22.19`
+- ts-node `v10.9.1`
+- typescript `4.8.4`
+
+### Quick Guide
 
 - Install dependency
 
@@ -201,17 +212,6 @@ Pedro.js is a microservice toolkit written in [TypeScript](https://www.typescrip
   ```shell
   yarn clean
   ```
-
-## Development
-
-### Env
-
-***Node version manager [`nvm`](https://github.com/nvm-sh/nvm) will helpful.***
-
-- node `v16.17.0`
-- yarn `v1.22.19`
-- ts-node `v10.9.1`
-- typescript `4.8.3`
 
 ### Makefile
 
