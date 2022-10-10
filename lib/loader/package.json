@@ -1,22 +1,11 @@
 {
-  "name": "@jovijovi/pedrojs-network",
+  "name": "@jovijovi/pedrojs-loader",
   "version": "1.1.23",
-  "description": "Network package for pedro.js",
+  "description": "Module loader for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
-  "dependencies": {
-    "@jovijovi/pedrojs-common": "1.1.22",
-    "@jovijovi/pedrojs-tracing": "1.1.22",
-    "@types/body-parser": "1.19.2",
-    "@types/express": "4.17.14",
-    "@types/ws": "^8.5.3",
-    "body-parser": "^1.20.0",
-    "express": "4.18.2",
-    "jayson": "4.0.0",
-    "nanoid": "3.3.4",
-    "ws": "8.9.0"
-  },
+  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist/*",
@@ -25,7 +14,7 @@
     "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
   },
   "repository": {
-    "directory": "lib/network",
+    "directory": "lib/loader",
     "type": "git",
     "url": "git+https://github.com/jovijovi/pedro.js.git"
   },
@@ -34,12 +23,7 @@
     "microservice",
     "toolkit",
     "pedro",
-    "network",
-    "http",
-    "jsonrpc",
-    "json-rpc",
-    "websocket",
-    "server"
+    "loader"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",
