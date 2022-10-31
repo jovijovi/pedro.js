@@ -1,13 +1,11 @@
 {
-  "name": "@jovijovi/pedrojs-fsm",
-  "version": "1.1.26",
-  "description": "FSM package for pedro.js",
+  "name": "@jovijovi/pedrojs-loader",
+  "version": "1.1.23",
+  "description": "Module loader for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
-  "dependencies": {
-    "@jovijovi/pedrojs-event": "1.1.26"
-  },
+  "dependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./dist/*",
@@ -16,7 +14,7 @@
     "prepub": "yarn clean-pub && yarn build && cp -ap ./dist/* ./publish/ && cp -ap LICENSE ./publish/ && cp -ap package.json ./publish/ && cp -ap README.md ./publish/"
   },
   "repository": {
-    "directory": "lib/fsm",
+    "directory": "lib/loader",
     "type": "git",
     "url": "git+https://github.com/jovijovi/pedro.js.git"
   },
@@ -25,7 +23,7 @@
     "microservice",
     "toolkit",
     "pedro",
-    "fsm"
+    "loader"
   ],
   "author": "jovijovi <mageyul@hotmail.com>",
   "license": "MIT",

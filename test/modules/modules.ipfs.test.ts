@@ -82,11 +82,11 @@ test('Add/Cat File', async () => {
 	expect(cid).toMatch(_mockCID);
 
 	// Cat a file
-	const chunks = [];
+	const chunks = Buffer.alloc(content.length);
 	for await (const chunk of engine.client.cat(_mockCID)) {
-		chunks.push(chunk)
+		chunks.fill(chunk);
 	}
-	const chunkString = chunks.toString();
+	const chunkString = chunks.toString('utf8');
 	console.log("Data=", chunkString);
 	expect(chunkString).toMatch(content);
 }, 10000)
