@@ -1,35 +1,50 @@
 # Changelog
 
+## [v1.1.28](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.28)
+
+### Features
+
+- (loader): a simple module loader
+
+### Test
+
+- (modules/ipfs): fix fill chunks
+
+### Build
+
+- Bump node version from 16.17 to 16.18
+- Bump packages
+
 ## [v1.1.22](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.22)
 
-Fixes:
+### Fixes
 
 - (modules/ipfs): 'Connect' is an async function
 
-Test:
+### Test
 
 - (common/util/time): test UTC
 - (devenv): bump postgres from 13.4 to 13.8
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.18](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.18)
 
-Features:
+### Features
 
 - (common/util/random): RandUIntBetween
 - (common/util/retry): verbose log & random retry interval
 - (common/util/retry): set DefaultRetryMaxInterval to be 3 times DefaultRetryMinInterval
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.14](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.14)
 
-Build:
+### Build
 
 - Bump node version
 - Bump packages
@@ -37,143 +52,143 @@ Build:
 
 ## [v1.1.13](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.13)
 
-Fixes:
+### Fixes
 
 - (common/cache): pass through custom options
 
 ## [v1.1.12](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.12)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.10](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.10)
 
-Fixes:
+### Fixes
 
 - (network/http/middleware/twofa-token): node-scheduler has only one timer, for compatibility reasons, this dependency
   is removed.
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.9](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.9)
 
-Features:
+### Features
 
 - (modules/sqlite): specify the sqlite3 module explicitly
 
-Test:
+### Test
 
 - More test code
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.6](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.6)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.5](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.5)
 
-Features:
+### Features
 
 - (common/util/random): random seed
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.4](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.4)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.1.2](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.2)
 
-Features:
+### Features
 
 - (network/http): use custom middleware
 - (network/http/middleware/twofa-token): API authorization based on 2FA
 
 ## [v1.1.0](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.0)
 
-Features:
+### Features
 
 - (common/auditor): check only if the expression is valid
 
 ## [v1.0.23](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.23)
 
-Features:
+### Features
 
 - Custom NanoID
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.21](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.21)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.19](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.19)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.18](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.18)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.17](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.17)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.15](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.15)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.11](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.11)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.10](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.10)
 
-Build:
+### Build
 
 - Bump packages
 
 ## [v1.0.8](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.8)
 
-Features:
+### Features
 
 - Refactor network
 
 ## [v1.0.5](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.5)
 
-Features:
+### Features
 
 - Export standalone packages
 
 ## [v1.0.3](https://github.com/jovijovi/pedro.js/releases/tag/v1.0.3)
 
-## Features
+### Features
 
 - HTTP/HTTPS 1.1
 
