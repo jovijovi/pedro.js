@@ -1,12 +1,12 @@
 import * as crypto from 'crypto';
 import {MaxEntropyLength} from './params';
 
-// RandIntBetween random int, range: [min, max)
+// RandIntBetween return random int in range: [min, max)
 export function RandIntBetween(min, max: number): number {
 	return crypto.randomInt(min, max);
 }
 
-// RandUIntBetween random uint, range: [min, max)
+// RandUIntBetween return random uint in range: [min, max)
 export function RandUIntBetween(min, max: number): number {
 	if (min < 0 || max < 0) {
 		throw new Error(`invalid range`);
@@ -14,12 +14,12 @@ export function RandUIntBetween(min, max: number): number {
 	return crypto.randomInt(min, max);
 }
 
-// RandBoolean random boolean, range: [true, false]
+// RandBoolean return random boolean in range: [true, false]
 export function RandBoolean(): boolean {
 	return RandIntBetween(0, 2) > 0;
 }
 
-// RandCase random letter case of string
+// RandCase return a string of random uppercase and lowercase letters
 export function RandCase(input: string): string {
 	let output = '';
 
@@ -34,7 +34,7 @@ export function RandCase(input: string): string {
 	return output;
 }
 
-// RandUppercase random letter uppercase of string
+// RandUppercase return a string of random uppercase letters
 export function RandUppercase(input: string): string {
 	let output = '';
 
@@ -49,7 +49,7 @@ export function RandUppercase(input: string): string {
 	return output;
 }
 
-// RandLowercase random letter lowercase of string
+// RandLowercase return a string of random lowercase letters
 export function RandLowercase(input: string): string {
 	let output = '';
 
@@ -64,7 +64,7 @@ export function RandLowercase(input: string): string {
 	return output;
 }
 
-// RandSeed returns a random seed
+// RandSeed return a random string seed
 export function RandSeed(): string {
 	return String.fromCharCode(...crypto.randomFillSync(new Uint8Array(MaxEntropyLength)));
 }
