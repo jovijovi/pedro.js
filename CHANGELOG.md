@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.1.30](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.30)
+
+### Build
+
+- Bump packages
+
 ## [v1.1.28](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.28)
 
 ### Features
