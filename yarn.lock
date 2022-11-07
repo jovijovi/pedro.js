@@ -1659,25 +1659,25 @@
   dependencies:
     "@jovijovi/two-fa.js" "^0.2.5"
 
-"@jovijovi/pedrojs-common@1.1.26":
-  version "1.1.26"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.26.tgz#864afbc0a4b2f5a52af3596cd9dd5d74e6215c87"
-  integrity sha512-exzu4IzcVWqfRSZMGy6bjOKgeLaLeLouXCr4OPGo2j7I0qdXA4K14BmfMWyScIAkXdpfgVhYzXvjmVrEU6QKpw==
+"@jovijovi/pedrojs-common@1.1.30":
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-common/-/pedrojs-common-1.1.30.tgz#3b49a96c9f08d03c8c9ecd9963d3bdc87d976c56"
+  integrity sha512-HNF3AtmdI85AdbZtIGT35vjoALuuaRnJIOUtC1fJSkwKUKx3TOeYrmMOCqbzjSKVojaeuKV642bvBrxoYCERXQ==
   dependencies:
     "@jovijovi/pedrojs-version" "^1.0.12"
     commander "9.4.1"
     dayjs "1.11.6"
     log4js "6.7.0"
-    lru-cache "7.14.0"
+    lru-cache "7.14.1"
     nanoid "3.3.4"
     yaml "2.1.3"
 
-"@jovijovi/pedrojs-event@1.1.26":
-  version "1.1.26"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.26.tgz#44c3aa6ea5351af0ad39b3005af8394587fe432c"
-  integrity sha512-pFilsURDtUlt1qcGAWPRYRRC+Yk0AmK6IIA1Mqr05n6EUDy7dAbTdPm97wKvCuVBfgWvwFUNP59UKgKGJYe3cQ==
+"@jovijovi/pedrojs-event@1.1.30":
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-event/-/pedrojs-event-1.1.30.tgz#399fe27fdd9d4ba55acba43d8cffbad96b225243"
+  integrity sha512-E6I01etG8YD0a8jnXYrMpZ/CICtR+eraeyk119vhiWHQqa5Xq7Gjoz+zldltTtu27RkQaFChQNTzWYiuhdyNFw==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.26"
+    "@jovijovi/pedrojs-common" "1.1.30"
     "@jovijovi/pedrojs-types" "^1.0.5"
 
 "@jovijovi/pedrojs-log@1.1.22":
@@ -1688,30 +1688,30 @@
     "@jovijovi/pedrojs-version" "^1.0.12"
     log4js "6.7.0"
 
-"@jovijovi/pedrojs-network@1.1.27":
-  version "1.1.27"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.27.tgz#622aa298ba6322f457e3e2431b15c6606333ed4c"
-  integrity sha512-3E9CdZlmfcuFYPAWV5ahdURjLkBZHz/OEPi3M1G/puucnjU8XHfGx76JS3VCTsmun+Zq64Srb6k916z4SlZQpw==
+"@jovijovi/pedrojs-network@1.1.30":
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-network/-/pedrojs-network-1.1.30.tgz#e0d61a5a3e0cff56848e60062a78425aeb75813a"
+  integrity sha512-UmscaV8PJNKoa1Cw2rfFx1aSReLpaRSLaIbF9D0iGgV68TbsjtzAMDTkJ9dcMfIeeu1j6YXXU/qKqWHrQdFiRg==
   dependencies:
-    "@jovijovi/pedrojs-common" "1.1.26"
-    "@jovijovi/pedrojs-tracing" "1.1.22"
+    "@jovijovi/pedrojs-common" "1.1.30"
+    "@jovijovi/pedrojs-tracing" "1.1.30"
     "@types/body-parser" "1.19.2"
     "@types/express" "4.17.14"
     "@types/ws" "^8.5.3"
-    body-parser "^1.20.0"
+    body-parser "^1.20.1"
     express "4.18.2"
     jayson "4.0.0"
     nanoid "3.3.4"
-    ws "8.10.0"
+    ws "8.11.0"
 
-"@jovijovi/pedrojs-tracing@1.1.22":
-  version "1.1.22"
-  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.22.tgz#fe01f04422cef85169607c05539feb122df57d7d"
-  integrity sha512-gyrII0Ttr4tSnWW2hsvtmCbKMavzXr0lsRCu0OAxpFxjnBjG1086CU6ikQuPc5IERADyV2ZvS+bt8bNWlHMwhg==
+"@jovijovi/pedrojs-tracing@1.1.30":
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/@jovijovi/pedrojs-tracing/-/pedrojs-tracing-1.1.30.tgz#11b535ecf0fb71505f43fdf7cacc84291035152c"
+  integrity sha512-PkdJoYI1VrNde0x8/igcH/ruZl3d32knx/T2M4s+KQncrFDtu6WkB8inwwpv5zRdB2oMEQJBd4JfPtKPwxYE6g==
   dependencies:
     "@opentelemetry/api" "1.1.0"
     "@opentelemetry/exporter-jaeger" "1.4.0"
-    "@opentelemetry/instrumentation-express" "0.31.2"
+    "@opentelemetry/instrumentation-express" "0.31.3"
     "@opentelemetry/instrumentation-http" "0.33.0"
     "@opentelemetry/sdk-trace-node" "1.4.0"
 
@@ -1885,16 +1885,6 @@
     "@opentelemetry/sdk-trace-base" "1.4.0"
     "@opentelemetry/semantic-conventions" "1.4.0"
     jaeger-client "^3.15.0"
-
-"@opentelemetry/instrumentation-express@0.31.2":
-  version "0.31.2"
-  resolved "https://registry.yarnpkg.com/@opentelemetry/instrumentation-express/-/instrumentation-express-0.31.2.tgz#3ddb1afa3f3e9b3fc380e088eab5ba0ef503e709"
-  integrity sha512-+/H/D3N65FyBCwSm0Kql45Ok2wgnDBKGqfijdRpgoDJc70P3trvE2zygcDGsnVDmNnrjJdjyk4W1pyav7kRTpA==
-  dependencies:
-    "@opentelemetry/core" "^1.0.0"
-    "@opentelemetry/instrumentation" "^0.32.0"
-    "@opentelemetry/semantic-conventions" "^1.0.0"
-    "@types/express" "4.17.13"
 
 "@opentelemetry/instrumentation-express@0.31.3":
   version "0.31.3"
@@ -2777,7 +2767,7 @@ blob-to-it@^1.0.1:
   dependencies:
     browser-readablestream-to-it "^1.0.3"
 
-body-parser@1.20.1, body-parser@^1.20.0, body-parser@^1.20.1:
+body-parser@1.20.1, body-parser@^1.20.1:
   version "1.20.1"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.20.1.tgz#b1812a8912c195cd371a3ee5e66faa2338a5c668"
   integrity sha512-jWi7abTbYwajOytWCQc37VulmWiRae5RyTpaCyDcS5/lMdtwSz5lOpDE67srw/HYe35f1z3fDQw+3txg7gNtWw==
@@ -4984,10 +4974,10 @@ long@^5.0.0:
   resolved "https://registry.yarnpkg.com/long/-/long-5.2.1.tgz#e27595d0083d103d2fa2c20c7699f8e0c92b897f"
   integrity sha512-GKSNGeNAtw8IryjjkhZxuKB3JzlcLTwjtiQCHKvqQet81I93kXslhDQruGI/QsddO83mcDToBVy7GqGS/zYf/A==
 
-lru-cache@7.14.0:
-  version "7.14.0"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.0.tgz#21be64954a4680e303a09e9468f880b98a0b3c7f"
-  integrity sha512-EIRtP1GrSJny0dqb50QXRUNBxHJhcpxHC++M5tD7RYbvLLn5KVWKsbyswSSqDuU15UFi3bgTQIY8nhDMeF6aDQ==
+lru-cache@7.14.1, lru-cache@^7.14.1:
+  version "7.14.1"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.1.tgz#8da8d2f5f59827edb388e63e459ac23d6d408fea"
+  integrity sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==
 
 lru-cache@^4.1.3:
   version "4.1.5"
@@ -5003,11 +4993,6 @@ lru-cache@^6.0.0:
   integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
   dependencies:
     yallist "^4.0.0"
-
-lru-cache@^7.14.1:
-  version "7.14.1"
-  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-7.14.1.tgz#8da8d2f5f59827edb388e63e459ac23d6d408fea"
-  integrity sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==
 
 make-dir@^3.0.0, make-dir@^3.1.0:
   version "3.1.0"
@@ -6662,20 +6647,15 @@ write-file-atomic@^4.0.1:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.7"
 
-ws@8.10.0:
-  version "8.10.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.10.0.tgz#00a28c09dfb76eae4eb45c3b565f771d6951aa51"
-  integrity sha512-+s49uSmZpvtAsd2h37vIPy1RBusaLawVe8of+GyEPsaJTCMpj/2v8NpeK1SHXjBlQ95lQTmQofOJnFiLoaN3yw==
+ws@8.11.0, ws@^8.11.0:
+  version "8.11.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.11.0.tgz#6a0d36b8edfd9f96d8b25683db2f8d7de6e8e143"
+  integrity sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==
 
 ws@^7.4.5:
   version "7.5.9"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.5.9.tgz#54fa7db29f4c7cec68b1ddd3a89de099942bb591"
   integrity sha512-F+P9Jil7UiSKSkppIiD94dN07AwvFixvLIj1Og1Rl9GGMuNipJnV9JzjD6XuqmAeiswGvUmNLjr5cFuXwNS77Q==
-
-ws@^8.11.0:
-  version "8.11.0"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.11.0.tgz#6a0d36b8edfd9f96d8b25683db2f8d7de6e8e143"
-  integrity sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg==
 
 xorshift@^1.1.1:
   version "1.2.0"
