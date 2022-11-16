@@ -75,7 +75,7 @@ export namespace NSEvent {
 		signature: Bytes;   // Signature(optional)
 		data: IData;        // Event data
 
-		// SetEventId set event id
+		// SetEventId set event ID
 		SetEventId(id: string);
 
 		// SetEventNamespace set event namespace
@@ -84,7 +84,7 @@ export namespace NSEvent {
 		// SetEventVersion set event version
 		SetEventVersion(version: string);
 
-		// SetRequestId set event request
+		// SetRequestId set event request ID
 		SetRequestId(requestId: string);
 
 		// SetSender set event sender
@@ -182,7 +182,7 @@ export namespace NSEvent {
 
 		AddPayload(id: string, category: string, raw: Bytes, hashAlgo?: string): Error {
 			if (!id) {
-				return new Error('payload id is empty');
+				return new Error('payload ID is empty');
 			} else if (!category) {
 				return new Error('category is empty');
 			} else if (!raw) {
