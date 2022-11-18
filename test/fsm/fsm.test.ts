@@ -52,14 +52,14 @@ test('FSM', () => {
 	});
 	console.log("Current State=", fsm.Current().value);
 
-	// Open door
+	// Open the door
 	const rsp1 = fsm.On(evt1, () => {
 		console.log("Event(%s) finished", evt1.data.name);
 	});
 	console.log("Response1=", rsp1);
 	console.log("Current State1=", rsp1.state.value);
 
-	// Close door
+	// Close the door
 	const rsp2 = fsm.On(evt2, (ctx) => {
 		console.log(ctx.get('who'), ctx.get('what'), ":", "Hello, world!");
 	}, new Map([
@@ -74,10 +74,10 @@ test('FSM', () => {
 	console.log("Response3=", rsp3);
 	console.log("Current State3=", rsp3.state.value);
 
-	// Open door again
+	// Open the door again
 	const rsp4 = fsm.On(evt1, (ctx) => {
 		console.log(ctx.get('who'), ctx.get('what'), "an error!");
-		throw new Error("An mock error!");
+		throw new Error("A mock error!");
 	}, new Map([
 		['who', 'FooBar'],
 		['what', 'throw'],
