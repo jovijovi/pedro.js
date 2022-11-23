@@ -1,12 +1,12 @@
 {
   "name": "@jovijovi/pedrojs-s3",
-  "version": "1.1.30",
+  "version": "1.2.1",
   "description": "S3 package for pedro.js",
   "main": "index.js",
   "module": "index.js",
   "types": "index.d.ts",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.204.0"
+    "@aws-sdk/client-s3": "^3.216.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
