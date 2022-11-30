@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@jovijovi/pedro.js.svg)](https://www.npmjs.com/package/@jovijovi/pedro.js)
 [![GitHub Actions](https://github.com/jovijovi/pedro.js/workflows/Test/badge.svg)](https://github.com/jovijovi/pedro.js)
 [![Coverage](https://img.shields.io/codecov/c/github/jovijovi/pedro.js?label=\&logo=codecov\&logoColor=fff)](https://codecov.io/gh/jovijovi/pedro.js)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjovijovi%2Fpedro.js.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjovijovi%2Fpedro.js?ref=badge_shield)
 
 <https://github.com/jovijovi/pedro.js>
 
@@ -364,3 +365,6 @@ Done in 26.21s.
 ## License
 
 [MIT](LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjovijovi%2Fpedro.js.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjovijovi%2Fpedro.js?ref=badge_large)
