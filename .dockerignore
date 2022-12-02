@@ -116,14 +116,24 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Custom
-.git
-/docker
+### IDE
 .vscode
 .idea
 
-/devenv
-/doc
-/test
+### Git
+.git
 
+### Docker
+/docker
 Dockerfile
+
+### Builds
+.github
+
+### Documents
+/doc
+
+### Tests
+/devenv
+/test
+/.data
