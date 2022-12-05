@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.2.2](https://github.com/jovijovi/pedro.js/releases/tag/v1.2.2)
+
+### Features
+
+- (common/context): get context chain head; rename params of Born()
+
+### Build
+
+- Bump node version from 16.18 to 18.12
+- Bump typescript from 4.8.4 to 4.9.3
+- Bump packages
+
 ## [v1.1.30](https://github.com/jovijovi/pedro.js/releases/tag/v1.1.30)
 
 ### Build

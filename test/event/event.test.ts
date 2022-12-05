@@ -39,8 +39,15 @@ const mockEventPayloadHashString = 'c775e7b757ede630cd0aa1113bd102661ab38829ca52
 let evtAfterSign: NSEvent.Event;
 
 test('NewEvent', () => {
-	const event = NSEvent.New();
-	console.log("NewEvent=", event);
+	const event1 = NSEvent.New();
+	const event2 = NSEvent.New();
+	const event3 = NSEvent.New();
+	console.log("NewEvent1=", event1);
+	console.log("NewEvent2=", event2);
+	console.log("NewEvent3=", event3);
+	assert.notStrictEqual(event1.data.header.id, event2.data.header.id)
+	assert.notStrictEqual(event2.data.header.id, event3.data.header.id)
+	assert.notStrictEqual(event1.data.header.id, event3.data.header.id)
 })
 
 test('SetEventId', () => {

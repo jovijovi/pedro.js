@@ -22,15 +22,15 @@ services:
 
   mysql:
     container_name: devenv_mysql_pedrojs
-    image: mysql:8.0.26
+    image: mysql:8.0.30
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: example
     volumes:
-      - /opt/dev/pedrojs/mysql_data:/var/lib/mysql
-      - ./database/mysql/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
-      - ./database/mysql/table.sql:/docker-entrypoint-initdb.d/2_table.sql
+      - ../.data/mysql_data:/var/lib/mysql
+      - ./init/mysql/schema.sql:/docker-entrypoint-initdb.d/1_schema.sql
+      - ./init/mysql/table.sql:/docker-entrypoint-initdb.d/2_table.sql
     ports:
       - "3306:3306"
     networks:
@@ -43,9 +43,9 @@ services:
     environment:
       POSTGRES_PASSWORD: example
     volumes:
-      - /opt/dev/pedrojs/postgres_data:/var/lib/postgresql/data
-      - ./database/postgres/database.sql:/docker-entrypoint-initdb.d/1_database.sql
-      - ./database/postgres/table.sql:/docker-entrypoint-initdb.d/2_table.sql
+      - ../.data/postgres_data:/var/lib/postgresql/data
+      - ./init/postgres/database.sql:/docker-entrypoint-initdb.d/1_database.sql
+      - ./init/postgres/table.sql:/docker-entrypoint-initdb.d/2_table.sql
     ports:
       - "5432:5432"
     networks:
@@ -53,7 +53,7 @@ services:
 
   mongo:
     container_name: devenv_mongodb_pedrojs
-    image: mongo:4.4.10
+    image: mongo:5.0.14
     command: --auth
     restart: always
     environment:
@@ -61,8 +61,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
       MONGO_INITDB_DATABASE: test
     volumes:
-      - /opt/dev/pedrojs/mongodb_data:/data/collection
-      - ./database/mongodb/user.js:/docker-entrypoint-initdb.d/1_user.js
+      - ../.data/mongodb_data:/data/db
+      - ./init/mongodb/user.js:/docker-entrypoint-initdb.d/1_user.js
     ports:
       - "27017:27017"
     networks:
@@ -127,8 +127,8 @@ services:
     image: minio/minio:latest
     restart: always
     volumes:
-      - /opt/dev/pedrojs/minio/data1-1:/data1
-      - /opt/dev/pedrojs/minio/data1-2:/data2
+      - ../.data/minio/data1-1:/data1
+      - ../.data/minio/data1-2:/data2
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -149,8 +149,8 @@ services:
     image: minio/minio:latest
     restart: always
     volumes:
-      - /opt/dev/pedrojs/minio/data2-1:/data1
-      - /opt/dev/pedrojs/minio/data2-2:/data2
+      - ../.data/minio/data2-1:/data1
+      - ../.data/minio/data2-2:/data2
     ports:
       - "9002:9002"
     environment:
@@ -170,8 +170,8 @@ services:
     image: minio/minio:latest
     restart: always
     volumes:
-      - /opt/dev/pedrojs/minio/data3-1:/data1
-      - /opt/dev/pedrojs/minio/data3-2:/data2
+      - ../.data/minio/data3-1:/data1
+      - ../.data/minio/data3-2:/data2
     ports:
       - "9003:9003"
     environment:
@@ -191,8 +191,8 @@ services:
     image: minio/minio:latest
     restart: always
     volumes:
-      - /opt/dev/pedrojs/minio/data4-1:/data1
-      - /opt/dev/pedrojs/minio/data4-2:/data2
+      - ../.data/minio/data4-1:/data1
+      - ../.data/minio/data4-2:/data2
     ports:
       - "9004:9004"
     environment:
@@ -216,7 +216,7 @@ services:
       # FOR TEST ONLY
       DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
     volumes:
-      - /opt/dev/pedrojs/dgraph/zero:/dgraph
+      - ../.data/dgraph/zero:/dgraph
     ports:
       - "5080:5080"
       - "6080:6080"
@@ -232,7 +232,7 @@ services:
       # FOR TEST ONLY
       DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
     volumes:
-      - /opt/dev/pedrojs/dgraph/alpha1:/dgraph
+      - ../.data/dgraph/alpha1:/dgraph
     ports:
       - "8080:8080"
       - "9080:9080"
@@ -250,7 +250,7 @@ services:
       # FOR TEST ONLY
       DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
     volumes:
-      - /opt/dev/pedrojs/dgraph/alpha2:/dgraph
+      - ../.data/dgraph/alpha2:/dgraph
     ports:
       - "8082:8080"
       - "9082:9080"
@@ -269,7 +269,7 @@ services:
       # FOR TEST ONLY
       DGRAPH_ALPHA_SECURITY: 'whitelist=0.0.0.0/0'
     volumes:
-      - /opt/dev/pedrojs/dgraph/alpha3:/dgraph
+      - ../.data/dgraph/alpha3:/dgraph
     ports:
       - "8083:8080"
       - "9083:9080"
@@ -313,8 +313,8 @@ services:
     image: ipfs/go-ipfs:latest
     restart: always
     volumes:
-      - /opt/dev/pedrojs/go-ipfs/export:/export
-      - /opt/dev/pedrojs/go-ipfs/data:/data/ipfs
+      - ../.data/go-ipfs/export:/export
+      - ../.data/go-ipfs/data:/data/ipfs
     ports:
       - "4001:4001"
       - "4001:4001/udp"

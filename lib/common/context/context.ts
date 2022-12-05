@@ -5,7 +5,7 @@ type ContextType = Map<any, any>;
 interface IContext {
 	context: ContextType;
 
-	// Context Id
+	// Context ID
 	id: string;
 
 	// Context index
@@ -69,9 +69,14 @@ export class Context implements IContext {
 		return this._parent.Trace(index);
 	}
 
-	// The length from the start to the current context
+	// The length from the context with index 0 to the current context
 	Length(): number {
 		return this.index + 1;
+	}
+
+	// Get context chain head
+	Head(): Context {
+		return this.Trace(0);
 	}
 }
 
@@ -81,42 +86,42 @@ export function NewContext(opts?: IOptions): Context {
 }
 
 export interface IBornOptions {
-	// Max index value
-	max: number;
+	// Chain length
+	length: number;
 
 	// Parent context
-	ctx?: Context;
+	parent?: Context;
 
-	// ID provider
+	// Context ID provider
 	idProvider?: () => string;
 }
 
 // Born the context chain
-export function Born(arg: IBornOptions): Context {
-	if (arg.ctx) {
-		if (arg.ctx.index == arg.max - 1) {
-			return arg.ctx;
+export function Born(opts: IBornOptions): Context {
+	if (opts.parent) {
+		if (opts.parent.index == opts.length - 1) {
+			return opts.parent;
 		}
 
 		const child = NewContext({
-			parent: arg.ctx,
-			id: arg.idProvider ? arg.idProvider() : randomUUID(),
+			parent: opts.parent,
+			id: opts.idProvider ? opts.idProvider() : randomUUID(),
 		})
 
 		return Born({
-			max: arg.max,
-			ctx: child,
-			idProvider: arg.idProvider,
+			length: opts.length,
+			parent: child,
+			idProvider: opts.idProvider,
 		});
 	}
 
 	const root = NewContext({
-		id: arg.idProvider ? arg.idProvider() : randomUUID(),
+		id: opts.idProvider ? opts.idProvider() : randomUUID(),
 	})
 
 	return Born({
-		max: arg.max,
-		ctx: root,
-		idProvider: arg.idProvider,
+		length: opts.length,
+		parent: root,
+		idProvider: opts.idProvider,
 	});
 }

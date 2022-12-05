@@ -124,4 +124,5 @@ dist
 # Builders
 publish
 /test/modules/database
+/.data
 /git.json
