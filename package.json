@@ -37,8 +37,8 @@
   "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.236.0",
-    "@aws-sdk/client-sqs": "^3.236.0",
+    "@aws-sdk/client-s3": "^3.238.0",
+    "@aws-sdk/client-sqs": "^3.238.0",
     "@grpc/grpc-js": "^1.8.0",
     "@jovijovi/express-2fa-token": "1.1.0",
     "@jovijovi/pedrojs-common": "1.2.1",
