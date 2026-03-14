@@ -4,7 +4,7 @@ import {heartbeat} from '@jovijovi/pedrojs-network/websocket/server';
 import {config, log, sys} from '@jovijovi/pedrojs-common';
 import {ITaskHandler} from '@jovijovi/pedrojs-network/http/server/interfaces';
 import {Tracing} from '@jovijovi/pedrojs-tracing';
-import {logo} from './logo';
+import {logo} from './logo.js';
 import {TwoFAToken} from '@jovijovi/express-2fa-token';
 
 function biz1(req, res) {
